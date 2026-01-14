@@ -51,7 +51,7 @@ export function ProductShowcase() {
             </div>
 
             <p className="text-gray-600 text-lg leading-relaxed">
-              From quarry selection to finishing lines, GGfivemines-minerals
+              From quarry selection to finishing lines, Gfivemines&minerals
               curates stone for architects, fabricators, and builders who need
               dependable consistency, rich veining, and durable performance on
               site.

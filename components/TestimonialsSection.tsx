@@ -12,7 +12,7 @@ const testimonials = [
   {
     name: "Ahmed Khalil",
     role: "Architectural Consultant",
-    text: "GGfivemines-minerals delivered consistent veining across 200 sqm of Carrara marble—exactly what we needed for a five-star hotel lobby. On-site support was outstanding.",
+    text: "Gfivemines&minerals delivered consistent veining across 200 sqm of Carrara marble—exactly what we needed for a five-star hotel lobby. On-site support was outstanding.",
     rating: 5,
     initials: "AK",
   },
@@ -26,7 +26,7 @@ const testimonials = [
   {
     name: "Bilal Qureshi",
     role: "Construction Manager",
-    text: "Reliable dispatch and load-tested blocks. We've used GGfivemines-minerals on three high-rise projects, and every delivery has met structural and aesthetic specs.",
+    text: "Reliable dispatch and load-tested blocks. We've used Gfivemines&minerals on three high-rise projects, and every delivery has met structural and aesthetic specs.",
     rating: 5,
     initials: "BQ",
   },
@@ -75,7 +75,7 @@ export function TestimonialsSection({ visibleSections }: TestimonialsSectionProp
             Trusted by <span className="font-serif italic font-medium">Builders.</span>
           </h2>
           <p className="text-gray-500 text-lg">
-            From architects to contractors, see why leading projects choose GGfivemines-minerals.
+            From architects to contractors, see why leading projects choose Gfivemines&minerals.
           </p>
         </motion.div>
 

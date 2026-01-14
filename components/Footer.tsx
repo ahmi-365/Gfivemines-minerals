@@ -35,7 +35,7 @@ export function Footer() {
       {/* Background Watermark (Subtle Gray) */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full overflow-hidden pointer-events-none opacity-[0.02]">
           <h1 className="text-[20vw] font-bold text-center leading-none tracking-tighter text-black select-none">
-            GGFIVEMINES-MINERALS
+            Gfivemines&minerals
         </h1>
       </div>
 
@@ -49,7 +49,7 @@ export function Footer() {
                 <Sparkles className="w-5 h-5" />
               </div>
                 <span className="text-2xl font-serif italic tracking-tight font-medium">
-                  GGfivemines-minerals.
+                  Gfivemines&minerals.
               </span>
             </Link>
 
@@ -121,7 +121,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-xs flex items-center gap-1.5">
-              © 2025 GGfivemines-minerals. Crafted with{" "}
+              © 2025 Gfivemines&minerals. Crafted with{" "}
             <Heart className="w-3.5 h-3.5 text-gray-900 fill-gray-900 animate-pulse" />{" "}
             in Pakistan.
           </p>

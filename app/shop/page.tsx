@@ -62,7 +62,7 @@ export default function ShopPage() {
     async function fetchProducts() {
       try {
         const response = await fetch(
-          "https://api.ggfivemines-minerals.com/api/all-products"
+          "https://api.Gfivemines&minerals.com/api/all-products"
         );
         const data = await response.json();
         if (data.status === "success") setProducts(data.data);
@@ -85,7 +85,7 @@ export default function ShopPage() {
   };
 
   const getImageUrl = (img: string) =>
-    `https://api.ggfivemines-minerals.com/public/assets/images/product/${img}`;
+    `https://api.Gfivemines&minerals.com/public/assets/images/product/${img}`;
 
   // Filter & Sort Logic
   const filteredProducts = products

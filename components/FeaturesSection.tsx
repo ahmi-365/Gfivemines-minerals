@@ -26,7 +26,7 @@ export function FeaturesSection({ visibleSections }: FeaturesSectionProps) {
           </h2>
           <p className="section-subtitle">
             Experience the perfect balance of form and durability with
-            GGfivemines-minerals — natural stone sourced for architectural impact.
+            Gfivemines&minerals — natural stone sourced for architectural impact.
           </p>
         </div>
 

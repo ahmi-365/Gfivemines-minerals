@@ -55,7 +55,7 @@ export default function PrivacyPolicy() {
             </h1>
 
             <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-light mb-8">
-              At GGfivemines-minerals, we believe transparency is essential. Here
+              At Gfivemines&minerals, we believe transparency is essential. Here
               is how we collect, use, and protect your personal information.
             </p>
 
@@ -81,7 +81,7 @@ export default function PrivacyPolicy() {
                 We respect your privacy and are committed to protecting it
                 through our compliance with this policy. This policy describes
                 the types of information we may collect from you or that you may
-                provide when you visit the website <strong>GGfivemines-minerals.com</strong>{" "}
+                provide when you visit the website <strong>Gfivemines&minerals.com</strong>{" "}
                 and our practices for collecting, using, maintaining,
                 protecting, and disclosing that information.
               </p>
@@ -197,13 +197,13 @@ export default function PrivacyPolicy() {
 
             <div className="flex justify-center pt-4">
               <a
-                href="mailto:privacy@ggfivemines-minerals.com"
+                href="mailto:privacy@Gfivemines&minerals.com"
                 className="group flex items-center gap-3 text-lg font-medium hover:text-gray-300 transition-colors"
               >
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
                   <Mail className="w-5 h-5" />
                 </div>
-                privacy@ggfivemines-minerals.com
+                privacy@Gfivemines&minerals.com
               </a>
             </div>
           </div>

@@ -98,14 +98,14 @@ export function BenefitsSection({ scrollY }: BenefitsSectionProps) {
             <div className="inline-flex items-center gap-2 border border-white/10 bg-white/5 px-4 py-1.5 rounded-full mb-4">
               <ShieldCheck className="w-3 h-3 text-white/70" />
               <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/70">
-                The GGfivemines-minerals Promise
+                The Gfivemines&minerals Promise
               </span>
             </div>
 
             <h2 className="text-3xl md:text-5xl font-light mb-4 tracking-tight">
               Why choose{" "}
               <span className="font-serif italic font-medium text-white/90">
-                GGfivemines-minerals?
+                Gfivemines&minerals?
               </span>
             </h2>
             <p className="text-base text-gray-400 font-light leading-relaxed max-w-2xl mx-auto">

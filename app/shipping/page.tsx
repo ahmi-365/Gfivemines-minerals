@@ -50,7 +50,7 @@ export default function ShippingGuide() {
             </h1>
 
             <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
-              From quarry to site. We ensure your GGfivemines-minerals stone
+              From quarry to site. We ensure your Gfivemines&minerals stone
               arrive safely, timely, and beautifully packaged.
             </p>
           </motion.div>

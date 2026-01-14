@@ -79,7 +79,7 @@ export function NewsletterSection() {
               <span className="font-serif italic font-medium"> and lots.</span>
             </h2>
             <p className="text-gray-400 text-lg mb-10 leading-relaxed">
-              Join the GGfivemines-minerals bulletin for fresh slabs, block availability,
+              Join the Gfivemines&minerals bulletin for fresh slabs, block availability,
               and logistics updates for builders and fabricators.
             </p>
           </motion.div>
@@ -140,7 +140,7 @@ export function NewsletterSection() {
                     className="flex items-center gap-2 text-emerald-400 text-sm font-medium"
                   >
                     <CheckCircle2 className="w-4 h-4" />
-                    <span>Welcome to the GGfivemines-minerals network!</span>
+                    <span>Welcome to the Gfivemines&minerals network!</span>
                   </motion.div>
                 )}
                 {status === "error" && (

@@ -74,7 +74,7 @@ export function HeroSection({ scrollY = 0, isVisible = true }: HeroSectionProps)
               Sculpted luxury for architecture and interiors
             </h1>
             <p className="text-sm md:text-base text-white/80">
-              GGfivemines-minerals sources world-class stone blocks, slabs, and finishes.
+              Gfivemines&minerals sources world-class stone blocks, slabs, and finishes.
             </p>
           </div>
 

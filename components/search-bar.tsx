@@ -37,7 +37,7 @@ export function SearchBar() {
       setLoading(true);
       try {
         const response = await fetch(
-          "https://api.ggfivemines-minerals.com/api/all-products"
+          "https://api.Gfivemines&minerals.com/api/all-products"
         );
         const data = await response.json();
         if (data.status === "success") {

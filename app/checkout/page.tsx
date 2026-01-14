@@ -122,7 +122,7 @@ export default function CheckoutPage() {
 
     try {
       const response = await fetch(
-        `https://api.ggfivemines-minerals.com/api/promo-code/discount`,
+        `https://api.Gfivemines&minerals.com/api/promo-code/discount`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -171,7 +171,7 @@ export default function CheckoutPage() {
     };
 
     try {
-      const response = await fetch("https://api.ggfivemines-minerals.com/api/save-order", {
+      const response = await fetch("https://api.Gfivemines&minerals.com/api/save-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(orderData),
@@ -373,7 +373,7 @@ export default function CheckoutPage() {
             href="/"
             className="text-xl font-serif italic font-bold text-white tracking-tighter"
           >
-            GGfivemines-minerals.
+            Gfivemines&minerals.
           </Link>
           <button
             onClick={() => setIsMobileSummaryOpen(!isMobileSummaryOpen)}
@@ -416,7 +416,7 @@ export default function CheckoutPage() {
               href="/"
               className="text-3xl font-serif italic font-bold text-white tracking-tighter hover:text-gray-300 transition-colors"
             >
-              GGfivemines-minerals.
+              Gfivemines&minerals.
             </Link>
           </div>
 
@@ -682,7 +682,7 @@ export default function CheckoutPage() {
             </div>
 
             <div className="lg:hidden pt-8 border-t border-gray-100 text-center text-xs text-gray-400 pb-12">
-              All rights reserved GGfivemines-minerals © 2025
+              All rights reserved Gfivemines&minerals © 2025
             </div>
           </form>
         </div>

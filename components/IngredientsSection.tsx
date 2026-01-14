@@ -79,14 +79,14 @@ export function IngredientsSection({
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-100 bg-white text-[10px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-6 shadow-sm">
             <CheckCircle2 className="w-3 h-3 text-gray-900" />
-            <span>The GGfivemines-minerals Standard</span>
+            <span>The Gfivemines&minerals Standard</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight leading-tight">
             Elevated stone for signature spaces
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            From marble feature walls to granite flooring, GGfivemines-minerals
+            From marble feature walls to granite flooring, Gfivemines&minerals
             supplies curated stone with predictable performance, consistent
             tones, and finishes that make installations effortless.
           </p>

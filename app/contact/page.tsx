@@ -70,7 +70,7 @@ export default function ContactPage() {
       };
 
       const response = await fetch(
-        "https://api.ggfivemines-minerals.com/api/contact-message",
+        "https://api.Gfivemines&minerals.com/api/contact-message",
         {
           method: "POST",
           headers: {
@@ -206,10 +206,10 @@ export default function ContactPage() {
                       Our sales team responds within 24 hours.
                     </p>
                     <a
-                      href="mailto:support@ggfivemines-minerals.com"
+                      href="mailto:support@Gfivemines&minerals.com"
                       className="text-sm font-semibold text-gray-900 hover:underline"
                     >
-                      support@ggfivemines-minerals.com
+                      support@Gfivemines&minerals.com
                     </a>
                   </div>
                 </div>

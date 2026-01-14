@@ -46,7 +46,7 @@ export default function ReturnPolicy() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-200 bg-white text-[10px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-8 shadow-sm">
               <ShieldCheck className="w-3 h-3" />
-              <span>The GGfivemines-minerals Guarantee</span>
+              <span>The Gfivemines&minerals Guarantee</span>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-light text-gray-900 mb-8 tracking-tight leading-[0.9]">
@@ -112,7 +112,7 @@ export default function ReturnPolicy() {
             <PolicyCard icon={Clock} title="Return Window" delay={0.1}>
               <p className="text-gray-600 leading-relaxed mb-4">
                 You have <strong className="text-gray-900">15 days</strong> from
-                the delivery date to return your GGfivemines-minerals stone. To be eligible
+                the delivery date to return your Gfivemines&minerals stone. To be eligible
                 for a full refund, items must be unworn, unwashed, and in their
                 original packaging with all tags attached.
               </p>
