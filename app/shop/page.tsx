@@ -5,15 +5,15 @@ import { Navigation } from "@/components/Navigation";
 import { useCart } from "@/lib/cart-context";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-    ArrowRight,
-    Check,
-    ChevronDown,
-    Minus,
-    Plus,
-    Search,
-    ShoppingBag,
-    SlidersHorizontal,
-    X
+  ArrowRight,
+  Check,
+  ChevronDown,
+  Minus,
+  Plus,
+  Search,
+  ShoppingBag,
+  SlidersHorizontal,
+  X
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -62,7 +62,7 @@ export default function ShopPage() {
     async function fetchProducts() {
       try {
         const response = await fetch(
-          "https://api.Gfivemines&minerals.com/api/all-products"
+          "https://backend.majesticsofts.com/api/all-products"
         );
         const data = await response.json();
         if (data.status === "success") setProducts(data.data);
@@ -85,7 +85,7 @@ export default function ShopPage() {
   };
 
   const getImageUrl = (img: string) =>
-    `https://api.Gfivemines&minerals.com/public/assets/images/product/${img}`;
+    `https://backend.majesticsofts.com/public/assets/images/product/${img}`;
 
   // Filter & Sort Logic
   const filteredProducts = products
@@ -146,15 +146,13 @@ export default function ShopPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-4xl mx-auto"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full border border-gray-200 bg-white text-[10px] font-bold uppercase tracking-[0.2em] mb-6">
-              New Season 2025
-            </span>
+
             <h1 className="text-6xl md:text-8xl font-light tracking-tighter leading-[0.9] mb-6">
               Natural <span className="font-serif italic">Stone.</span>
             </h1>
             <p className="text-gray-500 text-lg max-w-lg mx-auto leading-relaxed">
-              Marble, granite, and minerals sourced for durability and architectural beauty.
-              Browse inventory from quarry to finish.
+              Marble, granite, and minerals sourced directly from quarries.
+              Browse premium naturalstone blocks and slabs for cutting and processing.
             </p>
           </motion.div>
         </div>
@@ -196,11 +194,10 @@ export default function ShopPage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-5 py-2 rounded-xl text-sm font-medium transition-all whitespace-nowrap ${
-                    selectedCategory === cat
-                      ? "bg-gray-900 text-white shadow-lg"
-                      : "hover:bg-gray-100 text-gray-500 hover:text-gray-900"
-                  }`}
+                  className={`px-5 py-2 rounded-xl text-sm font-medium transition-all whitespace-nowrap ${selectedCategory === cat
+                    ? "bg-gray-900 text-white shadow-lg"
+                    : "hover:bg-gray-100 text-gray-500 hover:text-gray-900"
+                    }`}
                 >
                   {cat}
                 </button>
@@ -230,9 +227,8 @@ export default function ShopPage() {
                     Sort
                   </span>
                   <ChevronDown
-                    className={`w-3 h-3 text-gray-400 hidden lg:block transition-transform ${
-                      isSortOpen ? "rotate-180" : ""
-                    }`}
+                    className={`w-3 h-3 text-gray-400 hidden lg:block transition-transform ${isSortOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 
@@ -370,11 +366,10 @@ export default function ShopPage() {
                     <button
                       key={idx}
                       onClick={() => setSelectedImage(getImageUrl(img))}
-                      className={`w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden border-2 ${
-                        selectedImage === getImageUrl(img)
-                          ? "border-gray-900"
-                          : "border-transparent"
-                      }`}
+                      className={`w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden border-2 ${selectedImage === getImageUrl(img)
+                        ? "border-gray-900"
+                        : "border-transparent"
+                        }`}
                     >
                       <img
                         src={getImageUrl(img)}

@@ -4,15 +4,15 @@ import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
-    AlertTriangle,
-    Copyright,
-    CreditCard,
-    FileCheck,
-    Gavel,
-    Globe,
-    RefreshCcw,
-    Scale,
-    ShoppingBag,
+  AlertTriangle,
+  Copyright,
+  CreditCard,
+  FileCheck,
+  Gavel,
+  Globe,
+  RefreshCcw,
+  Scale,
+  ShoppingBag,
 } from "lucide-react";
 
 export default function TermsOfService() {
@@ -79,8 +79,8 @@ export default function TermsOfService() {
               delay={0.1}
             >
               <p className="text-gray-600 leading-relaxed">
-                This website is operated by <strong>Gfivemines&minerals</strong>. Throughout
-                the site, the terms "we", "us" and "our" refer to Gfivemines&minerals. We
+                This website is operated by <strong>GFive Mines & Minerals</strong>. Throughout
+                the site, the terms "we", "us" and "our" refer to GFive Mines & Minerals. We
                 offer this website, including all information, tools, and
                 services available from this site to you, the user, conditioned
                 upon your acceptance of all terms, conditions, policies, and
@@ -124,7 +124,7 @@ export default function TermsOfService() {
                 All content included on this site, such as text, graphics,
                 logos, button icons, images, audio clips, digital downloads,
                 data compilations, and software, is the property of{" "}
-                <strong>Gfivemines&minerals</strong> or its content suppliers and protected
+                <strong>GFive Mines & Minerals</strong> or its content suppliers and protected
                 by international copyright laws.
               </p>
               <div className="bg-gray-100 rounded-xl p-4 text-xs text-gray-500 font-medium">
@@ -141,7 +141,7 @@ export default function TermsOfService() {
               delay={0.5}
             >
               <p className="text-sm text-gray-600 leading-relaxed">
-                In no case shall Gfivemines&minerals, our directors, officers, employees,
+                In no case shall GFive Mines & Minerals, our directors, officers, employees,
                 affiliates, agents, contractors, or interns be liable for any
                 injury, loss, claim, or any direct, indirect, incidental,
                 punitive, or consequential damages of any kind.

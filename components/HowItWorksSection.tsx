@@ -3,12 +3,12 @@
 
 import { motion } from "framer-motion";
 import {
-    ArrowRight,
-    CheckCircle2,
-    MousePointerClick,
-    Search,
-    ShoppingBag,
-    Sparkles,
+  ArrowRight,
+  CheckCircle2,
+  MousePointerClick,
+  Search,
+  ShoppingBag,
+  Sparkles,
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -24,7 +24,7 @@ const steps = [
     desc: "Explore quarry-direct marble, granite, and minerals.",
     icon: Search,
     link: "/shop",
-    linkText: "Browse Stone",
+    linkText: "Browse Marble & Stone",
   },
   {
     id: 2,
@@ -44,8 +44,8 @@ const steps = [
   },
   {
     id: 4,
-    title: "Install",
-    desc: "Deliver a seamless fit-out with ready-to-lay stone.",
+    title: "Deliver",
+    desc: "Precision cutting and finishing for bulk orders and custom specifications.",
     icon: Sparkles,
     link: "/shop",
     linkText: "View Inventory",
@@ -71,7 +71,7 @@ export function HowItWorksSection({ visibleSections }: HowItWorksSectionProps) {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4 tracking-tight">
-            From quarry to installation
+            From quarry to cutting
             <span className="font-serif italic font-medium"> made simple.</span>
           </h2>
         </motion.div>
@@ -99,19 +99,17 @@ export function HowItWorksSection({ visibleSections }: HowItWorksSectionProps) {
                 transition={{ delay: item.id * 0.1 }}
                 onMouseEnter={() => setActiveStep(item.id)}
                 onMouseLeave={() => setActiveStep(0)}
-                className={`relative flex flex-col items-center text-center p-6 rounded-3xl transition-all duration-300 ${
-                  activeStep === item.id
-                    ? "bg-white shadow-xl shadow-gray-200/50 scale-105"
-                    : "hover:bg-white/50"
-                }`}
+                className={`relative flex flex-col items-center text-center p-6 rounded-3xl transition-all duration-300 ${activeStep === item.id
+                  ? "bg-white shadow-xl shadow-gray-200/50 scale-105"
+                  : "hover:bg-white/50"
+                  }`}
               >
                 {/* Step Circle */}
                 <div
-                  className={`w-20 h-20 rounded-full flex items-center justify-center mb-6 transition-all duration-500 border-2 relative z-10 ${
-                    activeStep >= item.id
-                      ? "bg-gray-900 border-gray-900 text-white"
-                      : "bg-white border-gray-100 text-gray-400"
-                  }`}
+                  className={`w-20 h-20 rounded-full flex items-center justify-center mb-6 transition-all duration-500 border-2 relative z-10 ${activeStep >= item.id
+                    ? "bg-gray-900 border-gray-900 text-white"
+                    : "bg-white border-gray-100 text-gray-400"
+                    }`}
                 >
                   <item.icon className="w-8 h-8" />
 
@@ -129,9 +127,8 @@ export function HowItWorksSection({ visibleSections }: HowItWorksSectionProps) {
                     Step 0{item.id}
                   </span>
                   <h3
-                    className={`text-lg font-medium transition-colors ${
-                      activeStep >= item.id ? "text-gray-900" : "text-gray-500"
-                    }`}
+                    className={`text-lg font-medium transition-colors ${activeStep >= item.id ? "text-gray-900" : "text-gray-500"
+                      }`}
                   >
                     {item.title}
                   </h3>
@@ -142,11 +139,10 @@ export function HowItWorksSection({ visibleSections }: HowItWorksSectionProps) {
 
                 {/* Interactive Link (Appears on Hover) */}
                 <div
-                  className={`mt-6 overflow-hidden transition-all duration-300 ${
-                    activeStep === item.id
-                      ? "h-10 opacity-100"
-                      : "h-0 opacity-0"
-                  }`}
+                  className={`mt-6 overflow-hidden transition-all duration-300 ${activeStep === item.id
+                    ? "h-10 opacity-100"
+                    : "h-0 opacity-0"
+                    }`}
                 >
                   <Link
                     href={item.link}

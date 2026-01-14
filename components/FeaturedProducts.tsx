@@ -4,13 +4,13 @@ import { Navigation } from "@/components/Navigation";
 import { useCart } from "@/lib/cart-context";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-    ArrowRight,
-    Check,
-    Minus,
-    Plus,
-    ShoppingBag,
-    Sparkles,
-    X
+  ArrowRight,
+  Check,
+  Minus,
+  Plus,
+  ShoppingBag,
+  Sparkles,
+  X
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -54,7 +54,7 @@ export default function FeaturedProducts() {
     async function fetchProducts() {
       try {
         const response = await fetch(
-          "https://api.Gfivemines&minerals.com/api/all-products"
+          "https://backend.majesticsofts.com/api/all-products"
         );
         const data = await response.json();
         if (data.status === "success") {
@@ -84,7 +84,7 @@ export default function FeaturedProducts() {
   };
 
   const getImageUrl = (img: string) =>
-    `https://api.Gfivemines&minerals.com/public/assets/images/product/${img}`;
+    `https://backend.majesticsofts.com/public/assets/images/product/${img}`;
 
   // Filter Logic
   const filteredProducts = products.filter((p) => {
@@ -144,10 +144,10 @@ export default function FeaturedProducts() {
             </div>
 
             <h1 className="text-6xl md:text-8xl font-light tracking-tighter leading-[0.9] mb-6">
-              Featured <span className="font-serif italic">Stone.</span>
+              Featured <span className="font-serif italic">Marble & Stone.</span>
             </h1>
             <p className="text-gray-500 text-lg max-w-lg mx-auto leading-relaxed">
-              Handpicked stone slabs and mineral blocks that define architectural excellence.
+              Handpicked natural stone slabs and mineral blocks that define architectural excellence.
               Explore curated lots for your next project.
             </p>
           </motion.div>
@@ -166,11 +166,10 @@ export default function FeaturedProducts() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
-                    selectedCategory === cat
-                      ? "bg-gray-900 text-white shadow-md"
-                      : "hover:bg-gray-100 text-gray-500 hover:text-gray-900"
-                  }`}
+                  className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${selectedCategory === cat
+                    ? "bg-gray-900 text-white shadow-md"
+                    : "hover:bg-gray-100 text-gray-500 hover:text-gray-900"
+                    }`}
                 >
                   {cat}
                 </button>
@@ -258,11 +257,10 @@ export default function FeaturedProducts() {
                     <button
                       key={idx}
                       onClick={() => setSelectedImage(getImageUrl(img))}
-                      className={`w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden border-2 ${
-                        selectedImage === getImageUrl(img)
-                          ? "border-gray-900"
-                          : "border-transparent"
-                      }`}
+                      className={`w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden border-2 ${selectedImage === getImageUrl(img)
+                        ? "border-gray-900"
+                        : "border-transparent"
+                        }`}
                     >
                       <img
                         src={getImageUrl(img)}

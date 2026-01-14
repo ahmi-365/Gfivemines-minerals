@@ -2,16 +2,16 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import {
-    ArrowLeft,
-    ArrowRight,
-    CheckCircle2,
-    ChevronDown,
-    ChevronUp,
-    CreditCard,
-    ShieldCheck,
-    ShoppingBag,
-    Truck,
-    XCircle,
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle2,
+  ChevronDown,
+  ChevronUp,
+  CreditCard,
+  ShieldCheck,
+  ShoppingBag,
+  Truck,
+  XCircle,
 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -235,17 +235,16 @@ export default function CheckoutPage() {
           onClick={
             validatedPromoCode
               ? () => {
-                  setValidatedPromoCode(null);
-                  setPromoCode("");
-                }
+                setValidatedPromoCode(null);
+                setPromoCode("");
+              }
               : validatePromoCode
           }
           disabled={!promoCode || isValidatingPromo}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-            validatedPromoCode
-              ? "bg-red-500/20 text-red-200 hover:bg-red-500/30 border border-red-500/20"
-              : "bg-white/10 text-white hover:bg-white/20 border border-white/10"
-          }`}
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${validatedPromoCode
+            ? "bg-red-500/20 text-red-200 hover:bg-red-500/30 border border-red-500/20"
+            : "bg-white/10 text-white hover:bg-white/20 border border-white/10"
+            }`}
         >
           {validatedPromoCode ? "Remove" : isValidatingPromo ? "..." : "Apply"}
         </button>
@@ -411,12 +410,12 @@ export default function CheckoutPage() {
       <aside className="hidden lg:flex flex-col w-[45%] bg-[#0a0a0a] border-r border-white/5 h-screen sticky top-0 z-10">
         <div className="flex-1 flex flex-col p-6 lg:p-8 overflow-hidden">
           {/* Branding */}
-          <div className="mb-4 flex-shrink-0">
+          <div className="flex-shrink-0">
             <Link
               href="/"
               className="text-3xl font-serif italic font-bold text-white tracking-tighter hover:text-gray-300 transition-colors"
             >
-              Gfivemines&minerals.
+              GFive Mines & Minerals.
             </Link>
           </div>
 
@@ -471,11 +470,10 @@ export default function CheckoutPage() {
                 />
                 <label className="flex items-start gap-3 cursor-pointer group">
                   <div
-                    className={`mt-0.5 w-5 h-5 rounded border flex items-center justify-center transition-colors flex-shrink-0 ${
-                      emailNews
-                        ? "bg-black border-black"
-                        : "border-gray-300 bg-white"
-                    }`}
+                    className={`mt-0.5 w-5 h-5 rounded border flex items-center justify-center transition-colors flex-shrink-0 ${emailNews
+                      ? "bg-black border-black"
+                      : "border-gray-300 bg-white"
+                      }`}
                   >
                     {emailNews && (
                       <CheckCircle2 className="w-3.5 h-3.5 text-white" />
@@ -560,11 +558,10 @@ export default function CheckoutPage() {
 
                 <label className="flex items-start gap-3 cursor-pointer group">
                   <div
-                    className={`mt-0.5 w-5 h-5 rounded border flex items-center justify-center transition-colors flex-shrink-0 ${
-                      saveInfo
-                        ? "bg-black border-black"
-                        : "border-gray-300 bg-white"
-                    }`}
+                    className={`mt-0.5 w-5 h-5 rounded border flex items-center justify-center transition-colors flex-shrink-0 ${saveInfo
+                      ? "bg-black border-black"
+                      : "border-gray-300 bg-white"
+                      }`}
                   >
                     {saveInfo && (
                       <CheckCircle2 className="w-3.5 h-3.5 text-white" />
@@ -682,7 +679,7 @@ export default function CheckoutPage() {
             </div>
 
             <div className="lg:hidden pt-8 border-t border-gray-100 text-center text-xs text-gray-400 pb-12">
-              All rights reserved Gfivemines&minerals © 2025
+              All rights reserved GFive Mines & Minerals © 2025
             </div>
           </form>
         </div>

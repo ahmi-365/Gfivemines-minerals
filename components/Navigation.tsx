@@ -72,7 +72,7 @@ export function Navigation() {
       setLoading(true);
       try {
         const response = await fetch(
-          "https://api.Gfivemines&minerals.com/api/all-products"
+          "https://backend.majesticsofts.com/api/all-products"
         );
         const data = await response.json();
         if (data.status === "success") {
@@ -90,17 +90,17 @@ export function Navigation() {
   // --- 2. FILTER LOGIC ---
   const filteredProducts = query.trim()
     ? products
-        .filter(
-          (product) =>
-            product.name.toLowerCase().includes(query.toLowerCase()) ||
-            product.category.name.toLowerCase().includes(query.toLowerCase()) ||
-            product.brand.name.toLowerCase().includes(query.toLowerCase())
-        )
-        .slice(0, 5)
+      .filter(
+        (product) =>
+          product.name.toLowerCase().includes(query.toLowerCase()) ||
+          product.category.name.toLowerCase().includes(query.toLowerCase()) ||
+          product.brand.name.toLowerCase().includes(query.toLowerCase())
+      )
+      .slice(0, 5)
     : [];
 
   const getImageUrl = (imageName: string) => {
-    return `https://api.Gfivemines&minerals.com/public/assets/images/product/${imageName}`;
+    return `https://backend.majesticsofts.com/public/assets/images/product/${imageName}`;
   };
 
   // --- SMART SCROLL LOGIC ---
@@ -128,7 +128,7 @@ export function Navigation() {
   };
 
   const navLinks = [
-    { name: "Shop", href: "/shop" },
+    { name: "Marble & Stones", href: "/shop" },
     { name: "Cart", href: "/cart" },
     { name: "Contact", href: "/contact" },
   ];
@@ -142,38 +142,35 @@ export function Navigation() {
         }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className={`fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-gray-100 transition-all duration-300 ${
-          searchOpen ? "shadow-none" : "shadow-sm"
-        }`}
+        className={`fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-gray-100 transition-all duration-300 ${searchOpen ? "shadow-none" : "shadow-sm"
+          }`}
       >
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between relative">
             {/* --- LEFT: LOGO --- */}
             <Link
               href="/"
-              className={`flex items-center gap-2 group relative z-50 transition-opacity duration-300 ${
-                searchOpen
-                  ? "opacity-0 pointer-events-none md:opacity-100"
-                  : "opacity-100"
-              }`}
+              className={`flex items-center gap-2 group relative z-50 transition-opacity duration-300 ${searchOpen
+                ? "opacity-0 pointer-events-none md:opacity-100"
+                : "opacity-100"
+                }`}
             >
-              <div className="relative">
-                <div className="flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-gray-900 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-500" />
-                  <span className="text-lg font-serif italic font-bold text-gray-900 tracking-tight group-hover:scale-105 transition-transform duration-300 block">
-                    Gfivemines&minerals
-                  </span>
-                </div>
-              </div>
+              <Image
+                src="/images/gfivelogo.png"
+                alt="Gfivemines & Minerals"
+                height={80}
+                width={300}
+                className="h-20 w-auto object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-lg grayscale brightness-0"
+                priority
+              />
             </Link>
 
             {/* --- CENTER: DESKTOP MENU --- */}
             <div
-              className={`hidden md:flex items-center gap-12 absolute left-1/2 -translate-x-1/2 transition-all duration-500 ${
-                searchOpen
-                  ? "opacity-0 scale-90 pointer-events-none"
-                  : "opacity-100"
-              }`}
+              className={`hidden md:flex items-center gap-12 absolute left-1/2 -translate-x-1/2 transition-all duration-500 ${searchOpen
+                ? "opacity-0 scale-90 pointer-events-none"
+                : "opacity-100"
+                }`}
             >
               {navLinks.map((link) => (
                 <InteractiveLink
@@ -188,26 +185,23 @@ export function Navigation() {
             <div className="flex items-center gap-3 relative z-50">
               {/* EXPANDABLE SEARCH BAR CONTAINER */}
               <div
-                className={`flex items-center justify-end transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
-                  searchOpen ? "w-[calc(100vw-48px)] absolute right-0" : "w-10"
-                }`}
+                className={`flex items-center justify-end transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${searchOpen ? "w-[calc(100vw-48px)] absolute right-0" : "w-10"
+                  }`}
               >
                 <div className="w-full relative">
                   <motion.div
                     layout
-                    className={`relative flex items-center h-10 z-50 ${
-                      searchOpen
-                        ? "w-full bg-gray-100 rounded-full px-4"
-                        : "w-10 bg-transparent"
-                    }`}
+                    className={`relative flex items-center h-10 z-50 ${searchOpen
+                      ? "w-full bg-gray-100 rounded-full px-4"
+                      : "w-10 bg-transparent"
+                      }`}
                   >
                     <button
                       onClick={() => setSearchOpen(!searchOpen)}
-                      className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors z-10 ${
-                        searchOpen
-                          ? "text-black"
-                          : "hover:bg-gray-100 text-gray-700"
-                      }`}
+                      className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors z-10 ${searchOpen
+                        ? "text-black"
+                        : "hover:bg-gray-100 text-gray-700"
+                        }`}
                     >
                       <Search className="w-5 h-5" />
                     </button>
@@ -219,9 +213,8 @@ export function Navigation() {
                       value={query}
                       onChange={(e) => setQuery(e.target.value)}
                       onKeyDown={handleKeyDown}
-                      className={`bg-transparent border-none outline-none text-sm text-gray-900 placeholder:text-gray-400 h-full transition-all duration-300 ${
-                        searchOpen ? "flex-1 ml-2 opacity-100" : "w-0 opacity-0"
-                      }`}
+                      className={`bg-transparent border-none outline-none text-sm text-gray-900 placeholder:text-gray-400 h-full transition-all duration-300 ${searchOpen ? "flex-1 ml-2 opacity-100" : "w-0 opacity-0"
+                        }`}
                     />
 
                     {searchOpen && (
@@ -307,11 +300,10 @@ export function Navigation() {
 
               {/* ICONS (Hidden on Search) */}
               <div
-                className={`flex items-center gap-2 transition-all duration-300 ${
-                  searchOpen
-                    ? "opacity-0 translate-x-10 pointer-events-none"
-                    : "opacity-100"
-                }`}
+                className={`flex items-center gap-2 transition-all duration-300 ${searchOpen
+                  ? "opacity-0 translate-x-10 pointer-events-none"
+                  : "opacity-100"
+                  }`}
               >
                 <MagneticButton>
                   <Link
@@ -351,9 +343,14 @@ export function Navigation() {
             className="fixed inset-0 z-[60] bg-white text-black flex flex-col p-8 md:hidden"
           >
             <div className="flex justify-between items-center mb-16">
-              <span className="text-2xl font-serif italic tracking-tight">
-                Gfivemines&minerals.
-              </span>
+              <Image
+                src="/images/gfivelogo.png"
+                alt="Gfivemines & Minerals"
+                height={80}
+                width={300}
+                className="h-20 w-auto object-contain drop-shadow-lg grayscale brightness-0"
+                priority
+              />
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors"

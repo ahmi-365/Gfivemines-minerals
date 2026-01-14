@@ -2,11 +2,11 @@
 "use client";
 
 import {
-    animate,
-    motion,
-    useInView,
-    useMotionValue,
-    useTransform,
+  animate,
+  motion,
+  useInView,
+  useMotionValue,
+  useTransform,
 } from "framer-motion";
 import { Crown, RefreshCcw, ShieldCheck, Star } from "lucide-react";
 import { useEffect, useRef } from "react";
@@ -49,15 +49,15 @@ export function BenefitsSection({ scrollY }: BenefitsSectionProps) {
   const stats = [
     {
       id: 1,
-      value: 500,
+      value: 10,
       suffix: "+",
-      label: "Projects Delivered",
+      label: "Cutting Projects",
       icon: Star,
-      desc: "Residential towers, hotels, and villas.",
+      desc: "Marble slabs, granite blocks, and specialty minerals.",
     },
     {
       id: 2,
-      value: 80,
+      value: 4,
       suffix: "+",
       label: "Stone Variants",
       icon: Crown,
@@ -67,9 +67,9 @@ export function BenefitsSection({ scrollY }: BenefitsSectionProps) {
       id: 3,
       value: 72,
       suffix: " hrs",
-      label: "Dispatch Support",
+      label: "Processing",
       icon: RefreshCcw,
-      desc: "Coordinated crating, loading, and delivery.",
+      desc: "Quick turnaround on cutting and bulk orders.",
     },
   ];
 
@@ -79,9 +79,8 @@ export function BenefitsSection({ scrollY }: BenefitsSectionProps) {
       <div
         className="absolute inset-0 opacity-20 pointer-events-none"
         style={{
-          background: `radial-gradient(circle at 50% ${
-            50 + scrollY * 0.05
-          }%, #333 0%, transparent 50%)`,
+          background: `radial-gradient(circle at 50% ${50 + scrollY * 0.05
+            }%, #333 0%, transparent 50%)`,
         }}
       />
       <div className="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
@@ -98,20 +97,20 @@ export function BenefitsSection({ scrollY }: BenefitsSectionProps) {
             <div className="inline-flex items-center gap-2 border border-white/10 bg-white/5 px-4 py-1.5 rounded-full mb-4">
               <ShieldCheck className="w-3 h-3 text-white/70" />
               <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/70">
-                The Gfivemines&minerals Promise
+                The GFive Mines & Minerals Promise
               </span>
             </div>
 
             <h2 className="text-3xl md:text-5xl font-light mb-4 tracking-tight">
               Why choose{" "}
               <span className="font-serif italic font-medium text-white/90">
-                Gfivemines&minerals?
+                GFive Mines & Minerals?
               </span>
             </h2>
             <p className="text-base text-gray-400 font-light leading-relaxed max-w-2xl mx-auto">
-              We source, finish, and deliver natural stone engineered for
-              durability, consistent veining, and efficient on-site
-              installation—so your build stays on schedule.
+              We source, cut, and finish natural stone engineered for
+              durability, consistent quality, and reliable delivery schedules—so your bulk
+              orders stay on time.
             </p>
           </motion.div>
         </div>

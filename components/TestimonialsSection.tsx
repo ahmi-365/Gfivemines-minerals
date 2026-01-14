@@ -11,22 +11,22 @@ interface TestimonialsSectionProps {
 const testimonials = [
   {
     name: "Ahmed Khalil",
-    role: "Architectural Consultant",
-    text: "Gfivemines&minerals delivered consistent veining across 200 sqm of Carrara marble—exactly what we needed for a five-star hotel lobby. On-site support was outstanding.",
+    role: "Stone Supplier",
+    text: "GFive Mines & Minerals provides consistent, high-quality marble blocks with reliable dimensions. Their cutting precision and delivery speed are unmatched in the quarry supply chain.",
     rating: 5,
     initials: "AK",
   },
   {
     name: "Sara Hafeez",
-    role: "Interior Designer",
-    text: "The slab-level quality control and finish precision saved us weeks during installation. Their Black Galaxy granite transformed our client's penthouse kitchen.",
+    role: "Marble Processing Manager",
+    text: "Excellent slab quality and precise measurements. Their Black Galaxy granite consistently meets our cutting specifications. We've increased our orders significantly.",
     rating: 5,
     initials: "SH",
   },
   {
     name: "Bilal Qureshi",
-    role: "Construction Manager",
-    text: "Reliable dispatch and load-tested blocks. We've used Gfivemines&minerals on three high-rise projects, and every delivery has met structural and aesthetic specs.",
+    role: "Stone Quarry Owner",
+    text: "Reliable sourcing and premium stone blocks. We've partnered with GFive Mines & Minerals for multiple cutting projects, and every batch exceeds our quality standards.",
     rating: 5,
     initials: "BQ",
   },
@@ -58,7 +58,7 @@ export function TestimonialsSection({ visibleSections }: TestimonialsSectionProp
       <div className="absolute top-0 right-0 w-96 h-96 bg-gray-200/40 rounded-full blur-3xl -z-10 pointer-events-none opacity-50" />
 
       <div className="container mx-auto px-6">
-        
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,12 +70,12 @@ export function TestimonialsSection({ visibleSections }: TestimonialsSectionProp
             <Star className="w-3 h-3 text-gray-900 fill-gray-900" />
             <span>Client Success Stories</span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4 tracking-tight">
-            Trusted by <span className="font-serif italic font-medium">Builders.</span>
+            Trusted by <span className="font-serif italic font-medium">Stone Professionals.</span>
           </h2>
           <p className="text-gray-500 text-lg">
-            From architects to contractors, see why leading projects choose Gfivemines&minerals.
+            From quarry managers to processing experts, see why industry leaders choose GFive Mines & Minerals.
           </p>
         </motion.div>
 

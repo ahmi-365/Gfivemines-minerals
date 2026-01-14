@@ -11,8 +11,6 @@ import {
 } from "framer-motion";
 import {
   Ruler,
-  Shirt,
-  Scissors,
   ArrowRightLeft,
   MoveVertical,
   CircleDashed,
@@ -21,53 +19,53 @@ import {
 
 // --- DATA ---
 const sizeData = {
-  shirts: {
-    columns: ["Size", "Chest", "Shoulder", "Length", "Sleeve"],
+  slabs: {
+    columns: ["Type", "Length", "Width", "Thickness", "Area", "Weight"],
     data: [
       {
-        size: "Small",
-        in: ["19.5", "14.5", "37", "19"],
-        cm: ["49", "37", "94", "48"],
+        size: "Small Slab",
+        in: ["120\"", "80\"", "20\"", "~75 sqft", "~500kg"],
+        mm: ["3048mm", "2032mm", "508mm", "~75 sqft", "~500kg"],
       },
       {
-        size: "Medium",
-        in: ["20.5", "15.5", "38", "20"],
-        cm: ["52", "39", "97", "51"],
+        size: "Medium Slab",
+        in: ["240\"", "120\"", "25\"", "~200 sqft", "~1200kg"],
+        mm: ["6096mm", "3048mm", "635mm", "~200 sqft", "~1200kg"],
       },
       {
-        size: "Large",
-        in: ["22.5", "16.5", "39", "21"],
-        cm: ["57", "42", "99", "53"],
+        size: "Large Slab",
+        in: ["300\"", "150\"", "30\"", "~312 sqft", "~1800kg"],
+        mm: ["7620mm", "3810mm", "762mm", "~312 sqft", "~1800kg"],
       },
     ],
   },
-  trousers: {
-    columns: ["Size", "Waist", "Hips", "Length", "Thigh"],
+  blocks: {
+    columns: ["Type", "Length", "Width", "Height", "Area", "Weight"],
     data: [
       {
-        size: "Small",
-        in: ["28-30", "38", "38", "24"],
-        cm: ["71-76", "97", "97", "61"],
+        size: "Marble Block",
+        in: ["200\"", "100\"", "80\"", "~139 sqft", "~900kg"],
+        mm: ["5080mm", "2540mm", "2032mm", "~139 sqft", "~900kg"],
       },
       {
-        size: "Medium",
-        in: ["30-32", "40", "39", "25"],
-        cm: ["76-81", "102", "99", "64"],
+        size: "Granite Block",
+        in: ["250\"", "120\"", "100\"", "~208 sqft", "~1500kg"],
+        mm: ["6350mm", "3048mm", "2540mm", "~208 sqft", "~1500kg"],
       },
       {
-        size: "Large",
-        in: ["32-34", "42", "40", "26"],
-        cm: ["81-86", "107", "102", "66"],
+        size: "Mineral Block",
+        in: ["180\"", "90\"", "70\"", "~113 sqft", "~750kg"],
+        mm: ["4572mm", "2286mm", "1778mm", "~113 sqft", "~750kg"],
       },
     ],
   },
 };
 
 export default function SizeGuide() {
-  const [activeCategory, setActiveCategory] = useState<"shirts" | "trousers">(
-    "shirts"
+  const [activeCategory, setActiveCategory] = useState<"slabs" | "blocks">(
+    "slabs"
   );
-  const [unit, setUnit] = useState<"in" | "cm">("in");
+  const [unit, setUnit] = useState<"in" | "mm">("in");
 
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, 100]);
@@ -92,18 +90,17 @@ export default function SizeGuide() {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-200 bg-white text-[10px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-8 shadow-sm">
-              <Scissors className="w-3 h-3" />
-              <span>Tailored to Perfection</span>
+              <Ruler className="w-3 h-3" />
+              <span>Stone Dimensions</span>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-light text-gray-900 mb-8 tracking-tight leading-[0.9]">
-              Find Your{" "}
-              <span className="font-serif italic font-medium">Fit.</span>
+              Marble & Stone{" "}
+              <span className="font-serif italic font-medium">Dimensions.</span>
             </h1>
 
             <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
-              Our modest cuts are designed to drape beautifully. Use this guide
-              to find the size that makes you feel most confident.
+              Our premium marble, granite, and mineral stones are available in standard and custom sizes. Browse dimensions for cutting and processing specifications.
             </p>
           </motion.div>
         </div>
@@ -117,38 +114,35 @@ export default function SizeGuide() {
             {/* Category Switcher */}
             <div className="flex bg-white rounded-full p-1 shadow-sm border border-gray-100">
               <button
-                onClick={() => setActiveCategory("shirts")}
-                className={`px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 ${
-                  activeCategory === "shirts"
-                    ? "bg-black text-white shadow-md"
-                    : "text-gray-500 hover:text-black"
-                }`}
+                onClick={() => setActiveCategory("slabs")}
+                className={`px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 ${activeCategory === "slabs"
+                  ? "bg-black text-white shadow-md"
+                  : "text-gray-500 hover:text-black"
+                  }`}
               >
-                Shirts
+                Slabs
               </button>
               <button
-                onClick={() => setActiveCategory("trousers")}
-                className={`px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 ${
-                  activeCategory === "trousers"
-                    ? "bg-black text-white shadow-md"
-                    : "text-gray-500 hover:text-black"
-                }`}
+                onClick={() => setActiveCategory("blocks")}
+                className={`px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 ${activeCategory === "blocks"
+                  ? "bg-black text-white shadow-md"
+                  : "text-gray-500 hover:text-black"
+                  }`}
               >
-                Trousers
+                Blocks
               </button>
             </div>
 
             {/* Unit Toggle */}
             <div className="flex items-center gap-3">
               <span
-                className={`text-sm font-medium ${
-                  unit === "in" ? "text-black" : "text-gray-400"
-                }`}
+                className={`text-sm font-medium ${unit === "in" ? "text-black" : "text-gray-400"
+                  }`}
               >
                 Inches
               </span>
               <button
-                onClick={() => setUnit(unit === "in" ? "cm" : "in")}
+                onClick={() => setUnit(unit === "in" ? "mm" : "in")}
                 className="w-12 h-6 bg-gray-200 rounded-full relative transition-colors duration-300 focus:outline-none"
               >
                 <motion.div
@@ -159,11 +153,10 @@ export default function SizeGuide() {
                 />
               </button>
               <span
-                className={`text-sm font-medium ${
-                  unit === "cm" ? "text-black" : "text-gray-400"
-                }`}
+                className={`text-sm font-medium ${unit === "mm" ? "text-black" : "text-gray-400"
+                  }`}
               >
-                CM
+                Millimeters
               </span>
             </div>
           </div>
@@ -226,10 +219,7 @@ export default function SizeGuide() {
           <div className="mt-6 flex items-start gap-3 bg-gray-50 p-4 rounded-2xl">
             <HelpCircle className="w-5 h-5 text-gray-400 mt-0.5" />
             <p className="text-sm text-gray-500 leading-relaxed">
-              <strong className="text-gray-900">Modest Fit Note:</strong> Our
-              garments are cut with a slightly relaxed silhouette to ensure
-              elegance and modesty. If you prefer a tighter fit, we recommend
-              sizing down.
+              <strong className="text-gray-900">Stone Availability Note:</strong> All dimensions are standard sizes. Custom dimensions and finishes are available upon request. Please contact our sales team for specific requirements and bulk orders.
             </p>
           </div>
         </div>
@@ -239,29 +229,29 @@ export default function SizeGuide() {
       <section className="py-24 bg-gray-50/50">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-light mb-4">How to Measure</h2>
+            <h2 className="text-3xl font-light mb-4">Stone Specifications</h2>
             <div className="w-20 h-px bg-black mx-auto" />
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <MeasureCard
-              title="Chest"
-              desc="Measure around the fullest part of your chest, keeping the tape horizontal."
+              title="Length"
+              desc="The longest horizontal dimension of the stone slab or block."
               icon={ArrowRightLeft}
             />
             <MeasureCard
-              title="Waist"
-              desc="Measure around the narrowest part of your waistline (natural waist)."
+              title="Width"
+              desc="The secondary horizontal dimension perpendicular to length."
               icon={CircleDashed}
             />
             <MeasureCard
-              title="Hips"
-              desc="Measure around the fullest part of your hips while standing with feet together."
+              title="Thickness"
+              desc="The vertical measurement from top to bottom of the stone."
               icon={MoveVertical}
             />
             <MeasureCard
-              title="Length"
-              desc="For shirts, measure from shoulder seam to hem. For trousers, from waist to ankle."
+              title="Weight"
+              desc="Approximate weight varies based on stone type and moisture content."
               icon={Ruler}
             />
           </div>

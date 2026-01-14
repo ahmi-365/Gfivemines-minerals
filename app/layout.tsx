@@ -8,7 +8,7 @@ import type React from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Gfivemines&minerals – Premium Marble & Natural Stone",
+  title: "GFive Mines & Minerals – Premium Marble & Natural Stone",
   description:
     "Premium marble slabs, granite blocks, and mined minerals for construction, interiors, and architectural stonework.",
   // generator: "v0.app",
@@ -38,7 +38,7 @@ html {
       <body>
         <CartProvider>{children}</CartProvider>
         <Analytics />
-        <WhatsAppButton />
+        {/* <WhatsAppButton /> */}
       </body>
     </html>
   );

@@ -59,7 +59,7 @@ export default function CartPage() {
             </Link>
             <h1 className="text-5xl md:text-6xl font-light tracking-tight leading-[0.9]">
               Your{" "}
-              <span className="font-serif italic font-medium">Stone Order.</span>
+              <span className="font-serif italic font-medium">Natural Stone Order.</span>
             </h1>
           </motion.div>
 
@@ -89,18 +89,16 @@ export default function CartPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className={`rounded-2xl p-6 border transition-colors duration-500 ${
-                  isFreeShipping
+                className={`rounded-2xl p-6 border transition-colors duration-500 ${isFreeShipping
                     ? "bg-black text-white border-black"
                     : "bg-gray-50 text-gray-900 border-gray-100"
-                }`}
+                  }`}
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-3">
                     <div
-                      className={`p-2 rounded-full ${
-                        isFreeShipping ? "bg-white/20" : "bg-white"
-                      }`}
+                      className={`p-2 rounded-full ${isFreeShipping ? "bg-white/20" : "bg-white"
+                        }`}
                     >
                       {isFreeShipping ? (
                         <Gift className="w-5 h-5 animate-bounce" />
@@ -135,9 +133,8 @@ export default function CartPage() {
                     initial={{ width: 0 }}
                     animate={{ width: `${progressPercent}%` }}
                     transition={{ duration: 1, ease: "circOut" }}
-                    className={`h-full rounded-full relative ${
-                      isFreeShipping ? "bg-white" : "bg-black"
-                    }`}
+                    className={`h-full rounded-full relative ${isFreeShipping ? "bg-white" : "bg-black"
+                      }`}
                   >
                     {/* Shimmer Effect */}
                     <motion.div
@@ -441,12 +438,12 @@ function EmptyCartState() {
         Your selection is empty
       </h2>
       <p className="text-gray-500 max-w-md mx-auto mb-10 leading-relaxed">
-        Your stone order awaits. Explore our curated selection of premium marble,
+        Your natural stone order awaits. Explore our curated selection of premium marble,
         granite, and mineral blocks for your architectural vision.
       </p>
       <Link href="/shop">
         <Button className="bg-black text-white px-10 py-6 rounded-full hover:bg-gray-800 transition-all text-base shadow-xl hover:shadow-2xl">
-          Browse Stone Inventory
+          Browse Natural Stone Inventory
         </Button>
       </Link>
     </motion.div>

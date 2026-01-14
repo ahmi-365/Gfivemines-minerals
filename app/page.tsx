@@ -9,7 +9,7 @@ import { ProductCategories } from "@/components/ProductCategories";
 import { ProductShowcase } from "@/components/ProductShowcase";
 import { IngredientsSection } from "@/components/IngredientsSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
+// import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { NewsletterSection } from "@/components/NewsletterSection";
 import { Footer } from "@/components/Footer";
@@ -56,12 +56,12 @@ export default function Home() {
       <Navigation />
       <HeroSection scrollY={scrollY} isVisible={isVisible} />
       {/* <ProductCategories /> */}
-      <FeaturedProducts /> 
+      <FeaturedProducts />
       {/* <FeaturesSection visibleSections={visibleSections} /> */}
       {/* <ProductShowcase /> */}
       <IngredientsSection visibleSections={visibleSections} />
       <BenefitsSection scrollY={scrollY} />
-      <TestimonialsSection visibleSections={visibleSections} />
+      {/* <TestimonialsSection visibleSections={visibleSections} /> */}
       <HowItWorksSection visibleSections={visibleSections} />
       <NewsletterSection />
       <Footer />

@@ -79,7 +79,7 @@ export function NewsletterSection() {
               <span className="font-serif italic font-medium"> and lots.</span>
             </h2>
             <p className="text-gray-400 text-lg mb-10 leading-relaxed">
-              Join the Gfivemines&minerals bulletin for fresh slabs, block availability,
+              Join the GFive Mines & Minerals bulletin for fresh slabs, block availability,
               and logistics updates for builders and fabricators.
             </p>
           </motion.div>
@@ -93,11 +93,10 @@ export function NewsletterSection() {
             className="relative max-w-md mx-auto"
           >
             <div
-              className={`relative flex items-center bg-white/5 border rounded-full p-1.5 transition-colors duration-300 ${
-                status === "error"
+              className={`relative flex items-center bg-white/5 border rounded-full p-1.5 transition-colors duration-300 ${status === "error"
                   ? "border-red-500/50"
                   : "border-white/10 focus-within:border-white/30"
-              }`}
+                }`}
             >
               <input
                 type="email"
@@ -140,7 +139,7 @@ export function NewsletterSection() {
                     className="flex items-center gap-2 text-emerald-400 text-sm font-medium"
                   >
                     <CheckCircle2 className="w-4 h-4" />
-                    <span>Welcome to the Gfivemines&minerals network!</span>
+                    <span>Welcome to the GFive Mines & Minerals network!</span>
                   </motion.div>
                 )}
                 {status === "error" && (

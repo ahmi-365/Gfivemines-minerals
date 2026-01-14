@@ -30,8 +30,8 @@ export function ProductCategories() {
     <section id="shop" className="py-20 bg-white relative overflow-hidden" data-scroll-reveal>
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="section-title">Featured Stone Collections</h2>
-          <p className="section-subtitle">Curated slabs and blocks for architectural and construction needs</p>
+          <h2 className="section-title">Featured Natural Stone Collections</h2>
+          <p className="section-subtitle">Direct from quarry: Premium marble slabs and stone blocks for cutting and processing</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">

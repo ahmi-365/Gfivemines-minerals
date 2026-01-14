@@ -4,12 +4,12 @@
 import { Button } from "@/components/ui/button";
 import { easeOut, motion } from "framer-motion";
 import {
-    ArrowRight,
-    CheckCircle2,
-    Heart,
-    Leaf,
-    Shield,
-    Sparkles,
+  ArrowRight,
+  CheckCircle2,
+  Heart,
+  Leaf,
+  Shield,
+  Sparkles,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -26,7 +26,7 @@ const features = [
   {
     icon: Sparkles,
     title: "Precision Finishing",
-    desc: "CNC cutting and honed, polished, or leathered finishes to match your installation requirements.",
+    desc: "CNC cutting and honed, polished, or leathered finishes to match your specifications.",
   },
   {
     icon: Shield,
@@ -78,17 +78,17 @@ export function IngredientsSection({
           className="text-center max-w-3xl mx-auto mb-16" // Reduced margin-bottom from 20 to 16
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-100 bg-white text-[10px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-6 shadow-sm">
-            <CheckCircle2 className="w-3 h-3 text-gray-900" />
-            <span>The Gfivemines&minerals Standard</span>
+            <CheckCircle2 className="w-3 h-10 text-gray-900" />
+            <span>The GFive Mines & Minerals Standard</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight leading-tight">
-            Elevated stone for signature spaces
+            Elevated Natural Stone for signature spaces
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            From marble feature walls to granite flooring, Gfivemines&minerals
-            supplies curated stone with predictable performance, consistent
-            tones, and finishes that make installations effortless.
+            From premium marble slabs to robust granite blocks, GFive Mines & Minerals
+            supplies quarry-direct stone with consistent quality, reliable dimensions,
+            and precision cutting capabilities for buyers worldwide.
           </p>
         </motion.div>
 

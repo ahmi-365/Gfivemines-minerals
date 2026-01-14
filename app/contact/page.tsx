@@ -70,7 +70,7 @@ export default function ContactPage() {
       };
 
       const response = await fetch(
-        "https://api.Gfivemines&minerals.com/api/contact-message",
+        "https://backend.majesticsofts.com/api/contact-message",
         {
           method: "POST",
           headers: {
@@ -142,7 +142,7 @@ export default function ContactPage() {
             Quote request received
           </h3>
           <p className="text-gray-500 mb-6">
-            Thanks {formData.name}, our sourcing team will contact you shortly with stone availability and pricing.
+            Thanks {formData.name}, our sourcing team will contact you shortly with natural stone availability and pricing.
           </p>
 
           <button
@@ -173,7 +173,7 @@ export default function ContactPage() {
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-xs font-semibold uppercase tracking-wider text-gray-600 mb-6">
                 <span className="w-2 h-2 rounded-full bg-gray-900 animate-pulse"></span>
-                Quarry & Sales Inquiries
+                Sourcing & Cutting Inquiries
               </div>
               <h1 className="text-4xl md:text-5xl font-light text-gray-900 leading-tight mb-6 tracking-tight">
                 Let's source your{" "}<br />
@@ -182,7 +182,7 @@ export default function ContactPage() {
                 </span>
               </h1>
               <p className="text-gray-500 text-lg leading-relaxed border-l-2 border-gray-200 pl-6">
-                Whether you need marble slabs, granite blocks, or want to discuss your architectural project, our sourcing team is ready to assist.
+                Whether you need marble slabs, granite blocks, or want to discuss sourcing and cutting specifications, our team is ready to assist.
               </p>
             </motion.div>
 
@@ -194,6 +194,7 @@ export default function ContactPage() {
               className="space-y-8"
             >
               <div className="space-y-6">
+                {/* Email */}
                 <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-300">
                   <div className="p-3 bg-gray-100 text-gray-900 rounded-xl group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
                     <Mail className="w-6 h-6" />
@@ -203,50 +204,94 @@ export default function ContactPage() {
                       Email us
                     </h4>
                     <p className="text-sm text-gray-500 mb-1">
-                      Our sales team responds within 24 hours.
+                      Our team responds within 24 hours.
                     </p>
                     <a
-                      href="mailto:support@Gfivemines&minerals.com"
+                      href="mailto:President.Gfive@hotmail.com"
                       className="text-sm font-semibold text-gray-900 hover:underline"
                     >
-                      support@Gfivemines&minerals.com
+                      President.Gfive@hotmail.com
                     </a>
                   </div>
                 </div>
 
-                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-300">
-                  <div className="p-3 bg-gray-100 text-gray-900 rounded-xl group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
-                    <MapPin className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-900 mb-1">Visit our quarry</h4>
-                    <p className="text-sm text-gray-500 mb-1">
-                      Explore stone samples and meet our team.
-                    </p>
-                    <a
-                      href="#"
-                      className="text-sm font-semibold text-gray-900 hover:underline"
-                    >
-                      Plot 45, Industrial Road, Lahore, Pakistan
-                    </a>
-                  </div>
-                </div>
-
+                {/* Phone */}
                 <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-300">
                   <div className="p-3 bg-gray-100 text-gray-900 rounded-xl group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-1">Call sales</h4>
-                    <p className="text-sm text-gray-500 mb-1">
-                      Mon-Fri from 8am to 6pm PKT.
+                    <h4 className="font-medium text-gray-900 mb-1">Contact Numbers</h4>
+                    <p className="text-sm text-gray-500 mb-2">Reach us directly</p>
+                    <div className="space-y-1">
+                      <a
+                        href="tel:+8613760113545"
+                        className="text-sm font-semibold text-gray-900 hover:underline block"
+                      >
+                        📞 +86 13760113545
+                      </a>
+                      <a
+                        href="tel:+85260602415"
+                        className="text-sm font-semibold text-gray-900 hover:underline block"
+                      >
+                        📞 +852 60602415
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Head Office China */}
+                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-300">
+                  <div className="p-3 bg-gray-100 text-gray-900 rounded-xl group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900 mb-1">Head Office China</h4>
+                    <p className="text-sm text-gray-700">
+                      4 / F, Building K, No. 8, East Shangxue Science Park,<br />
+                      Bantian, Longgang District, Shenzhen, China
                     </p>
-                    <a
-                      href="tel:+923001234567"
-                      className="text-sm font-semibold text-gray-900 hover:underline"
-                    >
-                      +92 300 1234567
-                    </a>
+                  </div>
+                </div>
+
+                {/* Hong Kong Office */}
+                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-300">
+                  <div className="p-3 bg-gray-100 text-gray-900 rounded-xl group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900 mb-1">Hong Kong Office</h4>
+                    <p className="text-sm text-gray-700">
+                      3/F Flat/RM B Chun Wah Commercial Building<br />
+                      30 Minden Avenue TST Kowloon, Hong Kong
+                    </p>
+                  </div>
+                </div>
+
+                {/* USA Office */}
+                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-300">
+                  <div className="p-3 bg-gray-100 text-gray-900 rounded-xl group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900 mb-1">USA Office</h4>
+                    <p className="text-sm text-gray-700">
+                      5619 Jarist Drive Clifton Virginia, USA 20124
+                    </p>
+                  </div>
+                </div>
+
+                {/* UAE Office */}
+                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-300">
+                  <div className="p-3 bg-gray-100 text-gray-900 rounded-xl group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900 mb-1">UAE Office</h4>
+                    <p className="text-sm text-gray-700">
+                      Office # S1-214 Property Investments Office 4
+                      Dubai Investment Park Dubai UAE.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -415,8 +460,6 @@ export default function ContactPage() {
                         </option>
                         <option value="product-inquiry">Product Inquiry</option>
                         <option value="order-status">Order Status</option>
-                        <option value="fashion-advice">Fashion Advice</option>
-                        <option value="partnership">Partnership</option>
                         <option value="other">Other</option>
                       </select>
                     </div>

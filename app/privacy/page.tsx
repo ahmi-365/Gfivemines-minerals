@@ -4,15 +4,15 @@ import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
-    Cookie,
-    CreditCard,
-    Database,
-    Eye,
-    FileText,
-    Lock,
-    Mail,
-    Share2,
-    Shield,
+  Cookie,
+  CreditCard,
+  Database,
+  Eye,
+  FileText,
+  Lock,
+  Mail,
+  Share2,
+  Shield,
 } from "lucide-react";
 
 export default function PrivacyPolicy() {
@@ -55,7 +55,7 @@ export default function PrivacyPolicy() {
             </h1>
 
             <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-light mb-8">
-              At Gfivemines&minerals, we believe transparency is essential. Here
+              At GFive Mines & Minerals, we believe transparency is essential. Here
               is how we collect, use, and protect your personal information.
             </p>
 
@@ -81,7 +81,7 @@ export default function PrivacyPolicy() {
                 We respect your privacy and are committed to protecting it
                 through our compliance with this policy. This policy describes
                 the types of information we may collect from you or that you may
-                provide when you visit the website <strong>Gfivemines&minerals.com</strong>{" "}
+                provide when you visit the website <strong>GFive Mines & Minerals.com</strong>{" "}
                 and our practices for collecting, using, maintaining,
                 protecting, and disclosing that information.
               </p>

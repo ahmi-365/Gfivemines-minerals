@@ -4,14 +4,14 @@ import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
-    AlertCircle,
-    ArrowRight,
-    CheckCircle2,
-    Clock,
-    Globe,
-    MapPin,
-    Package,
-    Truck,
+  AlertCircle,
+  ArrowRight,
+  CheckCircle2,
+  Clock,
+  Globe,
+  MapPin,
+  Package,
+  Truck,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -50,7 +50,7 @@ export default function ShippingGuide() {
             </h1>
 
             <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
-              From quarry to site. We ensure your Gfivemines&minerals stone
+              From quarry to site. We ensure your natural stone
               arrive safely, timely, and beautifully packaged.
             </p>
           </motion.div>
@@ -259,11 +259,10 @@ function ShippingCard({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className={`relative p-8 md:p-10 rounded-[2rem] border transition-all duration-500 group ${
-        recommended
-          ? "bg-black text-white border-black shadow-2xl shadow-gray-200"
-          : "bg-white text-gray-900 border-gray-100 hover:border-gray-300 hover:shadow-xl hover:shadow-gray-100"
-      }`}
+      className={`relative p-8 md:p-10 rounded-[2rem] border transition-all duration-500 group ${recommended
+        ? "bg-black text-white border-black shadow-2xl shadow-gray-200"
+        : "bg-white text-gray-900 border-gray-100 hover:border-gray-300 hover:shadow-xl hover:shadow-gray-100"
+        }`}
     >
       {recommended && (
         <div className="absolute top-6 right-6 px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-widest text-white border border-white/20">
@@ -272,9 +271,8 @@ function ShippingCard({
       )}
 
       <div
-        className={`w-12 h-12 rounded-full flex items-center justify-center mb-6 ${
-          recommended ? "bg-white/10 text-white" : "bg-gray-50 text-gray-900"
-        }`}
+        className={`w-12 h-12 rounded-full flex items-center justify-center mb-6 ${recommended ? "bg-white/10 text-white" : "bg-gray-50 text-gray-900"
+          }`}
       >
         <Icon className="w-6 h-6" />
       </div>
@@ -285,17 +283,15 @@ function ShippingCard({
       </div>
 
       <div
-        className={`inline-block px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider mb-6 ${
-          recommended ? "bg-white text-black" : "bg-gray-100 text-gray-900"
-        }`}
+        className={`inline-block px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider mb-6 ${recommended ? "bg-white text-black" : "bg-gray-100 text-gray-900"
+          }`}
       >
         {time}
       </div>
 
       <p
-        className={`mb-8 leading-relaxed ${
-          recommended ? "text-gray-400" : "text-gray-500"
-        }`}
+        className={`mb-8 leading-relaxed ${recommended ? "text-gray-400" : "text-gray-500"
+          }`}
       >
         {desc}
       </p>

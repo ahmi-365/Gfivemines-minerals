@@ -22,11 +22,11 @@ export function FeaturesSection({ visibleSections }: FeaturesSectionProps) {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="section-title">
-            Engineered stone with timeless resilience
+            Engineered natural stone with timeless resilience
           </h2>
           <p className="section-subtitle">
             Experience the perfect balance of form and durability with
-            Gfivemines&minerals — natural stone sourced for architectural impact.
+            GFive Mines & Minerals — natural stone sourced for marble mining and processing excellence.
           </p>
         </div>
 
@@ -34,11 +34,10 @@ export function FeaturesSection({ visibleSections }: FeaturesSectionProps) {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`feature-card group transform transition-all duration-700 ${
-                visibleSections["about"]
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-10 opacity-0"
-              }`}
+              className={`feature-card group transform transition-all duration-700 ${visibleSections["about"]
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+                }`}
               style={{ transitionDelay: feature.delay }}
             >
               <div className="icon-container">

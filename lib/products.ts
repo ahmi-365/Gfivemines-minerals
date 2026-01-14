@@ -14,7 +14,7 @@ export const products: Product[] = [
     price: 4599.99,
     image: "/images/hero-products.jpg",
     category: "Marble Slabs",
-    description: "Premium Italian Carrara marble with delicate gray veining for counters and feature walls",
+    description: "Premium Italian Carrara marble with consistent veining for cutting and processing",
   },
   {
     id: "2",
@@ -22,7 +22,7 @@ export const products: Product[] = [
     price: 3299.99,
     image: "/images/product-flat-lay.jpg",
     category: "Granite Blocks",
-    description: "High-polish black granite with golden speckling, ideal for flooring and exterior cladding",
+    description: "High-polish black granite with golden speckling for cutting and bulk processing",
   },
   {
     id: "3",
@@ -30,7 +30,7 @@ export const products: Product[] = [
     price: 8999.99,
     image: "/images/luxury-collection.jpg",
     category: "Marble Slabs",
-    description: "Luxury grade Statuario marble with bold veining for signature lobby installations",
+    description: "Luxury grade Statuario marble with bold veining for high-end cutting and finishing",
   },
   {
     id: "4",
@@ -38,7 +38,7 @@ export const products: Product[] = [
     price: 6799.99,
     image: "/images/pink-collection.jpg",
     category: "Specialty Minerals",
-    description: "Backlit-ready onyx with natural amber tones for high-end architectural lighting features",
+    description: "Backlit-ready onyx with natural amber tones for specialty stone cutting applications",
   },
   {
     id: "5",
@@ -46,7 +46,7 @@ export const products: Product[] = [
     price: 5299.99,
     image: "/images/modern-skincare.jpg",
     category: "Marble Slabs",
-    description: "Rich brown marble with cream veining for warm, elegant interior surfaces",
+    description: "Rich brown marble with warm tones for cutting and processing",
   },
   {
     id: "6",
@@ -54,7 +54,7 @@ export const products: Product[] = [
     price: 3899.99,
     image: "/images/hero-products.jpg",
     category: "Granite Blocks",
-    description: "Jet black granite with consistent tone for kitchen countertops and vanities",
+    description: "Jet black granite with consistent tone for stone cutting and bulk orders",
   },
   {
     id: "7",
@@ -62,7 +62,7 @@ export const products: Product[] = [
     price: 7499.99,
     image: "/images/product-flat-lay.jpg",
     category: "Marble Slabs",
-    description: "Luxurious Calacatta with gold and gray veining for statement bathroom and kitchen surfaces",
+    description: "Luxurious Calacatta with gold and gray veining for premium cutting applications",
   },
   {
     id: "8",
@@ -70,6 +70,6 @@ export const products: Product[] = [
     price: 2899.99,
     image: "/images/luxury-collection.jpg",
     category: "Specialty Minerals",
-    description: "Warm honey-toned sandstone with natural texture for rustic exterior facades",
+    description: "Warm honey-toned sandstone with natural texture for stone cutting and finishing",
   },
 ]

@@ -37,7 +37,7 @@ export function SearchBar() {
       setLoading(true);
       try {
         const response = await fetch(
-          "https://api.Gfivemines&minerals.com/api/all-products"
+          "https://backend.majesticsofts.com/api/all-products"
         );
         const data = await response.json();
         if (data.status === "success") {
@@ -60,11 +60,11 @@ export function SearchBar() {
   // Filter products based on search query
   const filteredProducts = query.trim()
     ? products.filter(
-        (product) =>
-          product.name.toLowerCase().includes(query.toLowerCase()) ||
-          product.category.name.toLowerCase().includes(query.toLowerCase()) ||
-          product.brand.name.toLowerCase().includes(query.toLowerCase())
-      )
+      (product) =>
+        product.name.toLowerCase().includes(query.toLowerCase()) ||
+        product.category.name.toLowerCase().includes(query.toLowerCase()) ||
+        product.brand.name.toLowerCase().includes(query.toLowerCase())
+    )
     : [];
 
   return (

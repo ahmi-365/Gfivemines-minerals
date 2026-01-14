@@ -16,7 +16,7 @@ export function ProductShowcase() {
     {
       icon: Droplets,
       title: "Precision Cut",
-      desc: "CNC and waterjet finishing for clean edges and rapid installation.",
+      desc: "CNC and waterjet cutting for precise edges and bulk order processing.",
     },
     {
       icon: Sparkles,
@@ -51,7 +51,7 @@ export function ProductShowcase() {
             </div>
 
             <p className="text-gray-600 text-lg leading-relaxed">
-              From quarry selection to finishing lines, Gfivemines&minerals
+              From quarry selection to finishing lines, GFive Mines & Minerals
               curates stone for architects, fabricators, and builders who need
               dependable consistency, rich veining, and durable performance on
               site.
