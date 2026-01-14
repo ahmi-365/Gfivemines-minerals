@@ -41,20 +41,20 @@ export function Footer() {
         <div className="grid md:grid-cols-12 gap-8 mb-16">
           {/* Brand Column (Wider) */}
           <div className="md:col-span-5 space-y-6">
-            <Link href="/" className="inline-flex flex-row items-center gap-4 group">
+            <Link href="/" className="inline-flex flex-col md:flex-row items-center gap-4 group">
               <Image
                 src="/images/gfivelogo.png"
                 alt="GFive Mines & Minerals"
                 height={120}
                 width={380}
-                className="h-40 w-auto object-contain"
+                className="h-32 md:h-40 w-auto object-contain"
               />
               <Image
                 src="/images/smartlife.png"
                 alt="SMARTLife"
                 height={70}
                 width={200}
-                className="h-24 w-auto object-contain"
+                className="h-16 md:h-24 w-auto object-contain"
               />
             </Link>
 

@@ -52,7 +52,7 @@ export function HeroSection({ scrollY = 0, isVisible = true }: HeroSectionProps)
         <img
           src="https://images.unsplash.com/photo-1659362549741-c32157cc71f4?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFyYmxlJTIwcXVhcnJ5fGVufDB8fDB8fHww"
           alt="Premium Black Marble Texture"
-          className="w-full h-full object-fit-width"
+          className="w-full h-full object-cover"
         />
 
         {/* Dark Overlay to make text pop */}
