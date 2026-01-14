@@ -31,7 +31,7 @@ html {
         `}</style>
 
         {/* Favicon */}
-        <link rel="icon" href="/images/Zrxyy.png" />
+        <link rel="icon" href="/placeholder.jpg" />
         {/* You can also add other formats if needed */}
         {/* <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" /> */}
       </head>
