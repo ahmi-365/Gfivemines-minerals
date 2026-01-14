@@ -1,33 +1,30 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
-import { useCart } from "@/lib/cart-context";
-import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { Navigation } from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/lib/cart-context";
 import {
-  motion,
   AnimatePresence,
-  useSpring,
+  motion,
   useMotionValue,
-  useTransform,
+  useSpring
 } from "framer-motion";
 import {
+  ArrowLeft,
+  ArrowRight,
+  CreditCard,
+  Gift,
   Minus,
   Plus,
-  Trash2,
-  ArrowRight,
-  ShoppingBag,
-  Truck,
   ShieldCheck,
-  CreditCard,
-  ArrowLeft,
-  Tag,
-  Gift,
-  Check,
+  ShoppingBag,
+  Trash2,
+  Truck
 } from "lucide-react";
-import { useState, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRef } from "react";
 
 export default function CartPage() {
   const { items, removeFromCart, updateQuantity, total } = useCart();
@@ -62,7 +59,7 @@ export default function CartPage() {
             </Link>
             <h1 className="text-5xl md:text-6xl font-light tracking-tight leading-[0.9]">
               Your{" "}
-              <span className="font-serif italic font-medium">Selection.</span>
+              <span className="font-serif italic font-medium">Stone Order.</span>
             </h1>
           </motion.div>
 
@@ -115,7 +112,7 @@ export default function CartPage() {
                       {isFreeShipping ? (
                         <span>
                           Congratulations! You've unlocked{" "}
-                          <strong>Free Express Shipping</strong>
+                          <strong>Free Crating & Delivery</strong>
                         </span>
                       ) : (
                         <span>
@@ -123,7 +120,7 @@ export default function CartPage() {
                           <strong className="text-black">
                             Rs. {remaining.toFixed(0)}
                           </strong>{" "}
-                          to unlock Free Shipping
+                          to qualify for free crating & delivery
                         </span>
                       )}
                     </p>
@@ -441,15 +438,15 @@ function EmptyCartState() {
         <ShoppingBag className="w-12 h-12 text-gray-300" />
       </motion.div>
       <h2 className="text-3xl font-light text-gray-900 mb-4">
-        Your bag is empty
+        Your selection is empty
       </h2>
       <p className="text-gray-500 max-w-md mx-auto mb-10 leading-relaxed">
-        Your wardrobe is waiting for an upgrade. Explore our latest collection
-        of premium fabrics and cuts.
+        Your stone order awaits. Explore our curated selection of premium marble,
+        granite, and mineral blocks for your architectural vision.
       </p>
       <Link href="/shop">
         <Button className="bg-black text-white px-10 py-6 rounded-full hover:bg-gray-800 transition-all text-base shadow-xl hover:shadow-2xl">
-          Explore Collection
+          Browse Stone Inventory
         </Button>
       </Link>
     </motion.div>

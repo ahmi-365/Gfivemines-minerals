@@ -1,22 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import {
-  ArrowLeft,
-  Package,
-  Clock,
-  CheckCircle2,
-  XCircle,
-  RefreshCw,
-  Mail,
-  Phone,
-  ShieldCheck,
-  ArrowRight,
-} from "lucide-react";
-import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import Link from "next/link";
+import { Navigation } from "@/components/Navigation";
 import { motion, useScroll, useTransform } from "framer-motion";
+import {
+    ArrowRight,
+    CheckCircle2,
+    Clock,
+    Mail,
+    Phone,
+    RefreshCw,
+    ShieldCheck,
+    XCircle
+} from "lucide-react";
+import Link from "next/link";
 
 export default function ReturnPolicy() {
   const { scrollY } = useScroll();
@@ -49,7 +46,7 @@ export default function ReturnPolicy() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-200 bg-white text-[10px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-8 shadow-sm">
               <ShieldCheck className="w-3 h-3" />
-              <span>The Zarshay Guarantee</span>
+              <span>The GGfivemines-minerals Guarantee</span>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-light text-gray-900 mb-8 tracking-tight leading-[0.9]">
@@ -115,7 +112,7 @@ export default function ReturnPolicy() {
             <PolicyCard icon={Clock} title="Return Window" delay={0.1}>
               <p className="text-gray-600 leading-relaxed mb-4">
                 You have <strong className="text-gray-900">15 days</strong> from
-                the delivery date to return your Zarshay items. To be eligible
+                the delivery date to return your GGfivemines-minerals stone. To be eligible
                 for a full refund, items must be unworn, unwashed, and in their
                 original packaging with all tags attached.
               </p>

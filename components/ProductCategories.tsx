@@ -1,28 +1,28 @@
 // components/ProductCategories.tsx
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export function ProductCategories() {
   const collections = [
     {
-      title: "Face Care",
-      desc: "Targeted treatments for every skin concern",
+      title: "Marble Slabs",
+      desc: "Signature veining for lobbies, counters, and feature walls",
       image: "/images/luxury-collection.jpg",
       color: "from-teal-500",
       href: "/shop",
       available: true,
     },
     {
-      title: "Hair Care",
-      desc: "Nourishing oil for smooth, healthy, and radiant hair",
+      title: "Granite & Mineral Blocks",
+      desc: "Load-bearing strength for exterior cladding and heavy-duty floors",
       image: "/images/modern-skincare.jpg",
       color: "from-amber-500",
-      href: "#",
-      available: false,
+      href: "/shop",
+      available: true,
     },
   ];
 
@@ -30,8 +30,8 @@ export function ProductCategories() {
     <section id="shop" className="py-20 bg-white relative overflow-hidden" data-scroll-reveal>
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="section-title">Featured Collections</h2>
-          <p className="section-subtitle">Explore our most popular skincare collections</p>
+          <h2 className="section-title">Featured Stone Collections</h2>
+          <p className="section-subtitle">Curated slabs and blocks for architectural and construction needs</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">

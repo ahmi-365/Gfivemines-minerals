@@ -1,20 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import {
-  ArrowLeft,
-  CheckCircle2,
-  XCircle,
-  Truck,
-  CreditCard,
-  ChevronDown,
-  ChevronUp,
-  ShieldCheck,
-  ShoppingBag,
-  ArrowRight,
+    ArrowLeft,
+    ArrowRight,
+    CheckCircle2,
+    ChevronDown,
+    ChevronUp,
+    CreditCard,
+    ShieldCheck,
+    ShoppingBag,
+    Truck,
+    XCircle,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 // --- Interfaces ---
 interface CartItem {
@@ -122,7 +122,7 @@ export default function CheckoutPage() {
 
     try {
       const response = await fetch(
-        `https://api.zarshay.com/api/promo-code/discount`,
+        `https://api.ggfivemines-minerals.com/api/promo-code/discount`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -171,7 +171,7 @@ export default function CheckoutPage() {
     };
 
     try {
-      const response = await fetch("https://api.zarshay.com/api/save-order", {
+      const response = await fetch("https://api.ggfivemines-minerals.com/api/save-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(orderData),
@@ -373,7 +373,7 @@ export default function CheckoutPage() {
             href="/"
             className="text-xl font-serif italic font-bold text-white tracking-tighter"
           >
-            Zarshay.
+            GGfivemines-minerals.
           </Link>
           <button
             onClick={() => setIsMobileSummaryOpen(!isMobileSummaryOpen)}
@@ -416,7 +416,7 @@ export default function CheckoutPage() {
               href="/"
               className="text-3xl font-serif italic font-bold text-white tracking-tighter hover:text-gray-300 transition-colors"
             >
-              Zarshay.
+              GGfivemines-minerals.
             </Link>
           </div>
 
@@ -682,7 +682,7 @@ export default function CheckoutPage() {
             </div>
 
             <div className="lg:hidden pt-8 border-t border-gray-100 text-center text-xs text-gray-400 pb-12">
-              All rights reserved Zarshay © 2024
+              All rights reserved GGfivemines-minerals © 2025
             </div>
           </form>
         </div>

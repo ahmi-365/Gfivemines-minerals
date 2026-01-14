@@ -1,22 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import {
-  ShoppingBag,
-  Star,
-  X,
-  Plus,
-  Minus,
-  ArrowRight,
-  Search,
-  SlidersHorizontal,
-  ChevronDown,
-  Check,
-} from "lucide-react";
+import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { useCart } from "@/lib/cart-context";
-import { Footer } from "@/components/Footer";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+    ArrowRight,
+    Check,
+    ChevronDown,
+    Minus,
+    Plus,
+    Search,
+    ShoppingBag,
+    SlidersHorizontal,
+    X
+} from "lucide-react";
+import { useEffect, useState } from "react";
 
 // --- Interfaces ---
 interface ProductImage {
@@ -63,7 +62,7 @@ export default function ShopPage() {
     async function fetchProducts() {
       try {
         const response = await fetch(
-          "https://api.zarshay.com/api/all-products"
+          "https://api.ggfivemines-minerals.com/api/all-products"
         );
         const data = await response.json();
         if (data.status === "success") setProducts(data.data);
@@ -86,7 +85,7 @@ export default function ShopPage() {
   };
 
   const getImageUrl = (img: string) =>
-    `https://api.zarshay.com/public/assets/images/product/${img}`;
+    `https://api.ggfivemines-minerals.com/public/assets/images/product/${img}`;
 
   // Filter & Sort Logic
   const filteredProducts = products
@@ -151,11 +150,11 @@ export default function ShopPage() {
               New Season 2025
             </span>
             <h1 className="text-6xl md:text-8xl font-light tracking-tighter leading-[0.9] mb-6">
-              Modern <span className="font-serif italic">Luxury.</span>
+              Natural <span className="font-serif italic">Stone.</span>
             </h1>
             <p className="text-gray-500 text-lg max-w-lg mx-auto leading-relaxed">
-              Curated essentials designed for the contemporary lifestyle.
-              Discover quality that speaks for itself.
+              Marble, granite, and minerals sourced for durability and architectural beauty.
+              Browse inventory from quarry to finish.
             </p>
           </motion.div>
         </div>
@@ -176,11 +175,11 @@ export default function ShopPage() {
               key={i}
               className="flex items-center gap-8 text-xs font-bold uppercase tracking-widest text-gray-400"
             >
-              <span>Free Shipping on Orders Over Rs 5000</span>
+              <span>Direct from Quarry – Consistent Lots</span>
               <span className="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
-              <span>New Arrivals Daily</span>
+              <span>Custom Slabs & Finishes</span>
               <span className="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
-              <span>Premium Quality Guaranteed</span>
+              <span>Load Tested for Structural Use</span>
               <span className="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
             </div>
           ))}

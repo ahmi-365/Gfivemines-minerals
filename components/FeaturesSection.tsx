@@ -1,7 +1,7 @@
 // components/FeaturesSection.tsx
 "use client";
 
-import { Shield, Leaf, Droplets, Clock, Sparkles, Heart } from "lucide-react";
+import { Clock, Droplets, Heart, Leaf, Shield, Sparkles } from "lucide-react";
 
 interface FeaturesSectionProps {
   visibleSections: { [key: string]: boolean };
@@ -22,11 +22,11 @@ export function FeaturesSection({ visibleSections }: FeaturesSectionProps) {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="section-title">
-            Elegant fashion with timeless quality
+            Engineered stone with timeless resilience
           </h2>
           <p className="section-subtitle">
-            Experience the perfect blend of comfort and style with Zarshay —
-            ladies' wear designed to elevate your confidence.
+            Experience the perfect balance of form and durability with
+            GGfivemines-minerals — natural stone sourced for architectural impact.
           </p>
         </div>
 

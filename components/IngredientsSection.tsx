@@ -1,18 +1,17 @@
 // components/IngredientsSection.tsx
 "use client";
 
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { easeOut, motion } from "framer-motion";
 import {
-  Leaf,
-  Sparkles,
-  Shield,
-  Heart,
-  ArrowRight,
-  CheckCircle2,
+    ArrowRight,
+    CheckCircle2,
+    Heart,
+    Leaf,
+    Shield,
+    Sparkles,
 } from "lucide-react";
-import { motion } from "framer-motion";
-import { easeOut } from "framer-motion";
+import Link from "next/link";
 
 interface IngredientsSectionProps {
   visibleSections: { [key: string]: boolean };
@@ -21,23 +20,23 @@ interface IngredientsSectionProps {
 const features = [
   {
     icon: Leaf,
-    title: "Premium Fabrics",
-    desc: "We select only the finest breathable cottons and linens, ensuring every trouser and shirt feels as good as it looks.",
+    title: "Source-to-Slab",
+    desc: "Direct quarry sourcing with full traceability from block to slab so every lot is consistent and project-ready.",
   },
   {
     icon: Sparkles,
-    title: "Flattering Cuts",
-    desc: "Tailored specifically for the modern woman. Our shirts and trousers are designed to provide the perfect silhouette and drape.",
+    title: "Precision Finishing",
+    desc: "CNC cutting and honed, polished, or leathered finishes to match your installation requirements.",
   },
   {
     icon: Shield,
-    title: "Lasting Quality",
-    desc: "From reinforced stitching on trousers to precision buttons on shirts, every detail is checked for durability.",
+    title: "Structural Integrity",
+    desc: "Strength-graded slabs and blocks tested for compressive performance on demanding construction sites.",
   },
   {
     icon: Heart,
-    title: "Consciously Crafted",
-    desc: "Fashion that feels right. We prioritize ethical manufacturing for all our women's wear collections.",
+    title: "Consciously Quarried",
+    desc: "Responsible extraction with minimized waste and water reuse across quarry and finishing operations.",
   },
 ];
 
@@ -80,17 +79,16 @@ export function IngredientsSection({
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-100 bg-white text-[10px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-6 shadow-sm">
             <CheckCircle2 className="w-3 h-3 text-gray-900" />
-            <span>The Zarshay Standard</span>
+            <span>The GGfivemines-minerals Standard</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight leading-tight">
-            Elevated Essentials for{" "}
-            <span className="font-serif italic font-medium">Her.</span>
+            Elevated stone for signature spaces
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            We believe style shouldn't compromise comfort. Zarshay is a
-            testament to our obsession with the perfect fit, tailored for the
-            confident woman.
+            From marble feature walls to granite flooring, GGfivemines-minerals
+            supplies curated stone with predictable performance, consistent
+            tones, and finishes that make installations effortless.
           </p>
         </motion.div>
 
@@ -151,7 +149,7 @@ export function IngredientsSection({
         >
           <Link href="/shop">
             <Button className="bg-gray-900 text-white px-10 py-6 rounded-full font-medium text-base hover:bg-black transition-all hover:shadow-lg hover:shadow-gray-200 group">
-              Shop The Collection
+              Browse Stone Inventory
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </Link>

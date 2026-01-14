@@ -1,8 +1,8 @@
 // components/TestimonialsSection.tsx
 "use client";
 
-import { Star, Quote, CheckCircle2 } from "lucide-react";
 import { easeOut, motion } from "framer-motion";
+import { CheckCircle2, Quote, Star } from "lucide-react";
 
 interface TestimonialsSectionProps {
   visibleSections?: { [key: string]: boolean };
@@ -10,25 +10,25 @@ interface TestimonialsSectionProps {
 
 const testimonials = [
   {
-    name: "Zainab Rizvi",
+    name: "Ahmed Khalil",
+    role: "Architectural Consultant",
+    text: "GGfivemines-minerals delivered consistent veining across 200 sqm of Carrara marble—exactly what we needed for a five-star hotel lobby. On-site support was outstanding.",
+    rating: 5,
+    initials: "AK",
+  },
+  {
+    name: "Sara Hafeez",
     role: "Interior Designer",
-    text: "Zarshay has completely transformed my wardrobe. The trousers fit perfectly tailored, and the shirts drape beautifully. I feel confident every day.",
+    text: "The slab-level quality control and finish precision saved us weeks during installation. Their Black Galaxy granite transformed our client's penthouse kitchen.",
     rating: 5,
-    initials: "ZR",
+    initials: "SH",
   },
   {
-    name: "Mahnoor Ali",
-    role: "Marketing Exec",
-    text: "I'm obsessed with the attention to detail. The fabric quality is breathable yet substantial—it's rare to find this level of craftsmanship online.",
+    name: "Bilal Qureshi",
+    role: "Construction Manager",
+    text: "Reliable dispatch and load-tested blocks. We've used GGfivemines-minerals on three high-rise projects, and every delivery has met structural and aesthetic specs.",
     rating: 5,
-    initials: "MA",
-  },
-  {
-    name: "Saba Karim",
-    role: "Verified Buyer",
-    text: "Exceptional packaging and even better products. The silhouette of the trousers is unmatched. Finally, a brand that understands fit.",
-    rating: 5,
-    initials: "SK",
+    initials: "BQ",
   },
 ];
 
@@ -68,14 +68,14 @@ export function TestimonialsSection({ visibleSections }: TestimonialsSectionProp
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-200 bg-white text-[10px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-6">
             <Star className="w-3 h-3 text-gray-900 fill-gray-900" />
-            <span>Customer Love</span>
+            <span>Client Success Stories</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4 tracking-tight">
-            Voices of <span className="font-serif italic font-medium">Confidence.</span>
+            Trusted by <span className="font-serif italic font-medium">Builders.</span>
           </h2>
           <p className="text-gray-500 text-lg">
-            Join thousands of women who have found their perfect fit.
+            From architects to contractors, see why leading projects choose GGfivemines-minerals.
           </p>
         </motion.div>
 

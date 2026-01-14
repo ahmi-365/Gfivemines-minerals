@@ -1,17 +1,17 @@
 // components/HowItWorksSection.tsx
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Search,
-  MousePointerClick,
-  ShoppingBag,
-  Sparkles,
-  ArrowRight,
-  CheckCircle2,
+    ArrowRight,
+    CheckCircle2,
+    MousePointerClick,
+    Search,
+    ShoppingBag,
+    Sparkles,
 } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 interface HowItWorksSectionProps {
   visibleSections?: { [key: string]: boolean };
@@ -21,34 +21,34 @@ const steps = [
   {
     id: 1,
     title: "Discover",
-    desc: "Explore our curated collection.",
+    desc: "Explore quarry-direct marble, granite, and minerals.",
     icon: Search,
     link: "/shop",
-    linkText: "Browse Collection",
+    linkText: "Browse Stone",
   },
   {
     id: 2,
-    title: "Select",
-    desc: "Choose your perfect size & fit.",
+    title: "Specify",
+    desc: "Select dimensions, finish, and application requirements.",
     icon: MousePointerClick,
     link: "/shop",
-    linkText: "Find Your Fit",
+    linkText: "Choose Finish",
   },
   {
     id: 3,
-    title: "Order",
-    desc: "Seamless & secure checkout.",
+    title: "Schedule",
+    desc: "Coordinate crating, loading, and delivery to site.",
     icon: ShoppingBag,
     link: "/cart",
-    linkText: "View Cart",
+    linkText: "Plan Logistics",
   },
   {
     id: 4,
-    title: "Elevate",
-    desc: "Wear with absolute confidence.",
+    title: "Install",
+    desc: "Deliver a seamless fit-out with ready-to-lay stone.",
     icon: Sparkles,
     link: "/shop",
-    linkText: "New Arrivals",
+    linkText: "View Inventory",
   },
 ];
 
@@ -71,8 +71,8 @@ export function HowItWorksSection({ visibleSections }: HowItWorksSectionProps) {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4 tracking-tight">
-            Your Journey to{" "}
-            <span className="font-serif italic font-medium">Elegance.</span>
+            From quarry to installation
+            <span className="font-serif italic font-medium"> made simple.</span>
           </h2>
         </motion.div>
 

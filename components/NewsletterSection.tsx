@@ -1,9 +1,9 @@
 // components/NewsletterSection.tsx
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight, CheckCircle2, Loader2, Mail, XCircle } from "lucide-react";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Mail, CheckCircle2, Loader2, XCircle } from "lucide-react";
 
 export function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -75,12 +75,12 @@ export function NewsletterSection() {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
-              Unlock Exclusive{" "}
-              <span className="font-serif italic font-medium">Access.</span>
+              Stay ahead of new quarry releases
+              <span className="font-serif italic font-medium"> and lots.</span>
             </h2>
             <p className="text-gray-400 text-lg mb-10 leading-relaxed">
-              Be the first to know about new collections, behind-the-scenes
-              content, and exclusive offers reserved for our community.
+              Join the GGfivemines-minerals bulletin for fresh slabs, block availability,
+              and logistics updates for builders and fabricators.
             </p>
           </motion.div>
 
@@ -140,7 +140,7 @@ export function NewsletterSection() {
                     className="flex items-center gap-2 text-emerald-400 text-sm font-medium"
                   >
                     <CheckCircle2 className="w-4 h-4" />
-                    <span>Welcome to the Zarshay family!</span>
+                    <span>Welcome to the GGfivemines-minerals network!</span>
                   </motion.div>
                 )}
                 {status === "error" && (

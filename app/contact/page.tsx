@@ -1,23 +1,20 @@
 // app/support/contact/page.tsx
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Send,
-  Clock,
-  Instagram,
-  Sparkles,
-  CheckCircle2,
-  XCircle,
-  ArrowRight,
-} from "lucide-react";
-import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { motion, AnimatePresence } from "framer-motion";
+import { Navigation } from "@/components/Navigation";
+import { Button } from "@/components/ui/button";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Instagram,
+  Mail,
+  MapPin,
+  Phone,
+  XCircle
+} from "lucide-react";
+import { useState } from "react";
 
 interface ContactFormData {
   name: string;
@@ -73,7 +70,7 @@ export default function ContactPage() {
       };
 
       const response = await fetch(
-        "https://api.zarshay.com/api/contact-message",
+        "https://api.ggfivemines-minerals.com/api/contact-message",
         {
           method: "POST",
           headers: {
@@ -142,10 +139,10 @@ export default function ContactPage() {
           </div>
 
           <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-            Message Received
+            Quote request received
           </h3>
           <p className="text-gray-500 mb-6">
-            Thanks {formData.name}, we'll be in touch shortly.
+            Thanks {formData.name}, our sourcing team will contact you shortly with stone availability and pricing.
           </p>
 
           <button
@@ -176,17 +173,16 @@ export default function ContactPage() {
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-xs font-semibold uppercase tracking-wider text-gray-600 mb-6">
                 <span className="w-2 h-2 rounded-full bg-gray-900 animate-pulse"></span>
-                Support & Inquiries
+                Quarry & Sales Inquiries
               </div>
               <h1 className="text-4xl md:text-5xl font-light text-gray-900 leading-tight mb-6 tracking-tight">
-                Let's start a <br />
+                Let's source your{" "}<br />
                 <span className="font-semibold italic font-serif">
-                  conversation.
+                  perfect stone.
                 </span>
               </h1>
               <p className="text-gray-500 text-lg leading-relaxed border-l-2 border-gray-200 pl-6">
-                Whether you have a question about our products, need style
-                advice, or just want to say hello, we're here to help.
+                Whether you need marble slabs, granite blocks, or want to discuss your architectural project, our sourcing team is ready to assist.
               </p>
             </motion.div>
 
@@ -204,16 +200,16 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-900 mb-1">
-                      Chat to us
+                      Email us
                     </h4>
                     <p className="text-sm text-gray-500 mb-1">
-                      Our friendly team is here to help.
+                      Our sales team responds within 24 hours.
                     </p>
                     <a
-                      href="mailto:support@zarshay.com"
+                      href="mailto:support@ggfivemines-minerals.com"
                       className="text-sm font-semibold text-gray-900 hover:underline"
                     >
-                      support@zarshay.com
+                      support@ggfivemines-minerals.com
                     </a>
                   </div>
                 </div>
@@ -223,15 +219,15 @@ export default function ContactPage() {
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-1">Visit us</h4>
+                    <h4 className="font-medium text-gray-900 mb-1">Visit our quarry</h4>
                     <p className="text-sm text-gray-500 mb-1">
-                      Come say hello at our office HQ.
+                      Explore stone samples and meet our team.
                     </p>
                     <a
                       href="#"
                       className="text-sm font-semibold text-gray-900 hover:underline"
                     >
-                      Okara, Punjab, Pakistan
+                      Plot 45, Industrial Road, Lahore, Pakistan
                     </a>
                   </div>
                 </div>
@@ -241,15 +237,15 @@ export default function ContactPage() {
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-1">Call us</h4>
+                    <h4 className="font-medium text-gray-900 mb-1">Call sales</h4>
                     <p className="text-sm text-gray-500 mb-1">
-                      Mon-Fri from 9am to 6pm.
+                      Mon-Fri from 8am to 6pm PKT.
                     </p>
                     <a
-                      href="tel:+923192225322"
+                      href="tel:+923001234567"
                       className="text-sm font-semibold text-gray-900 hover:underline"
                     >
-                      +92 319 2225322
+                      +92 300 1234567
                     </a>
                   </div>
                 </div>
@@ -319,7 +315,7 @@ export default function ContactPage() {
               <div className="relative z-10">
                 <div className="mb-10">
                   <h2 className="text-2xl font-light text-gray-900">
-                    Send a message
+                    Request a quote
                   </h2>
                   <div className="h-1 w-12 bg-gray-900 mt-4 rounded-full"></div>
                 </div>

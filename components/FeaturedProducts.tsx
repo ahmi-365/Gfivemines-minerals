@@ -1,23 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import {
-  ShoppingBag,
-  Star,
-  X,
-  Plus,
-  Minus,
-  ArrowRight,
-  Search,
-  SlidersHorizontal,
-  ChevronDown,
-  Check,
-  Sparkles,
-} from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { useCart } from "@/lib/cart-context";
-import { Footer } from "@/components/Footer";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+    ArrowRight,
+    Check,
+    Minus,
+    Plus,
+    ShoppingBag,
+    Sparkles,
+    X
+} from "lucide-react";
+import { useEffect, useState } from "react";
 
 // --- Interfaces ---
 interface ProductImage {
@@ -59,7 +54,7 @@ export default function FeaturedProducts() {
     async function fetchProducts() {
       try {
         const response = await fetch(
-          "https://api.zarshay.com/api/all-products"
+          "https://api.ggfivemines-minerals.com/api/all-products"
         );
         const data = await response.json();
         if (data.status === "success") {
@@ -89,7 +84,7 @@ export default function FeaturedProducts() {
   };
 
   const getImageUrl = (img: string) =>
-    `https://api.zarshay.com/public/assets/images/product/${img}`;
+    `https://api.ggfivemines-minerals.com/public/assets/images/product/${img}`;
 
   // Filter Logic
   const filteredProducts = products.filter((p) => {
@@ -149,11 +144,11 @@ export default function FeaturedProducts() {
             </div>
 
             <h1 className="text-6xl md:text-8xl font-light tracking-tighter leading-[0.9] mb-6">
-              Featured <span className="font-serif italic">Curations.</span>
+              Featured <span className="font-serif italic">Stone.</span>
             </h1>
             <p className="text-gray-500 text-lg max-w-lg mx-auto leading-relaxed">
-              Handpicked essentials that define the season. Explore our most
-              coveted pieces, selected just for you.
+              Handpicked stone slabs and mineral blocks that define architectural excellence.
+              Explore curated lots for your next project.
             </p>
           </motion.div>
         </div>

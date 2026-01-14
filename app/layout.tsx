@@ -1,16 +1,16 @@
-import type React from "react";
-import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { Analytics } from "@vercel/analytics/next";
-import "./globals.css";
-import { CartProvider } from "@/lib/cart-context";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { CartProvider } from "@/lib/cart-context";
+import { Analytics } from "@vercel/analytics/next";
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
+import type { Metadata } from "next";
+import type React from "react";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Zarshay - Elegant Ladies' Fashion",
+  title: "GGfivemines-minerals – Premium Marble & Natural Stone",
   description:
-    "Premium ladies' trousers and shirts. Discover timeless elegance and modern style.",
+    "Premium marble slabs, granite blocks, and mined minerals for construction, interiors, and architectural stonework.",
   // generator: "v0.app",
 };
 

@@ -1,15 +1,15 @@
 // components/BenefitsSection.tsx
 "use client";
 
-import { useRef, useEffect } from "react";
 import {
-  motion,
-  useInView,
-  useMotionValue,
-  useTransform,
-  animate,
+    animate,
+    motion,
+    useInView,
+    useMotionValue,
+    useTransform,
 } from "framer-motion";
-import { Crown, ShieldCheck, RefreshCcw, Star } from "lucide-react";
+import { Crown, RefreshCcw, ShieldCheck, Star } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 interface BenefitsSectionProps {
   scrollY: number;
@@ -49,27 +49,27 @@ export function BenefitsSection({ scrollY }: BenefitsSectionProps) {
   const stats = [
     {
       id: 1,
-      value: 10,
-      suffix: "k+",
-      label: "Happy Customers",
+      value: 500,
+      suffix: "+",
+      label: "Projects Delivered",
       icon: Star,
-      desc: "Trusting our quality.",
+      desc: "Residential towers, hotels, and villas.",
     },
     {
       id: 2,
-      value: 100,
-      suffix: "%",
-      label: "Quality Guarantee",
+      value: 80,
+      suffix: "+",
+      label: "Stone Variants",
       icon: Crown,
-      desc: "Premium fabrics only.",
+      desc: "Marble, granite, onyx, and mineral blocks.",
     },
     {
       id: 3,
-      value: 7,
-      suffix: " Days",
-      label: "Easy Returns",
+      value: 72,
+      suffix: " hrs",
+      label: "Dispatch Support",
       icon: RefreshCcw,
-      desc: "Shop with confidence.",
+      desc: "Coordinated crating, loading, and delivery.",
     },
   ];
 
@@ -98,20 +98,20 @@ export function BenefitsSection({ scrollY }: BenefitsSectionProps) {
             <div className="inline-flex items-center gap-2 border border-white/10 bg-white/5 px-4 py-1.5 rounded-full mb-4">
               <ShieldCheck className="w-3 h-3 text-white/70" />
               <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/70">
-                The Zarshay Promise
+                The GGfivemines-minerals Promise
               </span>
             </div>
 
             <h2 className="text-3xl md:text-5xl font-light mb-4 tracking-tight">
-              Why Choose{" "}
+              Why choose{" "}
               <span className="font-serif italic font-medium text-white/90">
-                Zarshay?
+                GGfivemines-minerals?
               </span>
             </h2>
             <p className="text-base text-gray-400 font-light leading-relaxed max-w-2xl mx-auto">
-              We're committed to delivering premium ladies' fashion that fits
-              perfectly. Every piece is crafted with care and designed for
-              confidence.
+              We source, finish, and deliver natural stone engineered for
+              durability, consistent veining, and efficient on-site
+              installation—so your build stays on schedule.
             </p>
           </motion.div>
         </div>

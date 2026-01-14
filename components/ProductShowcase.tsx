@@ -1,27 +1,27 @@
 // components/ProductShowcase.tsx
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Droplets, Leaf, Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Leaf, Droplets, Sparkles, ArrowRight } from "lucide-react";
 
 export function ProductShowcase() {
   const benefits = [
     {
       icon: Leaf,
-      title: "Natural",
-      desc: "Only the finest natural ingredients sourced responsibly",
+      title: "Quarried at Source",
+      desc: "Direct mine access with traceable lots for every slab and block.",
     },
     {
       icon: Droplets,
-      title: "Hydrating",
-      desc: "Deep hydration that lasts all day long",
+      title: "Precision Cut",
+      desc: "CNC and waterjet finishing for clean edges and rapid installation.",
     },
     {
       icon: Sparkles,
-      title: "Effective",
-      desc: "Proven results you can see and feel",
+      title: "Project-Ready",
+      desc: "Surface finishes calibrated for flooring, cladding, or countertop use.",
     },
   ];
 
@@ -45,15 +45,16 @@ export function ProductShowcase() {
           <div className="space-y-8 order-1 lg:order-2">
             <div className="space-y-4">
               <p className="text-teal-600 text-sm uppercase tracking-wider font-medium">
-                Our Story
+                Our Stone Story
               </p>
               <h2 className="section-title text-left">Crafted with Care</h2>
             </div>
 
             <p className="text-gray-600 text-lg leading-relaxed">
-              Founded with a passion for pure, effective skincare, Zarshay
-              crafts every product to deliver exceptional results while
-              respecting your skin's natural balance and the planet.
+              From quarry selection to finishing lines, GGfivemines-minerals
+              curates stone for architects, fabricators, and builders who need
+              dependable consistency, rich veining, and durable performance on
+              site.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -74,7 +75,7 @@ export function ProductShowcase() {
 
             <Link href="/shop">
               <Button className="btn-secondary">
-                Glow Up Now
+                Specify Your Stone
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </Link>

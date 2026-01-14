@@ -1,19 +1,19 @@
 "use client";
 
-import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import Link from "next/link";
+import { Navigation } from "@/components/Navigation";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
-  Truck,
-  Globe,
-  Clock,
-  MapPin,
-  Package,
-  AlertCircle,
-  CheckCircle2,
-  ArrowRight,
+    AlertCircle,
+    ArrowRight,
+    CheckCircle2,
+    Clock,
+    Globe,
+    MapPin,
+    Package,
+    Truck,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function ShippingGuide() {
   const { scrollY } = useScroll();
@@ -50,7 +50,7 @@ export default function ShippingGuide() {
             </h1>
 
             <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
-              From our studio to your doorstep. We ensure your Zarshay pieces
+              From quarry to site. We ensure your GGfivemines-minerals stone
               arrive safely, timely, and beautifully packaged.
             </p>
           </motion.div>

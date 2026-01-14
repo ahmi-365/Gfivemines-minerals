@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Search, X } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface Product {
   id: number;
@@ -37,7 +37,7 @@ export function SearchBar() {
       setLoading(true);
       try {
         const response = await fetch(
-          "https://api.zarshay.com/api/all-products"
+          "https://api.ggfivemines-minerals.com/api/all-products"
         );
         const data = await response.json();
         if (data.status === "success") {

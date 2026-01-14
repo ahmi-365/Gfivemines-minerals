@@ -1,27 +1,27 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
 import {
-  Menu,
-  X,
-  ShoppingBag,
-  Search,
-  Sparkles,
-  ChevronRight,
-  Loader2,
-  Instagram,
-  Facebook,
-  Twitter,
-} from "lucide-react";
-import {
-  motion,
   AnimatePresence,
-  useScroll,
+  motion,
   useMotionValueEvent,
+  useScroll,
 } from "framer-motion";
+import {
+  ChevronRight,
+  Facebook,
+  Instagram,
+  Loader2,
+  Menu,
+  Search,
+  ShoppingBag,
+  Sparkles,
+  Twitter,
+  X,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 // --- INTERFACES ---
 interface Product {
@@ -72,7 +72,7 @@ export function Navigation() {
       setLoading(true);
       try {
         const response = await fetch(
-          "https://api.zarshay.com/api/all-products"
+          "https://api.ggfivemines-minerals.com/api/all-products"
         );
         const data = await response.json();
         if (data.status === "success") {
@@ -100,7 +100,7 @@ export function Navigation() {
     : [];
 
   const getImageUrl = (imageName: string) => {
-    return `https://api.zarshay.com/public/assets/images/product/${imageName}`;
+    return `https://api.ggfivemines-minerals.com/public/assets/images/product/${imageName}`;
   };
 
   // --- SMART SCROLL LOGIC ---
@@ -160,14 +160,9 @@ export function Navigation() {
               <div className="relative">
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-gray-900 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-500" />
-                  <Image
-                    src="/images/Zrxyy.png"
-                    alt="Zarshay"
-                    width={140}
-                    height={60}
-                    className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                    priority
-                  />
+                  <span className="text-lg font-serif italic font-bold text-gray-900 tracking-tight group-hover:scale-105 transition-transform duration-300 block">
+                    GGfivemines-minerals
+                  </span>
                 </div>
               </div>
             </Link>
@@ -357,7 +352,7 @@ export function Navigation() {
           >
             <div className="flex justify-between items-center mb-16">
               <span className="text-2xl font-serif italic tracking-tight">
-                Zarshay.
+                GGfivemines-minerals.
               </span>
               <button
                 onClick={() => setMobileMenuOpen(false)}
