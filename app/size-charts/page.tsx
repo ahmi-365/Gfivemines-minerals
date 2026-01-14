@@ -199,7 +199,7 @@ export default function SizeGuide() {
                           </span>
                         </td>
                         {/* Dynamic Data Cells */}
-                        {(unit === "in" ? row.in : row.cm).map((val, idx) => (
+                        {(unit === "in" ? row.in : row.mm).map((val: string, idx: number) => (
                           <td
                             key={idx}
                             className="p-6 text-gray-600 font-medium group-hover:text-black transition-colors"
