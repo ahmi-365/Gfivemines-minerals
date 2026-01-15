@@ -153,7 +153,7 @@ export default function TermsOfService() {
               <p className="text-sm text-gray-600 leading-relaxed">
                 These Terms of Service and any separate agreements whereby we
                 provide you Services shall be governed by and construed in
-                accordance with the laws of <strong>Pakistan</strong>.
+                accordance with the Internation laws.
               </p>
             </TermCard>
 

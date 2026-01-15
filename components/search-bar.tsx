@@ -126,9 +126,9 @@ export function SearchBar() {
                     <p className="text-xs text-gray-600 mb-1">
                       {product.category.name}
                     </p>
-                    <p className="text-xs font-medium text-teal-600">
+                    {/* <p className="text-xs font-medium text-teal-600">
                       Rs. {product.selling_price}
-                    </p>
+                    </p> */}
                   </div>
                 </Link>
               ))}

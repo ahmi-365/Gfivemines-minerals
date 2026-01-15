@@ -70,11 +70,13 @@ export default function CartPage() {
             className="text-right hidden md:block"
           >
             <p className="text-lg font-medium">{items.length} items</p>
+            {/*
             <NumberTicker
               value={total}
               className="text-sm text-gray-400"
               prefix="Total: Rs. "
             />
+            */}
           </motion.div>
         </div>
 
@@ -246,7 +248,7 @@ function CartItem({ item, index, updateQuantity, removeFromCart }: any) {
               {item.name}
             </h3>
           </Link>
-          <p className="text-sm text-gray-500">Unit Price: Rs. {item.price}</p>
+          {/* <p className="text-sm text-gray-500">Unit Price: Rs. {item.price}</p> */}
         </div>
 
         <div className="flex items-center justify-between md:gap-8 w-full md:w-auto">
@@ -283,6 +285,7 @@ function CartItem({ item, index, updateQuantity, removeFromCart }: any) {
             </button>
           </div>
 
+          {/*
           <div className="text-right min-w-[80px]">
             <NumberTicker
               value={item.price * item.quantity}
@@ -290,6 +293,7 @@ function CartItem({ item, index, updateQuantity, removeFromCart }: any) {
               prefix="Rs. "
             />
           </div>
+          */}
         </div>
       </div>
 
@@ -317,6 +321,7 @@ function OrderSummary({ total }: { total: number }) {
 
       <h2 className="text-2xl font-light mb-8 relative z-10">Order Summary</h2>
 
+      {/*
       <div className="space-y-4 mb-8 text-sm relative z-10">
         <div className="flex justify-between text-gray-400">
           <span>Subtotal</span>
@@ -342,6 +347,7 @@ function OrderSummary({ total }: { total: number }) {
           />
         </div>
       </div>
+      */}
 
       <Link href="/checkout" className="block relative z-10">
         <MagneticButton className="w-full bg-white text-black h-16 rounded-xl text-lg hover:bg-gray-200 transition-all flex items-center justify-between px-6 group">

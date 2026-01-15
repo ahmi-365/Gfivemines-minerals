@@ -436,7 +436,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full pb-3 border-b border-gray-200 bg-transparent focus:border-gray-900 outline-none transition-all duration-300 placeholder:text-gray-300 text-gray-900 text-lg"
-                        placeholder="+92 300..."
+                        placeholder="+86 300..."
                       />
                     </div>
 
@@ -458,8 +458,8 @@ export default function ContactPage() {
                         <option value="" className="text-gray-400">
                           Select a subject...
                         </option>
-                        <option value="product-inquiry">Product Inquiry</option>
-                        <option value="order-status">Order Status</option>
+                        <option value="product-inquiry">Inquiry</option>
+                        {/* <option value="order-status">Order Status</option> */}
                         <option value="other">Other</option>
                       </select>
                     </div>

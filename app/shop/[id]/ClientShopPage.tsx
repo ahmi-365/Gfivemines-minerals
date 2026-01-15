@@ -33,13 +33,13 @@ export default function ClientShopPage({ id }: { id: string }) {
           This is a sample description for product {id}. You can replace this with real API data.
         </p>
 
-        <div className="flex items-center gap-3 mb-4">
+        {/* <div className="flex items-center gap-3 mb-4">
           <Button onClick={() => setQuantity(Math.max(1, quantity - 1))}>-</Button>
           <span className="text-lg font-semibold">{quantity}</span>
           <Button onClick={() => setQuantity(quantity + 1)}>+</Button>
         </div>
 
-        <Button onClick={handleAddToCart}>Add to Cart</Button>
+        <Button onClick={handleAddToCart}>Add to Cart</Button> */}
       </div>
     </div>
   );

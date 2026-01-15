@@ -31,11 +31,10 @@ export function FashionProductCard({
         <img
           src={getImageUrl(product.image)}
           alt={product.name}
-          className={`w-full h-full object-cover transition-all duration-700 ${
-            product.images && product.images.length > 0
+          className={`w-full h-full object-cover transition-all duration-700 ${product.images && product.images.length > 0
               ? "group-hover:opacity-0"
               : ""
-          }`}
+            }`}
         />
 
         {/* Hover Image */}
@@ -48,12 +47,12 @@ export function FashionProductCard({
         )}
 
         {/* Hover: Add to Cart Button - Minimal Black Bar */}
-        <div className="absolute bottom-0 left-0 right-0 bg-black text-white py-3 px-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        {/* <div className="absolute bottom-0 left-0 right-0 bg-black text-white py-3 px-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
           <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-wider">
             <ShoppingBag className="w-4 h-4" />
             <span>Quick Add</span>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Product Info - Minimal & Centered */}

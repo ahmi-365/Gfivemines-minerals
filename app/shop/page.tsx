@@ -218,7 +218,7 @@ export default function ShopPage() {
               </div>
 
               <div className="relative">
-                <button
+                {/* <button
                   onClick={() => setIsSortOpen(!isSortOpen)}
                   className="h-10 w-10 lg:w-auto lg:px-4 flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
                 >
@@ -230,7 +230,7 @@ export default function ShopPage() {
                     className={`w-3 h-3 text-gray-400 hidden lg:block transition-transform ${isSortOpen ? "rotate-180" : ""
                       }`}
                   />
-                </button>
+                </button> */}
 
                 {/* Dropdown */}
                 <AnimatePresence>
@@ -395,7 +395,7 @@ export default function ShopPage() {
                   <h2 className="text-3xl font-light text-gray-900 mt-2 mb-4">
                     {selectedProduct.name}
                   </h2>
-                  <div className="flex items-center gap-4 mb-6">
+                  {/* <div className="flex items-center gap-4 mb-6">
                     <span className="text-2xl font-semibold">
                       Rs. {getPrice(selectedProduct).toFixed(2)}
                     </span>
@@ -404,14 +404,14 @@ export default function ShopPage() {
                         Rs. {selectedProduct.selling_price}
                       </span>
                     )}
-                  </div>
+                  </div> */}
                   <p className="text-gray-600 leading-relaxed text-sm">
                     {selectedProduct.note ||
                       "Designed for modern living. Crafted with premium materials for durability and style."}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-8 border-t border-gray-100">
+                {/* <div className="mt-8 pt-8 border-t border-gray-100">
                   <div className="flex items-center gap-4">
                     <div className="flex items-center border border-gray-200 rounded-full h-12">
                       <button
@@ -438,7 +438,7 @@ export default function ShopPage() {
                       <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
-                </div>
+                </div> */}
               </div>
             </motion.div>
           </motion.div>
@@ -532,14 +532,14 @@ const ProductCard = ({
         )}
 
         {/* Quick Add Button - Slides up on hover */}
-        <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+        {/* <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
           <button
             onClick={onQuickAdd}
             className="w-full bg-white/95 backdrop-blur text-gray-900 py-3 rounded-xl font-medium text-sm shadow-lg hover:bg-gray-900 hover:text-white transition-colors flex items-center justify-center gap-2"
           >
             <ShoppingBag className="w-4 h-4" /> Quick Add
           </button>
-        </div>
+        </div> */}
 
         {/* Dark Overlay on Hover */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 pointer-events-none" />
@@ -550,7 +550,7 @@ const ProductCard = ({
           <h3 className="font-medium text-gray-900 truncate pr-4">
             {product.name}
           </h3>
-          <div className="flex flex-col items-end">
+          {/* <div className="flex flex-col items-end">
             <span className="font-semibold text-sm">
               Rs {getPrice(product).toFixed(0)}
             </span>
@@ -559,7 +559,7 @@ const ProductCard = ({
                 Rs {product.selling_price}
               </span>
             )}
-          </div>
+          </div> */}
         </div>
         <p className="text-xs text-gray-500 uppercase tracking-wide">
           {product.category.name}

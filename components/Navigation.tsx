@@ -129,7 +129,7 @@ export function Navigation() {
 
   const navLinks = [
     { name: "Marble & Stones", href: "/shop" },
-    { name: "Cart", href: "/cart" },
+    // { name: "Cart", href: "/cart" }, // Cart link commented out
     { name: "Contact", href: "/contact" },
   ];
 
@@ -274,9 +274,9 @@ export function Navigation() {
                                     {product.category.name}
                                   </p>
                                 </div>
-                                <span className="text-xs font-bold text-gray-900">
+                                {/* <span className="text-xs font-bold text-gray-900">
                                   Rs. {product.selling_price}
-                                </span>
+                                </span> */}
                               </Link>
                             ))}
                             <Link
@@ -305,16 +305,15 @@ export function Navigation() {
                   : "opacity-100"
                   }`}
               >
-                <MagneticButton>
+                {/* <MagneticButton>
                   <Link
                     href="/cart"
                     className="relative p-2.5 hover:bg-gray-100 rounded-full transition-colors block"
                   >
                     <ShoppingBag className="w-5 h-5 text-gray-700" />
-                    {/* Only show badge if items exist (optional logic) */}
                     <span className="absolute top-2 right-2 w-2 h-2 bg-black rounded-full ring-2 ring-white" />
                   </Link>
-                </MagneticButton>
+                </MagneticButton> */}
 
                 <div className="md:hidden">
                   <MagneticButton>
