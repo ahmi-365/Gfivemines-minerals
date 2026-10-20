@@ -107,7 +107,7 @@ export function SearchBar() {
               {filteredProducts.map((product) => (
                 <Link
                   key={product.id}
-                  href="/shop"
+                  href="/marble-stones"
                   onClick={() => {
                     setQuery("");
                     setIsOpen(false);

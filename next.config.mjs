@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // 👈 REQUIRED for static exports (replaces `next export`)
+  output: 'export',
+  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
   },

@@ -11,7 +11,6 @@ import { IngredientsSection } from "@/components/IngredientsSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
 // import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { NewsletterSection } from "@/components/NewsletterSection";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import FeaturedProducts from "@/components/FeaturedProducts";
@@ -52,7 +51,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-obsidian text-marble overflow-x-hidden">
       <Navigation />
       <HeroSection scrollY={scrollY} isVisible={isVisible} />
       {/* <ProductCategories /> */}
@@ -63,7 +62,6 @@ export default function Home() {
       <BenefitsSection scrollY={scrollY} />
       {/* <TestimonialsSection visibleSections={visibleSections} /> */}
       <HowItWorksSection visibleSections={visibleSections} />
-      <NewsletterSection />
       <Footer />
     </div>
   );

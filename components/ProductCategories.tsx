@@ -13,7 +13,7 @@ export function ProductCategories() {
       desc: "Signature veining for lobbies, counters, and feature walls",
       image: "/images/luxury-collection.jpg",
       color: "from-teal-500",
-      href: "/shop",
+      href: "/marble-stones",
       available: true,
     },
     {
@@ -21,7 +21,7 @@ export function ProductCategories() {
       desc: "Load-bearing strength for exterior cladding and heavy-duty floors",
       image: "/images/modern-skincare.jpg",
       color: "from-amber-500",
-      href: "/shop",
+      href: "/marble-stones",
       available: true,
     },
   ];
@@ -81,7 +81,7 @@ export function ProductCategories() {
         </div>
 
         <div className="text-center">
-          <Link href="/shop">
+          <Link href="/marble-stones">
             <Button className="btn-primary group">
               VIEW ALL PRODUCTS
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />

@@ -13,8 +13,6 @@ import {
   Loader2,
   Menu,
   Search,
-  ShoppingBag,
-  Sparkles,
   Twitter,
   X,
 } from "lucide-react";
@@ -122,14 +120,14 @@ export function Navigation() {
     if (e.key === "Enter") {
       if (query.trim()) {
         setSearchOpen(false);
-        router.push(`/shop?search=${encodeURIComponent(query.trim())}`);
+        router.push(`/marble-stones?search=${encodeURIComponent(query.trim())}`);
       }
     }
   };
 
   const navLinks = [
-    { name: "Marble & Stones", href: "/shop" },
-    // { name: "Cart", href: "/cart" }, // Cart link commented out
+    { name: "Home", href: "/" },
+    { name: "Marble & Stones", href: "/marble-stones" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -142,10 +140,44 @@ export function Navigation() {
         }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className={`fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-gray-100 transition-all duration-300 ${searchOpen ? "shadow-none" : "shadow-sm"
+        className={`fixed top-0 w-full z-50 bg-obsidian/85 backdrop-blur-xl border-b transition-all duration-300 ${searchOpen
+          ? "border-hairline-strong"
+          : "border-hairline"
           }`}
       >
-        <div className="container mx-auto px-6 py-4">
+        {/* --- SLIM UTILITY BAR (desktop) --- */}
+        <div className="hidden md:block border-b border-hairline/60">
+          <div className="container mx-auto px-6">
+            <div className="flex items-center justify-between h-9 text-[11px] tracking-wide">
+              <p className="text-marble-faint">
+                Quarry-direct natural stone ·{" "}
+                <span className="text-marble-dim">
+                  China · Hong Kong · USA · UAE
+                </span>
+              </p>
+              <div className="flex items-center gap-5 text-marble-dim">
+                <a
+                  href="mailto:President.Gfive@hotmail.com"
+                  className="hover:text-bronze-light transition-colors"
+                >
+                  President.Gfive@hotmail.com
+                </a>
+                <span className="h-3 w-px bg-hairline-strong" />
+                <a
+                  href="tel:+8613760113545"
+                  className="hover:text-bronze-light transition-colors"
+                >
+                  +86 137 6011 3545
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* bronze hairline under the bar */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-bronze/40 to-transparent" />
+
+        <div className="container mx-auto px-6 py-3">
           <div className="flex items-center justify-between relative">
             {/* --- LEFT: LOGO --- */}
             <Link
@@ -160,7 +192,7 @@ export function Navigation() {
                 alt="Gfivemines & Minerals"
                 height={80}
                 width={300}
-                className="h-20 w-auto object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-lg grayscale brightness-0"
+                className="h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
                 priority
               />
             </Link>
@@ -192,15 +224,15 @@ export function Navigation() {
                   <motion.div
                     layout
                     className={`relative flex items-center h-10 z-50 ${searchOpen
-                      ? "w-full bg-gray-100 rounded-full px-4"
+                      ? "w-full bg-graphite border border-hairline-strong rounded-full px-4"
                       : "w-10 bg-transparent"
                       }`}
                   >
                     <button
                       onClick={() => setSearchOpen(!searchOpen)}
                       className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors z-10 ${searchOpen
-                        ? "text-black"
-                        : "hover:bg-gray-100 text-gray-700"
+                        ? "text-bronze-light"
+                        : "hover:bg-white/5 text-marble-dim hover:text-marble"
                         }`}
                     >
                       <Search className="w-5 h-5" />
@@ -209,11 +241,11 @@ export function Navigation() {
                     <input
                       ref={searchInputRef}
                       type="text"
-                      placeholder="Search for products..."
+                      placeholder="Search marble, granite, minerals..."
                       value={query}
                       onChange={(e) => setQuery(e.target.value)}
                       onKeyDown={handleKeyDown}
-                      className={`bg-transparent border-none outline-none text-sm text-gray-900 placeholder:text-gray-400 h-full transition-all duration-300 ${searchOpen ? "flex-1 ml-2 opacity-100" : "w-0 opacity-0"
+                      className={`bg-transparent border-none outline-none text-sm text-marble placeholder:text-marble-faint h-full transition-all duration-300 ${searchOpen ? "flex-1 ml-2 opacity-100" : "w-0 opacity-0"
                         }`}
                     />
 
@@ -223,7 +255,7 @@ export function Navigation() {
                           setSearchOpen(false);
                           setQuery(""); // Clear query on close
                         }}
-                        className="p-2 text-gray-400 hover:text-black transition-colors"
+                        className="p-2 text-marble-faint hover:text-bronze-light transition-colors"
                       >
                         <X className="w-4 h-4" />
                       </button>
@@ -237,28 +269,28 @@ export function Navigation() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
-                        className="absolute top-12 left-0 right-0 bg-white border border-gray-100 rounded-2xl shadow-xl overflow-hidden z-40"
+                        className="absolute top-12 left-0 right-0 bg-graphite border border-hairline-strong rounded-2xl shadow-2xl shadow-black/60 overflow-hidden z-40"
                       >
                         {loading ? (
-                          <div className="p-6 text-center text-gray-400">
-                            <Loader2 className="w-5 h-5 animate-spin mx-auto mb-2" />
+                          <div className="p-6 text-center text-marble-faint">
+                            <Loader2 className="w-5 h-5 animate-spin mx-auto mb-2 text-bronze" />
                             <span className="text-xs">Searching...</span>
                           </div>
                         ) : filteredProducts.length > 0 ? (
-                          <div className="divide-y divide-gray-50">
+                          <div className="divide-y divide-hairline">
                             {filteredProducts.map((product) => (
                               <Link
                                 key={product.id}
-                                href={`/shop?search=${encodeURIComponent(
+                                href={`/marble-stones?search=${encodeURIComponent(
                                   product.name
                                 )}`}
                                 onClick={() => {
                                   setSearchOpen(false);
                                   setQuery("");
                                 }}
-                                className="flex items-center gap-4 p-3 hover:bg-gray-50 transition-colors group"
+                                className="flex items-center gap-4 p-3 hover:bg-white/5 transition-colors group"
                               >
-                                <div className="w-10 h-12 bg-gray-100 rounded-md overflow-hidden flex-shrink-0 relative">
+                                <div className="w-10 h-12 bg-graphite-light rounded-md overflow-hidden flex-shrink-0 relative border border-hairline">
                                   <Image
                                     src={getImageUrl(product.image)}
                                     alt={product.name}
@@ -267,28 +299,25 @@ export function Navigation() {
                                   />
                                 </div>
                                 <div className="flex-1 min-w-0">
-                                  <h4 className="text-sm font-medium text-gray-900 truncate group-hover:text-black transition-colors">
+                                  <h4 className="text-sm font-medium text-marble truncate group-hover:text-bronze-light transition-colors">
                                     {product.name}
                                   </h4>
-                                  <p className="text-xs text-gray-500">
+                                  <p className="text-xs text-marble-faint uppercase tracking-wide">
                                     {product.category.name}
                                   </p>
                                 </div>
-                                {/* <span className="text-xs font-bold text-gray-900">
-                                  Rs. {product.selling_price}
-                                </span> */}
                               </Link>
                             ))}
                             <Link
-                              href={`/shop?search=${encodeURIComponent(query)}`}
+                              href={`/marble-stones?search=${encodeURIComponent(query)}`}
                               onClick={() => setSearchOpen(false)}
-                              className="block p-3 text-center text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-black hover:bg-gray-50 transition-colors"
+                              className="block p-3 text-center text-xs font-bold uppercase tracking-widest text-bronze-light hover:text-marble hover:bg-white/5 transition-colors"
                             >
                               View all results
                             </Link>
                           </div>
                         ) : (
-                          <div className="p-6 text-center text-gray-400 text-sm">
+                          <div className="p-6 text-center text-marble-faint text-sm">
                             No products found.
                           </div>
                         )}
@@ -300,28 +329,26 @@ export function Navigation() {
 
               {/* ICONS (Hidden on Search) */}
               <div
-                className={`flex items-center gap-2 transition-all duration-300 ${searchOpen
+                className={`flex items-center gap-3 transition-all duration-300 ${searchOpen
                   ? "opacity-0 translate-x-10 pointer-events-none"
                   : "opacity-100"
                   }`}
               >
-                {/* <MagneticButton>
-                  <Link
-                    href="/cart"
-                    className="relative p-2.5 hover:bg-gray-100 rounded-full transition-colors block"
-                  >
-                    <ShoppingBag className="w-5 h-5 text-gray-700" />
-                    <span className="absolute top-2 right-2 w-2 h-2 bg-black rounded-full ring-2 ring-white" />
-                  </Link>
-                </MagneticButton> */}
+                {/* Desktop CTA */}
+                <Link
+                  href="/contact"
+                  className="hidden md:inline-flex items-center gap-2 bg-bronze text-obsidian px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] hover:bg-bronze-light transition-colors"
+                >
+                  Request a Quote
+                </Link>
 
                 <div className="md:hidden">
                   <MagneticButton>
                     <button
                       onClick={() => setMobileMenuOpen(true)}
-                      className="p-2.5 hover:bg-gray-100 rounded-full transition-colors"
+                      className="p-2.5 hover:bg-white/5 rounded-full transition-colors"
                     >
-                      <Menu className="w-6 h-6 text-gray-900" />
+                      <Menu className="w-6 h-6 text-marble" />
                     </button>
                   </MagneticButton>
                 </div>
@@ -339,61 +366,79 @@ export function Navigation() {
             animate={{ clipPath: "circle(150% at 100% 0%)" }}
             exit={{ clipPath: "circle(0% at 100% 0%)" }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[60] bg-white text-black flex flex-col p-8 md:hidden"
+            className="fixed inset-0 z-[60] bg-obsidian text-marble flex flex-col p-8 md:hidden grain overflow-hidden"
           >
-            <div className="flex justify-between items-center mb-16">
-              <Image
-                src="/images/gfivelogo.png"
-                alt="Gfivemines & Minerals"
-                height={80}
-                width={300}
-                className="h-20 w-auto object-contain drop-shadow-lg grayscale brightness-0"
-                priority
-              />
-              <button
-                onClick={() => setMobileMenuOpen(false)}
-                className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
-            <div className="space-y-6">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.name}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + i * 0.1, duration: 0.5 }}
+            <div className="vein-glow" />
+            <div className="relative z-10 flex flex-col h-full">
+              <div className="flex justify-between items-center mb-16">
+                <Image
+                  src="/images/gfivelogo.png"
+                  alt="Gfivemines & Minerals"
+                  height={80}
+                  width={300}
+                  className="h-20 w-auto object-contain"
+                  priority
+                />
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-3 bg-white/5 border border-hairline rounded-full hover:bg-white/10 transition-colors"
                 >
-                  <Link
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center justify-between text-4xl font-light tracking-tight hover:pl-4 transition-all duration-300 group"
-                  >
-                    <span>{link.name}</span>
-                    <ChevronRight className="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
 
-            <div className="mt-auto">
-              <p className="text-gray-400 text-xs uppercase tracking-widest mb-4">
-                Follow Us
-              </p>
-              <div className="flex gap-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-gray-600 hover:bg-black hover:text-white transition-all duration-300"
+              <div className="space-y-6">
+                {navLinks.map((link, i) => (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + i * 0.1, duration: 0.5 }}
                   >
-                    <social.icon className="w-5 h-5" />
-                  </a>
+                    <Link
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center justify-between text-4xl font-display font-light tracking-tight hover:pl-4 hover:text-bronze-light transition-all duration-300 group"
+                    >
+                      <span>{link.name}</span>
+                      <ChevronRight className="w-6 h-6 text-bronze opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </Link>
+                  </motion.div>
                 ))}
+              </div>
+
+              {/* Mobile CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.45, duration: 0.5 }}
+                className="mt-10"
+              >
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-center gap-2 bg-bronze text-obsidian w-full py-4 text-sm font-bold uppercase tracking-[0.15em] hover:bg-bronze-light transition-colors"
+                >
+                  Request a Quote
+                  <ChevronRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+
+              <div className="mt-auto pt-10">
+                <p className="eyebrow mb-4">Follow Us</p>
+                <div className="flex gap-4">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 bg-white/5 border border-hairline rounded-full flex items-center justify-center text-marble-dim hover:bg-bronze hover:text-obsidian hover:border-bronze transition-all duration-300"
+                    >
+                      <social.icon className="w-5 h-5" />
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
@@ -406,15 +451,11 @@ export function Navigation() {
 // --- SUB-COMPONENT: INTERACTIVE LINK ---
 function InteractiveLink({ href, text }: { href: string; text: string }) {
   return (
-    <Link href={href} className="group relative overflow-hidden h-5 block">
-      <div className="flex flex-col transition-transform duration-300 group-hover:-translate-y-[20px]">
-        <span className="text-xs font-bold uppercase tracking-[0.2em] text-gray-600 h-[20px] flex items-center">
-          {text}
-        </span>
-        <span className="text-sm font-serif italic font-medium text-black h-[20px] flex items-center">
-          {text}
-        </span>
-      </div>
+    <Link
+      href={href}
+      className="font-display italic font-medium text-2xl leading-none text-marble hover:text-bronze-light transition-colors duration-300"
+    >
+      {text}
     </Link>
   );
 }

@@ -1,17 +1,9 @@
 "use client";
 
-import { Navigation } from "@/components/Navigation";
 import { useCart } from "@/lib/cart-context";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  ArrowRight,
-  Check,
-  Minus,
-  Plus,
-  ShoppingBag,
-  Sparkles,
-  X
-} from "lucide-react";
+import { ArrowRight, Check, ShoppingBag, X } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 // --- Interfaces ---
@@ -124,100 +116,94 @@ export default function FeaturedProducts() {
   if (!loading && !hasFeaturedProducts) return null;
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 selection:bg-gray-900 selection:text-white">
-      <Navigation />
+    <section className="relative bg-obsidian text-marble py-24 md:py-32 overflow-hidden grain">
+      <div className="vein-glow" />
 
-      {/* --- HERO SECTION --- */}
-      <section className="pt-32 pb-16 relative overflow-hidden bg-white">
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="inline-flex items-center gap-2 border border-gray-200 bg-white px-4 py-1.5 rounded-full mb-6 shadow-sm">
-              <Sparkles className="w-3 h-3 text-gray-900" />
-              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-900">
-                Editor's Choice
-              </span>
-            </div>
+      {/* --- SECTION HEADER --- */}
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-3xl mb-14"
+        >
+          <div className="flex items-center gap-4 mb-6">
+            <span className="h-px w-12 bg-bronze" />
+            <span className="eyebrow">Editor&apos;s Choice</span>
+          </div>
+          <h2 className="font-display font-light text-4xl sm:text-5xl md:text-7xl tracking-tight leading-[0.95] mb-6">
+            Featured <span className="italic text-vein">marble &amp; stone.</span>
+          </h2>
+          <p className="text-marble-dim text-lg max-w-xl leading-relaxed">
+            Handpicked natural-stone slabs and mineral blocks that define
+            architectural excellence. Explore curated lots for your next project.
+          </p>
+        </motion.div>
 
-            <h1 className="text-6xl md:text-8xl font-light tracking-tighter leading-[0.9] mb-6">
-              Featured <span className="font-serif italic">Marble & Stone.</span>
-            </h1>
-            <p className="text-gray-500 text-lg max-w-lg mx-auto leading-relaxed">
-              Handpicked natural stone slabs and mineral blocks that define architectural excellence.
-              Explore curated lots for your next project.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Background Blob */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gray-50 rounded-full blur-3xl -z-10 opacity-50 pointer-events-none" />
-      </section>
-
-      {/* --- FLOATING CONTROL BAR (Filters Only) --- */}
-      <div className="z-30 px-6 mb-12 relative">
-        <div className="container mx-auto pointer-events-auto flex justify-center">
-          <div className="bg-white/80 backdrop-blur-xl border border-gray-200/50 rounded-full p-2 shadow-xl shadow-gray-200/20 inline-flex transition-all">
-            <div className="flex items-center gap-1 overflow-x-auto max-w-[90vw] no-scrollbar">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${selectedCategory === cat
-                    ? "bg-gray-900 text-white shadow-md"
-                    : "hover:bg-gray-100 text-gray-500 hover:text-gray-900"
-                    }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
+        {/* --- CATEGORY FILTER RAIL --- */}
+        <div className="mb-14">
+          <div className="inline-flex max-w-full overflow-x-auto no-scrollbar border border-hairline rounded-full p-1.5 bg-graphite/60 backdrop-blur">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${selectedCategory === cat
+                  ? "bg-bronze text-obsidian shadow-md"
+                  : "text-marble-dim hover:text-marble hover:bg-white/5"
+                  }`}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
         </div>
-      </div>
 
-      {/* --- GRID --- */}
-      <section className="container mx-auto px-6 pb-24">
+        {/* --- GRID --- */}
         {loading ? (
           <div className="flex flex-col items-center justify-center h-64">
-            <div className="w-8 h-8 border-2 border-gray-100 border-t-gray-900 rounded-full animate-spin mb-4" />
-            <p className="text-gray-400 text-sm">Loading featured items...</p>
+            <div className="w-8 h-8 border-2 border-hairline border-t-bronze rounded-full animate-spin mb-4" />
+            <p className="text-marble-faint text-sm">Loading featured items...</p>
           </div>
         ) : filteredProducts.length === 0 ? (
-          <div className="text-center py-32 bg-gray-50/50 rounded-3xl border border-dashed border-gray-200">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm">
-              <ShoppingBag className="w-6 h-6 text-gray-300" />
+          <div className="text-center py-32 bg-graphite/40 rounded-3xl border border-dashed border-hairline-strong">
+            <div className="w-16 h-16 bg-graphite-light rounded-full flex items-center justify-center mx-auto mb-4 border border-hairline">
+              <ShoppingBag className="w-6 h-6 text-bronze" />
             </div>
-            <h3 className="text-lg font-medium text-gray-900">
-              No items found
-            </h3>
-            <p className="text-gray-500 mt-1">
+            <h3 className="text-lg font-medium text-marble">No items found</h3>
+            <p className="text-marble-dim mt-1">
               Try selecting a different category.
             </p>
           </div>
         ) : (
           <motion.div
             layout
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10 lg:gap-y-16"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6"
           >
             <AnimatePresence>
-              {filteredProducts.map((product) => (
+              {filteredProducts.map((product, i) => (
                 <ProductCard
                   key={product.id}
                   product={product}
+                  index={i}
                   onClick={() => openModal(product)}
-                  onQuickAdd={(e: any) => handleAddToCart(product, 1, e)}
                   getImageUrl={getImageUrl}
-                  getPrice={getPrice}
                 />
               ))}
             </AnimatePresence>
           </motion.div>
         )}
-      </section>
+
+        {/* --- CTA --- */}
+        <div className="text-center mt-20">
+          <Link href="/marble-stones" className="group inline-flex">
+            <span className="inline-flex items-center gap-3 border border-bronze text-bronze-light px-9 py-4 text-sm font-bold uppercase tracking-[0.15em] hover:bg-bronze hover:text-obsidian transition-colors duration-300">
+              Browse Full Inventory
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </span>
+          </Link>
+        </div>
+      </div>
 
       {/* --- MODAL --- */}
       <AnimatePresence>
@@ -226,25 +212,25 @@ export default function FeaturedProducts() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-white/60 backdrop-blur-md flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-obsidian/80 backdrop-blur-md flex items-center justify-center p-4"
             onClick={closeModal}
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-white w-full max-w-5xl rounded-[2rem] shadow-2xl border border-gray-100 overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
+              className="bg-graphite w-full max-w-5xl rounded-[2rem] shadow-2xl shadow-black/60 border border-hairline-strong overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="md:w-1/2 bg-gray-50 p-8 flex flex-col gap-4 overflow-y-auto">
-                <div className="aspect-square rounded-2xl overflow-hidden bg-white shadow-sm relative">
+              <div className="md:w-1/2 bg-obsidian p-8 flex flex-col gap-4 overflow-y-auto">
+                <div className="aspect-square rounded-2xl overflow-hidden bg-graphite-light shadow-sm relative border border-hairline">
                   <img
                     src={selectedImage}
                     alt={selectedProduct.name}
                     className="w-full h-full object-cover"
                   />
                   {selectedProduct.sale && selectedProduct.sale > 0 && (
-                    <span className="absolute top-4 left-4 bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    <span className="absolute top-4 left-4 bg-bronze text-obsidian text-xs font-bold px-3 py-1 rounded-full">
                       -{selectedProduct.sale}%
                     </span>
                   )}
@@ -258,8 +244,8 @@ export default function FeaturedProducts() {
                       key={idx}
                       onClick={() => setSelectedImage(getImageUrl(img))}
                       className={`w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden border-2 ${selectedImage === getImageUrl(img)
-                        ? "border-gray-900"
-                        : "border-transparent"
+                        ? "border-bronze"
+                        : "border-hairline"
                         }`}
                     >
                       <img
@@ -274,62 +260,29 @@ export default function FeaturedProducts() {
               <div className="md:w-1/2 p-8 md:p-12 flex flex-col overflow-y-auto">
                 <button
                   onClick={closeModal}
-                  className="self-end p-2 hover:bg-gray-100 rounded-full mb-4"
+                  className="self-end p-2 hover:bg-white/5 rounded-full mb-4 text-marble-dim hover:text-marble"
                 >
                   <X className="w-5 h-5" />
                 </button>
 
                 <div className="mb-auto">
-                  <span className="text-gray-400 text-xs font-bold uppercase tracking-widest">
-                    {selectedProduct.category.name}
-                  </span>
-                  <h2 className="text-3xl font-light text-gray-900 mt-2 mb-4">
+                  <span className="eyebrow">{selectedProduct.category.name}</span>
+                  <h2 className="font-display text-4xl font-light text-marble mt-3 mb-5 leading-tight">
                     {selectedProduct.name}
                   </h2>
-                  {/* <div className="flex items-center gap-4 mb-6">
-                    <span className="text-2xl font-semibold">
-                      Rs. {getPrice(selectedProduct).toFixed(2)}
-                    </span>
-                    {selectedProduct.sale && selectedProduct.sale > 0 && (
-                      <span className="text-gray-400 line-through">
-                        Rs. {selectedProduct.selling_price}
-                      </span>
-                    )}
-                  </div> */}
-                  <p className="text-gray-600 leading-relaxed text-sm">
+                  <div className="rule-bronze mb-6" />
+                  <p className="text-marble-dim leading-relaxed text-sm">
                     {selectedProduct.note ||
-                      "Designed for modern living. Crafted with premium materials for durability and style."}
+                      "Quarry-direct natural stone, selected for consistent veining and structural integrity. Available for cutting, finishing, and bulk supply."}
                   </p>
                 </div>
 
-                {/* <div className="mt-8 pt-8 border-t border-gray-100">
-                  <div className="flex items-center gap-4">
-                    <div className="flex items-center border border-gray-200 rounded-full h-12">
-                      <button
-                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                        className="w-12 h-full hover:bg-gray-50 rounded-l-full flex items-center justify-center"
-                      >
-                        <Minus className="w-4 h-4" />
-                      </button>
-                      <span className="w-8 text-center font-medium">
-                        {quantity}
-                      </span>
-                      <button
-                        onClick={() => setQuantity(quantity + 1)}
-                        className="w-12 h-full hover:bg-gray-50 rounded-r-full flex items-center justify-center"
-                      >
-                        <Plus className="w-4 h-4" />
-                      </button>
-                    </div>
-                    <button
-                      onClick={() => handleAddToCart(selectedProduct, quantity)}
-                      className="flex-1 h-12 bg-gray-900 text-white rounded-full font-medium hover:bg-black transition-all flex items-center justify-center gap-2"
-                    >
-                      <span>Add to Cart</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div> */}
+                <Link
+                  href="/contact"
+                  className="mt-10 inline-flex items-center justify-center gap-2 bg-bronze text-obsidian h-12 px-6 rounded-full font-bold text-sm uppercase tracking-[0.12em] hover:bg-bronze-light transition-colors"
+                >
+                  Request a Quote <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </motion.div>
           </motion.div>
@@ -345,28 +298,22 @@ export default function FeaturedProducts() {
             exit={{ y: 20, opacity: 0 }}
             className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100]"
           >
-            <div className="bg-gray-900 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3">
-              <div className="bg-emerald-500 rounded-full p-0.5">
-                <Check className="w-3 h-3 text-white" />
+            <div className="bg-graphite border border-hairline-strong text-marble px-6 py-3 rounded-full shadow-2xl flex items-center gap-3">
+              <div className="bg-bronze rounded-full p-0.5">
+                <Check className="w-3 h-3 text-obsidian" />
               </div>
-              <span className="text-sm font-medium">Added to your bag</span>
+              <span className="text-sm font-medium">Added to your selection</span>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </section>
   );
 }
 
 // --- SUB COMPONENTS ---
 
-const ProductCard = ({
-  product,
-  onClick,
-  onQuickAdd,
-  getImageUrl,
-  getPrice,
-}: any) => {
+const ProductCard = ({ product, index, onClick, getImageUrl }: any) => {
   const [currentImage, setCurrentImage] = useState(getImageUrl(product.image));
   const [isHovered, setIsHovered] = useState(false);
 
@@ -379,12 +326,10 @@ const ProductCard = ({
   // Logic to change image on hover
   useEffect(() => {
     if (isHovered && allImages.length > 1) {
-      // Pick a random index that isn't the first one (main image)
       const randomIndex =
         Math.floor(Math.random() * (allImages.length - 1)) + 1;
       setCurrentImage(allImages[randomIndex]);
     } else {
-      // Reset to main image when not hovered
       setCurrentImage(allImages[0]);
     }
   }, [isHovered]);
@@ -392,69 +337,67 @@ const ProductCard = ({
   return (
     <motion.div
       layout
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
-      className="group cursor-pointer flex flex-col gap-3"
+      transition={{ duration: 0.5 }}
+      className="group relative cursor-pointer"
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-gray-100 isolate">
-        {/* Animated Image Transition */}
+      <div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-graphite isolate border border-hairline group-hover:border-bronze/50 transition-colors duration-500 shadow-lg shadow-black/30">
+        {/* Animated Image */}
         <AnimatePresence mode="popLayout">
           <motion.img
-            key={currentImage} // Key change triggers animation
+            key={currentImage}
             src={currentImage}
             alt={product.name}
             initial={{ opacity: 0.8 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0.8 }}
             transition={{ duration: 0.4 }}
-            className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105"
+            className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-110"
           />
         </AnimatePresence>
 
+        {/* Permanent bottom gradient for caption legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/25 to-transparent pointer-events-none" />
+        {/* Extra darken on hover */}
+        <div className="absolute inset-0 bg-obsidian/0 group-hover:bg-obsidian/25 transition-colors duration-500 pointer-events-none" />
+
+        {/* Serif index watermark */}
+        <span className="absolute top-2 left-4 font-display text-4xl leading-none text-marble/20 group-hover:text-bronze/40 transition-colors duration-500 select-none pointer-events-none">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+
         {/* Sale Badge */}
         {product.sale && product.sale > 0 && (
-          <span className="absolute top-3 left-3 bg-white/90 backdrop-blur px-2 py-1 text-[10px] font-bold uppercase tracking-wider rounded-sm z-10">
+          <span className="absolute top-5 right-5 bg-bronze text-obsidian px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full z-10">
             -{product.sale}%
           </span>
         )}
 
-        {/* Quick Add Button - Slides up on hover */}
-        {/* <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
-          <button
-            onClick={onQuickAdd}
-            className="w-full bg-white/95 backdrop-blur text-gray-900 py-3 rounded-xl font-medium text-sm shadow-lg hover:bg-gray-900 hover:text-white transition-colors flex items-center justify-center gap-2"
-          >
-            <ShoppingBag className="w-4 h-4" /> Quick Add
-          </button>
-        </div> */}
+        {/* Bronze corner accent on hover */}
+        <span className="absolute top-4 right-4 w-9 h-9 rounded-tr-xl border-t border-r border-bronze/0 group-hover:border-bronze/70 transition-colors duration-500 pointer-events-none" />
 
-        {/* Dark Overlay on Hover */}
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 pointer-events-none" />
-      </div>
-
-      <div>
-        <div className="flex justify-between items-start mb-1">
-          <h3 className="font-medium text-gray-900 truncate pr-4">
+        {/* Caption */}
+        <div className="absolute inset-x-0 bottom-0 p-4 z-10">
+          <p className="eyebrow mb-1.5">{product.category.name}</p>
+          <h3 className="font-display text-lg font-light text-marble leading-tight">
             {product.name}
           </h3>
-          {/* <div className="flex flex-col items-end">
-            <span className="font-semibold text-sm">
-              Rs {getPrice(product).toFixed(0)}
-            </span>
-            {product.sale && product.sale > 0 && (
-              <span className="text-[10px] text-gray-400 line-through">
-                Rs {product.selling_price}
+
+          {/* Hover CTA reveal */}
+          <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out mt-0 group-hover:mt-3">
+            <div className="overflow-hidden">
+              <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-bronze-light">
+                View Details
+                <ArrowRight className="w-3.5 h-3.5" />
               </span>
-            )}
-          </div> */}
+            </div>
+          </div>
         </div>
-        <p className="text-xs text-gray-500 uppercase tracking-wide">
-          {product.category.name}
-        </p>
       </div>
     </motion.div>
   );

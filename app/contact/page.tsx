@@ -126,28 +126,29 @@ export default function ContactPage() {
 
   // Success Modal
   const SuccessModal = () => (
-    <div className="fixed inset-0 bg-gray-900/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-obsidian/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="bg-white rounded-2xl p-8 max-w-md w-full mx-auto shadow-2xl border border-gray-100"
+        className="bg-graphite rounded-2xl p-8 max-w-md w-full mx-auto shadow-2xl shadow-black/60 border border-hairline-strong"
       >
         <div className="text-center">
-          <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-gray-200">
-            <CheckCircle2 className="w-8 h-8 text-white" />
+          <div className="w-16 h-16 bg-bronze rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <CheckCircle2 className="w-8 h-8 text-obsidian" />
           </div>
 
-          <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+          <h3 className="font-display text-2xl font-semibold text-marble mb-2">
             Quote request received
           </h3>
-          <p className="text-gray-500 mb-6">
-            Thanks {formData.name}, our sourcing team will contact you shortly with natural stone availability and pricing.
+          <p className="text-marble-dim mb-6">
+            Thanks {formData.name}, our sourcing team will contact you shortly
+            with natural stone availability and pricing.
           </p>
 
           <button
             onClick={() => setIsSubmitted(false)}
-            className="w-full bg-gray-100 text-gray-900 py-3 rounded-xl font-medium hover:bg-gray-200 transition-all duration-300"
+            className="w-full bg-white/5 border border-hairline text-marble py-3 rounded-xl font-medium hover:bg-white/10 transition-all duration-300"
           >
             Close Window
           </button>
@@ -157,58 +158,55 @@ export default function ContactPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50/50">
+    <div className="min-h-screen bg-obsidian text-marble">
       <Navigation />
       <AnimatePresence>{isSubmitted && <SuccessModal />}</AnimatePresence>
 
-      <div className="pt-32 pb-20 container mx-auto px-6 lg:px-12">
+      <div className="pt-40 pb-20 container mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           {/* LEFT COLUMN: Content & Info (Sticky on Desktop) */}
-          <div className="lg:col-span-5 lg:sticky lg:top-32 space-y-12">
+          <div className="lg:col-span-5 lg:sticky lg:top-40 space-y-12">
             {/* Header Text */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-xs font-semibold uppercase tracking-wider text-gray-600 mb-6">
-                <span className="w-2 h-2 rounded-full bg-gray-900 animate-pulse"></span>
-                Sourcing & Cutting Inquiries
+              <div className="inline-flex items-center gap-2 mb-6">
+                <span className="w-2 h-2 rounded-full bg-bronze animate-pulse"></span>
+                <span className="eyebrow">Sourcing &amp; Cutting Inquiries</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-light text-gray-900 leading-tight mb-6 tracking-tight">
-                Let's source your{" "}<br />
-                <span className="font-semibold italic font-serif">
-                  perfect stone.
-                </span>
+              <h1 className="font-display text-4xl md:text-6xl font-light text-marble leading-[0.98] mb-6 tracking-tight">
+                Let&apos;s source your{" "}<br />
+                <span className="italic text-vein">perfect stone.</span>
               </h1>
-              <p className="text-gray-500 text-lg leading-relaxed border-l-2 border-gray-200 pl-6">
-                Whether you need marble slabs, granite blocks, or want to discuss sourcing and cutting specifications, our team is ready to assist.
+              <p className="text-marble-dim text-lg leading-relaxed border-l-2 border-bronze/40 pl-6">
+                Whether you need marble slabs, granite blocks, or want to discuss
+                sourcing and cutting specifications, our team is ready to assist.
               </p>
             </motion.div>
 
-            {/* Contact Details List (Replaced Cards) */}
+            {/* Contact Details List */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
               className="space-y-8"
             >
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {/* Email */}
-                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-300">
-                  <div className="p-3 bg-gray-100 text-gray-900 rounded-xl group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
+                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-graphite border border-transparent hover:border-hairline transition-all duration-300">
+                  <div className="p-3 bg-graphite-light border border-hairline text-bronze rounded-xl group-hover:bg-bronze group-hover:text-obsidian transition-colors duration-300">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-1">
-                      Email us
-                    </h4>
-                    <p className="text-sm text-gray-500 mb-1">
+                    <h4 className="font-medium text-marble mb-1">Email us</h4>
+                    <p className="text-sm text-marble-dim mb-1">
                       Our team responds within 24 hours.
                     </p>
                     <a
                       href="mailto:President.Gfive@hotmail.com"
-                      className="text-sm font-semibold text-gray-900 hover:underline"
+                      className="text-sm font-semibold text-bronze-light hover:underline"
                     >
                       President.Gfive@hotmail.com
                     </a>
@@ -216,23 +214,23 @@ export default function ContactPage() {
                 </div>
 
                 {/* Phone */}
-                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-300">
-                  <div className="p-3 bg-gray-100 text-gray-900 rounded-xl group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
+                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-graphite border border-transparent hover:border-hairline transition-all duration-300">
+                  <div className="p-3 bg-graphite-light border border-hairline text-bronze rounded-xl group-hover:bg-bronze group-hover:text-obsidian transition-colors duration-300">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-1">Contact Numbers</h4>
-                    <p className="text-sm text-gray-500 mb-2">Reach us directly</p>
+                    <h4 className="font-medium text-marble mb-1">Contact Numbers</h4>
+                    <p className="text-sm text-marble-dim mb-2">Reach us directly</p>
                     <div className="space-y-1">
                       <a
                         href="tel:+8613760113545"
-                        className="text-sm font-semibold text-gray-900 hover:underline block"
+                        className="text-sm font-semibold text-marble hover:text-bronze-light transition-colors block"
                       >
                         📞 +86 13760113545
                       </a>
                       <a
                         href="tel:+85260602415"
-                        className="text-sm font-semibold text-gray-900 hover:underline block"
+                        className="text-sm font-semibold text-marble hover:text-bronze-light transition-colors block"
                       >
                         📞 +852 60602415
                       </a>
@@ -241,13 +239,13 @@ export default function ContactPage() {
                 </div>
 
                 {/* Head Office China */}
-                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-300">
-                  <div className="p-3 bg-gray-100 text-gray-900 rounded-xl group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
+                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-graphite border border-transparent hover:border-hairline transition-all duration-300">
+                  <div className="p-3 bg-graphite-light border border-hairline text-bronze rounded-xl group-hover:bg-bronze group-hover:text-obsidian transition-colors duration-300">
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-1">Head Office China</h4>
-                    <p className="text-sm text-gray-700">
+                    <h4 className="font-medium text-marble mb-1">Head Office China</h4>
+                    <p className="text-sm text-marble-dim">
                       4 / F, Building K, No. 8, East Shangxue Science Park,<br />
                       Bantian, Longgang District, Shenzhen, China
                     </p>
@@ -255,13 +253,13 @@ export default function ContactPage() {
                 </div>
 
                 {/* Hong Kong Office */}
-                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-300">
-                  <div className="p-3 bg-gray-100 text-gray-900 rounded-xl group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
+                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-graphite border border-transparent hover:border-hairline transition-all duration-300">
+                  <div className="p-3 bg-graphite-light border border-hairline text-bronze rounded-xl group-hover:bg-bronze group-hover:text-obsidian transition-colors duration-300">
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-1">Hong Kong Office</h4>
-                    <p className="text-sm text-gray-700">
+                    <h4 className="font-medium text-marble mb-1">Hong Kong Office</h4>
+                    <p className="text-sm text-marble-dim">
                       3/F Flat/RM B Chun Wah Commercial Building<br />
                       30 Minden Avenue TST Kowloon, Hong Kong
                     </p>
@@ -269,26 +267,26 @@ export default function ContactPage() {
                 </div>
 
                 {/* USA Office */}
-                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-300">
-                  <div className="p-3 bg-gray-100 text-gray-900 rounded-xl group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
+                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-graphite border border-transparent hover:border-hairline transition-all duration-300">
+                  <div className="p-3 bg-graphite-light border border-hairline text-bronze rounded-xl group-hover:bg-bronze group-hover:text-obsidian transition-colors duration-300">
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-1">USA Office</h4>
-                    <p className="text-sm text-gray-700">
+                    <h4 className="font-medium text-marble mb-1">USA Office</h4>
+                    <p className="text-sm text-marble-dim">
                       5619 Jarist Drive Clifton Virginia, USA 20124
                     </p>
                   </div>
                 </div>
 
                 {/* UAE Office */}
-                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-300">
-                  <div className="p-3 bg-gray-100 text-gray-900 rounded-xl group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
+                <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-graphite border border-transparent hover:border-hairline transition-all duration-300">
+                  <div className="p-3 bg-graphite-light border border-hairline text-bronze rounded-xl group-hover:bg-bronze group-hover:text-obsidian transition-colors duration-300">
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-1">UAE Office</h4>
-                    <p className="text-sm text-gray-700">
+                    <h4 className="font-medium text-marble mb-1">UAE Office</h4>
+                    <p className="text-sm text-marble-dim">
                       Office # S1-214 Property Investments Office 4
                       Dubai Investment Park Dubai UAE.
                     </p>
@@ -296,23 +294,21 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Socials & Hours Mini Section */}
-              <div className="pt-8 border-t border-gray-200">
-                <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
-                  Follow Us
-                </h4>
+              {/* Socials */}
+              <div className="pt-8 border-t border-hairline">
+                <h4 className="eyebrow mb-4">Follow Us</h4>
                 <div className="flex gap-4">
                   <a
-                    href="https://www.instagram.com/bloomixpk?igsh=MTFlejFpbnJhOGNlNA=="
+                    href="https://www.instagram.com/"
                     target="_blank"
-                    className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-900 hover:text-white transition-all duration-300"
+                    className="w-10 h-10 flex items-center justify-center rounded-full border border-hairline-strong text-marble hover:bg-bronze hover:text-obsidian hover:border-bronze transition-all duration-300"
                   >
                     <Instagram className="w-4 h-4" />
                   </a>
                   <a
-                    href="https://www.facebook.com/Bloomixpk/"
+                    href="https://www.facebook.com/"
                     target="_blank"
-                    className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-900 hover:text-white transition-all duration-300"
+                    className="w-10 h-10 flex items-center justify-center rounded-full border border-hairline-strong text-marble hover:bg-bronze hover:text-obsidian hover:border-bronze transition-all duration-300"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -326,9 +322,9 @@ export default function ContactPage() {
                     </svg>
                   </a>
                   <a
-                    href="https://www.tiktok.com/@bloomixpk"
+                    href="https://www.tiktok.com/"
                     target="_blank"
-                    className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-900 hover:text-white transition-all duration-300"
+                    className="w-10 h-10 flex items-center justify-center rounded-full border border-hairline-strong text-marble hover:bg-bronze hover:text-obsidian hover:border-bronze transition-all duration-300"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -352,17 +348,17 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-100 relative overflow-hidden"
+              className="bg-graphite rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-black/40 border border-hairline relative overflow-hidden grain"
             >
-              {/* Decorative Elements */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gray-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-60 pointer-events-none"></div>
+              {/* Decorative Element */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-bronze/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
               <div className="relative z-10">
                 <div className="mb-10">
-                  <h2 className="text-2xl font-light text-gray-900">
+                  <h2 className="font-display text-3xl font-light text-marble">
                     Request a quote
                   </h2>
-                  <div className="h-1 w-12 bg-gray-900 mt-4 rounded-full"></div>
+                  <div className="h-1 w-12 bg-bronze mt-4 rounded-full"></div>
                 </div>
 
                 {/* Error Message */}
@@ -372,10 +368,10 @@ export default function ContactPage() {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 rounded-r-lg flex items-center gap-3"
+                      className="mb-6 p-4 bg-red-500/10 border-l-4 border-red-500 rounded-r-lg flex items-center gap-3"
                     >
-                      <XCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
-                      <p className="text-red-800 text-sm">{error}</p>
+                      <XCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
+                      <p className="text-red-300 text-sm">{error}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -385,7 +381,7 @@ export default function ContactPage() {
                     <div className="group">
                       <label
                         htmlFor="name"
-                        className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 group-focus-within:text-gray-900 transition-colors"
+                        className="block text-xs font-semibold text-marble-faint uppercase tracking-wider mb-3 group-focus-within:text-bronze-light transition-colors"
                       >
                         Full Name
                       </label>
@@ -396,7 +392,7 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full pb-3 border-b border-gray-200 bg-transparent focus:border-gray-900 outline-none transition-all duration-300 placeholder:text-gray-300 text-gray-900 text-lg"
+                        className="w-full pb-3 border-b border-hairline-strong bg-transparent focus:border-bronze outline-none transition-all duration-300 placeholder:text-marble-faint text-marble text-lg"
                         placeholder="Jane Doe"
                       />
                     </div>
@@ -404,7 +400,7 @@ export default function ContactPage() {
                     <div className="group">
                       <label
                         htmlFor="email"
-                        className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 group-focus-within:text-gray-900 transition-colors"
+                        className="block text-xs font-semibold text-marble-faint uppercase tracking-wider mb-3 group-focus-within:text-bronze-light transition-colors"
                       >
                         Email Address
                       </label>
@@ -415,7 +411,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full pb-3 border-b border-gray-200 bg-transparent focus:border-gray-900 outline-none transition-all duration-300 placeholder:text-gray-300 text-gray-900 text-lg"
+                        className="w-full pb-3 border-b border-hairline-strong bg-transparent focus:border-bronze outline-none transition-all duration-300 placeholder:text-marble-faint text-marble text-lg"
                         placeholder="jane@example.com"
                       />
                     </div>
@@ -425,7 +421,7 @@ export default function ContactPage() {
                     <div className="group">
                       <label
                         htmlFor="phone"
-                        className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 group-focus-within:text-gray-900 transition-colors"
+                        className="block text-xs font-semibold text-marble-faint uppercase tracking-wider mb-3 group-focus-within:text-bronze-light transition-colors"
                       >
                         Phone (Optional)
                       </label>
@@ -435,7 +431,7 @@ export default function ContactPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full pb-3 border-b border-gray-200 bg-transparent focus:border-gray-900 outline-none transition-all duration-300 placeholder:text-gray-300 text-gray-900 text-lg"
+                        className="w-full pb-3 border-b border-hairline-strong bg-transparent focus:border-bronze outline-none transition-all duration-300 placeholder:text-marble-faint text-marble text-lg"
                         placeholder="+86 300..."
                       />
                     </div>
@@ -443,7 +439,7 @@ export default function ContactPage() {
                     <div className="group">
                       <label
                         htmlFor="subject"
-                        className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 group-focus-within:text-gray-900 transition-colors"
+                        className="block text-xs font-semibold text-marble-faint uppercase tracking-wider mb-3 group-focus-within:text-bronze-light transition-colors"
                       >
                         Topic
                       </label>
@@ -453,13 +449,12 @@ export default function ContactPage() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full pb-3 border-b border-gray-200 bg-transparent focus:border-gray-900 outline-none transition-all duration-300 text-gray-900 text-lg cursor-pointer"
+                        className="w-full pb-3 border-b border-hairline-strong bg-transparent focus:border-bronze outline-none transition-all duration-300 text-marble text-lg cursor-pointer [&>option]:bg-graphite [&>option]:text-marble"
                       >
-                        <option value="" className="text-gray-400">
+                        <option value="" className="text-marble-faint">
                           Select a subject...
                         </option>
                         <option value="product-inquiry">Inquiry</option>
-                        {/* <option value="order-status">Order Status</option> */}
                         <option value="other">Other</option>
                       </select>
                     </div>
@@ -468,7 +463,7 @@ export default function ContactPage() {
                   <div className="group">
                     <label
                       htmlFor="message"
-                      className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 group-focus-within:text-gray-900 transition-colors"
+                      className="block text-xs font-semibold text-marble-faint uppercase tracking-wider mb-3 group-focus-within:text-bronze-light transition-colors"
                     >
                       Your Message
                     </label>
@@ -479,7 +474,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       required
                       rows={4}
-                      className="w-full p-4 bg-gray-50 rounded-xl border border-gray-100 focus:border-gray-300 focus:ring-0 outline-none transition-all duration-300 resize-none text-gray-900 leading-relaxed"
+                      className="w-full p-4 bg-obsidian rounded-xl border border-hairline focus:border-bronze focus:ring-0 outline-none transition-all duration-300 resize-none text-marble placeholder:text-marble-faint leading-relaxed"
                       placeholder="How can we help you today?"
                     ></textarea>
                   </div>
@@ -488,11 +483,11 @@ export default function ContactPage() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="bg-gray-900 text-white px-10 py-6 rounded-full font-medium text-base hover:bg-black transition-all duration-300 hover:shadow-xl hover:shadow-gray-200 disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="bg-bronze text-obsidian px-10 py-6 rounded-full font-bold uppercase tracking-[0.12em] text-sm hover:bg-bronze-light transition-all duration-300 hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? (
                         <span className="flex items-center gap-2">
-                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                          <div className="w-4 h-4 border-2 border-obsidian/30 border-t-obsidian rounded-full animate-spin"></div>
                           Sending...
                         </span>
                       ) : (

@@ -1,16 +1,8 @@
 // components/IngredientsSection.tsx
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { easeOut, motion } from "framer-motion";
-import {
-  ArrowRight,
-  CheckCircle2,
-  Heart,
-  Leaf,
-  Shield,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, Heart, Leaf, Shield, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 interface IngredientsSectionProps {
@@ -63,32 +55,35 @@ export function IngredientsSection({
   visibleSections,
 }: IngredientsSectionProps) {
   return (
-    // UPDATED: Changed py-24 to pt-8 pb-24 to remove top spacing
-    <section id="about" className=" pb-24 bg-white relative overflow-hidden">
-      {/* Decorative Background Element */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gray-50/50 rounded-full blur-3xl -z-10 opacity-60 pointer-events-none" />
+    <section
+      id="about"
+      className="pb-24 pt-24 bg-obsidian text-marble relative overflow-hidden grain"
+    >
+      <div className="vein-glow" />
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16" // Reduced margin-bottom from 20 to 16
+          className="max-w-3xl mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-100 bg-white text-[10px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-6 shadow-sm">
-            <CheckCircle2 className="w-3 h-10 text-gray-900" />
-            <span>The GFive Mines & Minerals Standard</span>
+          <div className="flex items-center gap-4 mb-6">
+            <span className="h-px w-12 bg-bronze" />
+            <span className="eyebrow">The GFive Standard</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight leading-tight">
-            Elevated Natural Stone for signature spaces
+          <h2 className="font-display text-4xl md:text-6xl font-light mb-6 tracking-tight leading-[0.98]">
+            Elevated natural stone for{" "}
+            <span className="italic text-vein">signature spaces.</span>
           </h2>
-          <p className="text-gray-500 text-lg leading-relaxed">
-            From premium marble slabs to robust granite blocks, GFive Mines & Minerals
-            supplies quarry-direct stone with consistent quality, reliable dimensions,
-            and precision cutting capabilities for buyers worldwide.
+          <p className="text-marble-dim text-lg leading-relaxed max-w-2xl">
+            From premium marble slabs to robust granite blocks, GFive Mines &amp;
+            Minerals supplies quarry-direct stone with consistent quality,
+            reliable dimensions, and precision cutting capabilities for buyers
+            worldwide.
           </p>
         </motion.div>
 
@@ -105,36 +100,24 @@ export function IngredientsSection({
               key={index}
               variants={itemVariants}
               whileHover={{ y: -10 }}
-              className="group relative bg-white border border-gray-100 rounded-3xl p-8 hover:border-gray-200 hover:shadow-xl hover:shadow-gray-200/40 transition-all duration-500 cursor-default"
+              className="group relative bg-graphite border border-hairline rounded-3xl p-8 hover:border-bronze/40 hover:shadow-2xl hover:shadow-black/40 transition-all duration-500 cursor-default overflow-hidden"
             >
-              <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-900 transition-colors duration-500">
-                <item.icon className="w-6 h-6 text-gray-900 group-hover:text-white transition-colors duration-500 group-hover:scale-110" />
+              {/* number watermark */}
+              <span className="absolute top-6 right-7 font-display text-5xl text-white/5 group-hover:text-bronze/15 transition-colors duration-500 select-none">
+                0{index + 1}
+              </span>
+
+              <div className="w-14 h-14 bg-white/5 border border-hairline rounded-2xl flex items-center justify-center mb-6 group-hover:bg-bronze group-hover:border-bronze transition-colors duration-500">
+                <item.icon className="w-6 h-6 text-bronze-light group-hover:text-obsidian transition-colors duration-500" />
               </div>
 
-              <h3 className="text-xl font-medium text-gray-900 mb-3 group-hover:tracking-wide transition-all duration-300">
+              <h3 className="text-xl font-medium text-marble mb-3">
                 {item.title}
               </h3>
 
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-marble-dim leading-relaxed">
                 {item.desc}
               </p>
-
-              {/* Decorative Corner */}
-              <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 2L18 18M18 2L2 18"
-                    stroke="black"
-                    strokeWidth="1"
-                  />
-                </svg>
-              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -145,13 +128,12 @@ export function IngredientsSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="text-center"
         >
-          <Link href="/shop">
-            <Button className="bg-gray-900 text-white px-10 py-6 rounded-full font-medium text-base hover:bg-black transition-all hover:shadow-lg hover:shadow-gray-200 group">
+          <Link href="/marble-stones" className="group inline-flex">
+            <span className="inline-flex items-center gap-3 bg-bronze text-obsidian px-9 py-4 text-sm font-bold uppercase tracking-[0.15em] hover:bg-bronze-light transition-colors duration-300">
               Browse Stone Inventory
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-            </Button>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </span>
           </Link>
         </motion.div>
       </div>

@@ -3,11 +3,45 @@
 @tailwind utilities;
 
 :root {
-  /* Sharp Fashion Design - Minimal Radius */
-  --radius: 0rem;
+  /* ============================================================
+     OBSIDIAN & BRONZE — Quarry Luxe design system
+     ============================================================ */
+  --obsidian: #0b0b0d; /* page background */
+  --graphite: #16161a; /* raised panels */
+  --graphite-2: #1e1e24; /* elevated cards / hover */
+  --marble: #f4f1ea; /* primary text */
+  --marble-dim: #a7a49c; /* secondary text */
+  --marble-faint: #6f6d68; /* tertiary / captions */
+  --bronze: #b08d57; /* accent — mineral vein */
+  --bronze-light: #c9a876; /* accent hover / highlight */
+  --bronze-dim: #8a6f45;
+  --hairline: #26262c; /* borders / rules */
+  --hairline-strong: #34343c;
+
+  /* shadcn/ui token bridge (dark) */
+  --background: 240 6% 4%;
+  --foreground: 43 30% 93%;
+  --card: 240 8% 9%;
+  --card-foreground: 43 30% 93%;
+  --popover: 240 8% 9%;
+  --popover-foreground: 43 30% 93%;
+  --primary: 43 30% 93%;
+  --primary-foreground: 240 6% 4%;
+  --secondary: 240 6% 12%;
+  --secondary-foreground: 43 30% 93%;
+  --muted: 240 6% 12%;
+  --muted-foreground: 40 5% 63%;
+  --accent: 33 36% 51%;
+  --accent-foreground: 240 6% 4%;
+  --destructive: 0 62% 50%;
+  --destructive-foreground: 43 30% 93%;
+  --border: 240 8% 16%;
+  --input: 240 8% 16%;
+  --ring: 33 36% 51%;
+
+  --radius: 0.25rem;
   --radius-sm: 0.125rem;
 
-  /* Fashion-optimized spacing */
   --container-padding: 2rem;
   --section-padding: 5rem;
 }
@@ -18,8 +52,16 @@
   }
 
   body {
-    font-family: "Inter", sans-serif;
-    letter-spacing: 0.01em; /* Slightly tighter for fashion */
+    background-color: var(--obsidian);
+    color: var(--marble);
+    font-family: var(--font-geist-sans), "Inter", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--bronze);
+    color: var(--obsidian);
   }
 }
 
@@ -213,22 +255,24 @@
   }
 }
 
-/* Custom scrollbar with monochrome theme */
+/* Custom scrollbar — obsidian & bronze */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5f5f5;
+  background: var(--obsidian);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #000000;
-  border-radius: 4px;
+  background: #33333b;
+  border-radius: 6px;
+  border: 2px solid var(--obsidian);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333333;
+  background: var(--bronze-dim);
 }
 
 /* Global transitions */
@@ -270,4 +314,123 @@ img[data-loaded="false"] {
 
 img[data-loaded="true"] {
   opacity: 1;
+}
+
+/* ============================================================
+   QUARRY LUXE — theme utilities
+   ============================================================ */
+
+/* Hide scrollbars (used by filter rails / thumbnails) */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Thin bronze scrollbar for inner panels (checkout summary) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--hairline-strong);
+  border-radius: 3px;
+}
+
+/* Serif display helper */
+.font-display {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+}
+
+/* Bronze gradient text (mineral vein) */
+.text-vein {
+  background: linear-gradient(
+    100deg,
+    var(--bronze) 0%,
+    var(--bronze-light) 45%,
+    #e7d4b0 55%,
+    var(--bronze) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Hairline label — small uppercase eyebrow */
+.eyebrow {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--bronze-light);
+}
+
+/* Fine film grain overlay for dark sections */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+}
+
+/* Marble vein radial glow, sits behind content */
+.vein-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 15% 0%, rgba(176, 141, 87, 0.1), transparent 60%),
+    radial-gradient(50% 60% at 100% 100%, rgba(176, 141, 87, 0.07), transparent 55%);
+}
+
+/* Thin bronze hairline divider */
+.rule-bronze {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--bronze-dim) 20%,
+    var(--bronze) 50%,
+    var(--bronze-dim) 80%,
+    transparent
+  );
+  opacity: 0.6;
+}
+
+/* Shimmer sweep (progress bars, highlights) */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.animate-shimmer {
+  animation: shimmer 2.2s linear infinite;
+}
+
+/* Slow float for decorative marks */
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-floatY {
+  animation: floatY 6s ease-in-out infinite;
 }

@@ -12,7 +12,31 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-geist-sans)', 'Inter', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-serif)', 'Georgia', 'Times New Roman', 'serif'],
+        mono: ['var(--font-geist-mono)', 'ui-monospace', 'monospace'],
+      },
       colors: {
+        obsidian: '#0b0b0d',
+        graphite: {
+          DEFAULT: '#16161a',
+          light: '#1e1e24',
+        },
+        marble: {
+          DEFAULT: '#f4f1ea',
+          dim: '#a7a49c',
+          faint: '#6f6d68',
+        },
+        bronze: {
+          DEFAULT: '#b08d57',
+          light: '#c9a876',
+          dim: '#8a6f45',
+        },
+        hairline: {
+          DEFAULT: '#26262c',
+          strong: '#34343c',
+        },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

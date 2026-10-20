@@ -196,30 +196,30 @@ export default function CheckoutPage() {
       <div className="space-y-4 max-h-[calc(100vh-300px)] overflow-y-auto pr-2 custom-scrollbar">
         {items.map((item) => (
           <div key={item.id} className="flex gap-4 items-center group">
-            <div className="relative w-16 h-16 rounded-xl border border-white/10 overflow-hidden bg-white/5 flex-shrink-0">
+            <div className="relative w-16 h-16 rounded-xl border border-hairline overflow-hidden bg-white/5 flex-shrink-0">
               <img
                 src={item.image}
                 alt={item.name}
                 className="w-full h-full object-cover"
               />
-              <span className="absolute top-0 right-0 bg-gray-500/80 backdrop-blur text-white text-[10px] px-1.5 py-0.5 rounded-bl-lg font-medium">
+              <span className="absolute top-0 right-0 bg-bronze text-obsidian text-[10px] px-1.5 py-0.5 rounded-bl-lg font-bold">
                 {item.quantity}
               </span>
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-white/90 group-hover:text-white transition-colors truncate">
+              <p className="text-sm font-medium text-marble group-hover:text-bronze-light transition-colors truncate">
                 {item.name}
               </p>
-              <p className="text-xs text-white/50">{item.brand}</p>
+              <p className="text-xs text-marble-faint">{item.brand}</p>
             </div>
-            <p className="text-sm font-medium text-white whitespace-nowrap">
+            <p className="text-sm font-medium text-marble whitespace-nowrap">
               Rs {Math.round(item.price * item.quantity).toLocaleString()}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="h-px bg-white/10 w-full" />
+      <div className="rule-bronze" />
 
       {/* Promo Code Input */}
       <div className="flex gap-2">
@@ -229,7 +229,7 @@ export default function CheckoutPage() {
           onChange={(e) => setPromoCode(e.target.value.toUpperCase())}
           placeholder="Discount code or gift card"
           disabled={!!validatedPromoCode}
-          className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-white/30 transition-colors uppercase"
+          className="flex-1 bg-obsidian border border-hairline rounded-lg px-4 py-3 text-sm text-marble placeholder:text-marble-faint focus:outline-none focus:border-bronze transition-colors uppercase"
         />
         <button
           onClick={
@@ -243,7 +243,7 @@ export default function CheckoutPage() {
           disabled={!promoCode || isValidatingPromo}
           className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${validatedPromoCode
             ? "bg-red-500/20 text-red-200 hover:bg-red-500/30 border border-red-500/20"
-            : "bg-white/10 text-white hover:bg-white/20 border border-white/10"
+            : "bg-bronze text-obsidian hover:bg-bronze-light border border-bronze"
             }`}
         >
           {validatedPromoCode ? "Remove" : isValidatingPromo ? "..." : "Apply"}
@@ -251,41 +251,41 @@ export default function CheckoutPage() {
       </div>
       {promoError && <p className="text-xs text-red-400 mt-1">{promoError}</p>}
       {validatedPromoCode && (
-        <div className="flex items-center gap-2 text-xs text-emerald-400 bg-emerald-400/10 p-2 rounded-lg border border-emerald-400/20">
+        <div className="flex items-center gap-2 text-xs text-bronze-light bg-bronze/10 p-2 rounded-lg border border-bronze/20">
           <CheckCircle2 className="w-3 h-3" />
           Code <b>{validatedPromoCode.code}</b> applied
         </div>
       )}
 
-      <div className="h-px bg-white/10 w-full" />
+      <div className="rule-bronze" />
 
       {/* Totals */}
-      <div className="space-y-2 text-sm text-white/70">
+      <div className="space-y-2 text-sm text-marble-dim">
         <div className="flex justify-between">
           <span>Subtotal</span>
-          <span className="text-white">Rs {subtotal.toLocaleString()}</span>
+          <span className="text-marble">Rs {subtotal.toLocaleString()}</span>
         </div>
         {validatedPromoCode && (
-          <div className="flex justify-between text-emerald-400">
+          <div className="flex justify-between text-bronze-light">
             <span>Discount</span>
             <span>- Rs {discountAmount.toLocaleString()}</span>
           </div>
         )}
         <div className="flex justify-between">
           <span>Shipping</span>
-          <span className="text-xs bg-white/10 px-2 py-0.5 rounded text-white/80">
+          <span className="text-xs bg-white/5 border border-hairline px-2 py-0.5 rounded text-marble-dim">
             Calculated next step
           </span>
         </div>
       </div>
 
-      <div className="h-px bg-white/10 w-full" />
+      <div className="rule-bronze" />
 
       <div className="flex justify-between items-baseline">
-        <span className="text-lg font-medium text-white">Total</span>
+        <span className="text-lg font-medium text-marble">Total</span>
         <div className="text-right">
-          <span className="text-xs text-white/50 mr-2">PKR</span>
-          <span className="text-2xl font-semibold text-white tracking-tight">
+          <span className="text-xs text-marble-faint mr-2">PKR</span>
+          <span className="font-display text-3xl font-semibold text-marble tracking-tight">
             {total.toLocaleString()}
           </span>
         </div>
@@ -309,9 +309,9 @@ export default function CheckoutPage() {
         onChange={onChange}
         required={required}
         placeholder=" "
-        className="peer w-full bg-white border border-gray-200 rounded-lg px-4 pt-5 pb-2 text-gray-900 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all"
+        className="peer w-full bg-graphite border border-hairline rounded-lg px-4 pt-5 pb-2 text-marble placeholder-transparent focus:outline-none focus:ring-2 focus:ring-bronze/20 focus:border-bronze transition-all"
       />
-      <label className="absolute left-4 top-1.5 text-[10px] text-gray-500 font-medium uppercase tracking-wider transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:normal-case peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3.5 peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:uppercase peer-focus:text-gray-800 peer-focus:font-bold pointer-events-none">
+      <label className="absolute left-4 top-1.5 text-[10px] text-marble-faint font-medium uppercase tracking-wider transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:normal-case peer-placeholder-shown:text-marble-faint peer-placeholder-shown:top-3.5 peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:uppercase peer-focus:text-bronze-light peer-focus:font-bold pointer-events-none">
         {label}
       </label>
     </div>
@@ -321,40 +321,40 @@ export default function CheckoutPage() {
 
   if (showSuccess) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center p-6">
+      <div className="min-h-screen bg-obsidian text-marble flex items-center justify-center p-6 grain">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="max-w-md w-full text-center space-y-6"
+          className="max-w-md w-full text-center space-y-6 relative z-10"
         >
-          <div className="w-24 h-24 bg-gray-900 rounded-full flex items-center justify-center mx-auto shadow-2xl">
-            <CheckCircle2 className="w-10 h-10 text-white" />
+          <div className="w-24 h-24 bg-bronze rounded-full flex items-center justify-center mx-auto shadow-2xl">
+            <CheckCircle2 className="w-10 h-10 text-obsidian" />
           </div>
           <div>
-            <h1 className="text-3xl font-light text-gray-900 mb-2">
+            <h1 className="font-display text-4xl font-light text-marble mb-2">
               Order Confirmed
             </h1>
-            <p className="text-gray-500">
-              Thank you, {firstName}. We've sent the receipt to {email}.
+            <p className="text-marble-dim">
+              Thank you, {firstName}. We&apos;ve sent the receipt to {email}.
             </p>
           </div>
-          <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 text-left space-y-4">
+          <div className="bg-graphite p-6 rounded-2xl border border-hairline text-left space-y-4">
             <div className="flex justify-between text-sm">
-              <span className="text-gray-500">Amount Paid</span>
-              <span className="font-medium text-gray-900">
+              <span className="text-marble-dim">Amount Paid</span>
+              <span className="font-medium text-marble">
                 Rs {total.toLocaleString()} (COD)
               </span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-gray-500">Shipping To</span>
-              <span className="font-medium text-gray-900 text-right max-w-[200px] truncate">
+              <span className="text-marble-dim">Shipping To</span>
+              <span className="font-medium text-marble text-right max-w-[200px] truncate">
                 {address}, {city}
               </span>
             </div>
           </div>
           <Link
-            href="/shop"
-            className="block w-full bg-gray-900 text-white py-4 rounded-xl font-medium hover:bg-black transition-all"
+            href="/marble-stones"
+            className="block w-full bg-bronze text-obsidian py-4 rounded-xl font-bold uppercase tracking-[0.12em] text-sm hover:bg-bronze-light transition-all"
           >
             Continue Shopping
           </Link>
@@ -364,19 +364,19 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="h-screen flex flex-col lg:flex-row bg-white overflow-x-hidden">
+    <div className="h-screen flex flex-col lg:flex-row bg-obsidian overflow-x-hidden">
       {/* 1. Mobile Order Summary Toggle (Visible only on mobile) */}
-      <div className="lg:hidden bg-[#0a0a0a] border-b border-white/10 sticky top-0 z-50">
+      <div className="lg:hidden bg-graphite border-b border-hairline sticky top-0 z-50">
         <div className="px-6 py-4 flex items-center justify-between">
           <Link
             href="/"
-            className="text-xl font-serif italic font-bold text-white tracking-tighter"
+            className="font-display text-xl italic font-bold text-marble tracking-tighter"
           >
-            Gfivemines&minerals.
+            GFive Mines &amp; Minerals.
           </Link>
           <button
             onClick={() => setIsMobileSummaryOpen(!isMobileSummaryOpen)}
-            className="flex items-center gap-2 text-sm text-emerald-400 font-medium"
+            className="flex items-center gap-2 text-sm text-bronze-light font-medium"
           >
             <ShoppingBag className="w-4 h-4" />
             <span>{isMobileSummaryOpen ? "Hide" : "Show"} Order Summary</span>
@@ -385,7 +385,7 @@ export default function CheckoutPage() {
             ) : (
               <ChevronDown className="w-4 h-4" />
             )}
-            <span className="text-white ml-1">Rs {total.toLocaleString()}</span>
+            <span className="text-marble ml-1">Rs {total.toLocaleString()}</span>
           </button>
         </div>
 
@@ -395,7 +395,7 @@ export default function CheckoutPage() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="bg-[#0a0a0a] border-t border-white/10 overflow-hidden"
+              className="bg-graphite border-t border-hairline overflow-hidden"
             >
               <div className="p-6">
                 <OrderSummaryContent />
@@ -406,28 +406,28 @@ export default function CheckoutPage() {
       </div>
 
       {/* 2. Left Column: Desktop Order Summary (Sticky & Full Height) */}
-      {/* h-screen + sticky top-0 ensures it stays locked to the viewport */}
-      <aside className="hidden lg:flex flex-col w-[45%] bg-[#0a0a0a] border-r border-white/5 h-screen sticky top-0 z-10">
-        <div className="flex-1 flex flex-col p-6 lg:p-8 overflow-hidden">
+      <aside className="hidden lg:flex flex-col w-[45%] bg-graphite border-r border-hairline h-screen sticky top-0 z-10 grain">
+        <div className="vein-glow" />
+        <div className="flex-1 flex flex-col p-6 lg:p-8 overflow-hidden relative z-10">
           {/* Branding */}
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className="text-3xl font-serif italic font-bold text-white tracking-tighter hover:text-gray-300 transition-colors"
+              className="font-display text-3xl italic font-bold text-marble tracking-tighter hover:text-bronze-light transition-colors"
             >
-              GFive Mines & Minerals.
+              GFive Mines &amp; Minerals.
             </Link>
           </div>
 
           {/* Scrollable Content Area */}
-          <div className="flex-1 overflow-hidden pr-4">
+          <div className="flex-1 overflow-hidden pr-4 mt-8">
             <OrderSummaryContent />
           </div>
 
           {/* Trust Footer */}
-          <div className="mt-6 pt-4 border-t border-white/10 flex gap-4 text-xs text-white/40 flex-shrink-0">
+          <div className="mt-6 pt-4 border-t border-hairline flex gap-4 text-xs text-marble-faint flex-shrink-0">
             <span className="flex items-center gap-1">
-              <ShieldCheck className="w-3 h-3" /> Secure Checkout
+              <ShieldCheck className="w-3 h-3 text-bronze" /> Secure Checkout
             </span>
             <span>Returns Policy</span>
             <span>Terms of Service</span>
@@ -436,19 +436,19 @@ export default function CheckoutPage() {
       </aside>
 
       {/* 3. Right Column: Forms & Data Entry */}
-      <main className="flex-1 w-full bg-white overflow-y-auto">
+      <main className="flex-1 w-full bg-obsidian overflow-y-auto">
         <div className="max-w-2xl mx-auto p-6 md:p-12 lg:p-20 lg:pt-24">
           {/* Desktop Breadcrumb */}
           <div className="hidden lg:flex items-center justify-between mb-8">
-            <div className="flex items-center gap-2 text-sm text-gray-500">
+            <div className="flex items-center gap-2 text-sm text-marble-dim">
               <Link
                 href="/cart"
-                className="hover:text-gray-900 transition-colors"
+                className="hover:text-bronze-light transition-colors"
               >
                 Cart
               </Link>
-              <span className="text-gray-300">/</span>
-              <span className="text-gray-900 font-medium">Checkout</span>
+              <span className="text-marble-faint">/</span>
+              <span className="text-marble font-medium">Checkout</span>
             </div>
           </div>
 
@@ -456,8 +456,9 @@ export default function CheckoutPage() {
             {/* Contact Section */}
             <section>
               <div className="mb-4">
-                <h2 className="text-xl font-medium text-gray-900">Contact</h2>
-                {/* "Have an account?" text removed as requested */}
+                <h2 className="font-display text-2xl font-medium text-marble">
+                  Contact
+                </h2>
               </div>
 
               <div className="space-y-4">
@@ -471,12 +472,12 @@ export default function CheckoutPage() {
                 <label className="flex items-start gap-3 cursor-pointer group">
                   <div
                     className={`mt-0.5 w-5 h-5 rounded border flex items-center justify-center transition-colors flex-shrink-0 ${emailNews
-                      ? "bg-black border-black"
-                      : "border-gray-300 bg-white"
+                      ? "bg-bronze border-bronze"
+                      : "border-hairline-strong bg-graphite"
                       }`}
                   >
                     {emailNews && (
-                      <CheckCircle2 className="w-3.5 h-3.5 text-white" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-obsidian" />
                     )}
                   </div>
                   <input
@@ -485,7 +486,7 @@ export default function CheckoutPage() {
                     onChange={(e) => setEmailNews(e.target.checked)}
                     className="hidden"
                   />
-                  <span className="text-sm text-gray-500 group-hover:text-gray-900 transition-colors">
+                  <span className="text-sm text-marble-dim group-hover:text-marble transition-colors">
                     Email me with news and offers
                   </span>
                 </label>
@@ -494,14 +495,14 @@ export default function CheckoutPage() {
 
             {/* Shipping Section */}
             <section>
-              <h2 className="text-xl font-medium text-gray-900 mb-4">
+              <h2 className="font-display text-2xl font-medium text-marble mb-4">
                 Delivery
               </h2>
               <div className="space-y-4">
                 {/* Country Mock */}
-                <div className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3.5 text-gray-500 text-sm flex justify-between cursor-not-allowed">
+                <div className="w-full bg-graphite border border-hairline rounded-lg px-4 py-3.5 text-marble-dim text-sm flex justify-between cursor-not-allowed">
                   <span>Pakistan</span>
-                  <span className="text-xs font-medium bg-gray-200 px-2 py-0.5 rounded">
+                  <span className="text-xs font-medium bg-white/5 border border-hairline px-2 py-0.5 rounded">
                     International shipping coming soon
                   </span>
                 </div>
@@ -559,12 +560,12 @@ export default function CheckoutPage() {
                 <label className="flex items-start gap-3 cursor-pointer group">
                   <div
                     className={`mt-0.5 w-5 h-5 rounded border flex items-center justify-center transition-colors flex-shrink-0 ${saveInfo
-                      ? "bg-black border-black"
-                      : "border-gray-300 bg-white"
+                      ? "bg-bronze border-bronze"
+                      : "border-hairline-strong bg-graphite"
                       }`}
                   >
                     {saveInfo && (
-                      <CheckCircle2 className="w-3.5 h-3.5 text-white" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-obsidian" />
                     )}
                   </div>
                   <input
@@ -573,7 +574,7 @@ export default function CheckoutPage() {
                     onChange={(e) => setSaveInfo(e.target.checked)}
                     className="hidden"
                   />
-                  <span className="text-sm text-gray-500 group-hover:text-gray-900 transition-colors">
+                  <span className="text-sm text-marble-dim group-hover:text-marble transition-colors">
                     Save this information for next time
                   </span>
                 </label>
@@ -582,45 +583,45 @@ export default function CheckoutPage() {
 
             {/* Payment Section */}
             <section>
-              <h2 className="text-xl font-medium text-gray-900 mb-2">
+              <h2 className="font-display text-2xl font-medium text-marble mb-2">
                 Payment
               </h2>
-              <p className="text-sm text-gray-500 mb-4">
+              <p className="text-sm text-marble-dim mb-4">
                 All transactions are secure and encrypted.
               </p>
 
-              <div className="rounded-xl border border-gray-200 overflow-hidden">
+              <div className="rounded-xl border border-hairline overflow-hidden">
                 {/* Selected Option: COD */}
-                <div className="bg-gray-50/50 p-4 border-b border-gray-200 flex items-center justify-between">
+                <div className="bg-graphite p-4 border-b border-hairline flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-4 h-4 rounded-full border-[5px] border-black bg-white"></div>
-                    <span className="font-medium text-gray-900 text-sm">
+                    <div className="w-4 h-4 rounded-full border-[5px] border-bronze bg-obsidian"></div>
+                    <span className="font-medium text-marble text-sm">
                       Cash on Delivery (COD)
                     </span>
                   </div>
-                  <Truck className="w-5 h-5 text-gray-900" />
+                  <Truck className="w-5 h-5 text-bronze" />
                 </div>
                 {/* COD Content */}
-                <div className="bg-gray-50 p-6 flex flex-col items-center justify-center text-center space-y-2">
-                  <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center border border-gray-200 shadow-sm mb-2">
-                    <ShoppingBag className="w-6 h-6 text-gray-400" />
+                <div className="bg-graphite/50 p-6 flex flex-col items-center justify-center text-center space-y-2">
+                  <div className="w-12 h-12 bg-obsidian rounded-lg flex items-center justify-center border border-hairline shadow-sm mb-2">
+                    <ShoppingBag className="w-6 h-6 text-bronze" />
                   </div>
-                  <p className="text-sm text-gray-600 max-w-xs mx-auto">
-                    You will pay <b>Rs {total.toLocaleString()}</b> in cash when
-                    the courier delivers your order.
+                  <p className="text-sm text-marble-dim max-w-xs mx-auto">
+                    You will pay <b className="text-marble">Rs {total.toLocaleString()}</b> in
+                    cash when the courier delivers your order.
                   </p>
                 </div>
 
                 {/* Disabled Option: Card */}
-                <div className="opacity-50 p-4 flex items-center justify-between bg-white cursor-not-allowed">
+                <div className="opacity-40 p-4 flex items-center justify-between bg-obsidian cursor-not-allowed">
                   <div className="flex items-center gap-3">
-                    <div className="w-4 h-4 rounded-full border border-gray-300"></div>
-                    <span className="font-medium text-gray-900 text-sm">
+                    <div className="w-4 h-4 rounded-full border border-hairline-strong"></div>
+                    <span className="font-medium text-marble text-sm">
                       Credit Card (Coming Soon)
                     </span>
                   </div>
                   <div className="flex gap-1">
-                    <CreditCard className="w-5 h-5 text-gray-400" />
+                    <CreditCard className="w-5 h-5 text-marble-faint" />
                   </div>
                 </div>
               </div>
@@ -642,7 +643,7 @@ export default function CheckoutPage() {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="bg-red-50 text-red-600 px-4 py-3 rounded-lg text-sm flex items-center gap-2"
+                  className="bg-red-500/10 text-red-400 px-4 py-3 rounded-lg text-sm flex items-center gap-2 border border-red-500/20"
                 >
                   <XCircle className="w-4 h-4" />
                   {error}
@@ -654,7 +655,7 @@ export default function CheckoutPage() {
             <div className="pt-6 flex flex-col-reverse md:flex-row md:items-center justify-between gap-6">
               <Link
                 href="/cart"
-                className="flex items-center gap-2 text-sm text-gray-500 hover:text-black transition-colors justify-center md:justify-start"
+                className="flex items-center gap-2 text-sm text-marble-dim hover:text-bronze-light transition-colors justify-center md:justify-start"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Return to cart
@@ -663,11 +664,11 @@ export default function CheckoutPage() {
               <button
                 type="submit"
                 disabled={isSubmitting || items.length === 0}
-                className="bg-black text-white px-8 py-4 rounded-xl font-medium text-lg hover:bg-gray-800 transition-all shadow-xl shadow-black/10 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed w-full md:w-auto"
+                className="bg-bronze text-obsidian px-8 py-4 rounded-xl font-bold uppercase tracking-[0.12em] text-sm hover:bg-bronze-light transition-all shadow-xl shadow-black/20 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed w-full md:w-auto"
               >
                 {isSubmitting ? (
                   <span className="flex items-center gap-2">
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    <div className="w-4 h-4 border-2 border-obsidian/30 border-t-obsidian rounded-full animate-spin"></div>
                     Processing
                   </span>
                 ) : (
@@ -678,8 +679,8 @@ export default function CheckoutPage() {
               </button>
             </div>
 
-            <div className="lg:hidden pt-8 border-t border-gray-100 text-center text-xs text-gray-400 pb-12">
-              All rights reserved GFive Mines & Minerals © 2025
+            <div className="lg:hidden pt-8 border-t border-hairline text-center text-xs text-marble-faint pb-12">
+              All rights reserved GFive Mines &amp; Minerals © 2025
             </div>
           </form>
         </div>

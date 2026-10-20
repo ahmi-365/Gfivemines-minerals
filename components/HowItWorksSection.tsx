@@ -23,7 +23,7 @@ const steps = [
     title: "Discover",
     desc: "Explore quarry-direct marble, granite, and minerals.",
     icon: Search,
-    link: "/shop",
+    link: "/marble-stones",
     linkText: "Browse Marble & Stone",
   },
   {
@@ -31,7 +31,7 @@ const steps = [
     title: "Specify",
     desc: "Select dimensions, finish, and application requirements.",
     icon: MousePointerClick,
-    link: "/shop",
+    link: "/marble-stones",
     linkText: "Choose Finish",
   },
   {
@@ -47,7 +47,7 @@ const steps = [
     title: "Deliver",
     desc: "Precision cutting and finishing for bulk orders and custom specifications.",
     icon: Sparkles,
-    link: "/shop",
+    link: "/marble-stones",
     linkText: "View Inventory",
   },
 ];
@@ -56,7 +56,7 @@ export function HowItWorksSection({ visibleSections }: HowItWorksSectionProps) {
   const [activeStep, setActiveStep] = useState<number>(0);
 
   return (
-    <section className="py-24 bg-gray-50/50 relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-obsidian text-marble relative overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -65,25 +65,25 @@ export function HowItWorksSection({ visibleSections }: HowItWorksSectionProps) {
           viewport={{ once: true }}
           className="text-center mb-24"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-200 bg-white text-[10px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-6">
-            <ArrowRight className="w-3 h-3 text-gray-900" />
-            <span>The Process</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-hairline bg-white/5 mb-6">
+            <ArrowRight className="w-3 h-3 text-bronze" />
+            <span className="eyebrow">The Process</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4 tracking-tight">
+          <h2 className="font-display text-4xl md:text-6xl font-light tracking-tight leading-[0.98]">
             From quarry to cutting
-            <span className="font-serif italic font-medium"> made simple.</span>
+            <span className="italic text-vein"> made simple.</span>
           </h2>
         </motion.div>
 
         {/* Steps Container */}
         <div className="relative">
-          {/* DESKTOP: Connecting Line Background (Gray) */}
-          <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-0.5 bg-gray-200 -z-10" />
+          {/* DESKTOP: Connecting Line Background */}
+          <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-px bg-hairline -z-10" />
 
-          {/* DESKTOP: Interactive Progress Line (Black) */}
+          {/* DESKTOP: Interactive Progress Line (Bronze) */}
           <motion.div
-            className="hidden lg:block absolute top-10 left-[10%] h-0.5 bg-gray-900 -z-10 origin-left"
+            className="hidden lg:block absolute top-10 left-[10%] h-px bg-bronze -z-10 origin-left"
             initial={{ width: "0%" }}
             animate={{ width: `${(Math.max(0, activeStep - 1) / 3) * 80}%` }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -100,39 +100,36 @@ export function HowItWorksSection({ visibleSections }: HowItWorksSectionProps) {
                 onMouseEnter={() => setActiveStep(item.id)}
                 onMouseLeave={() => setActiveStep(0)}
                 className={`relative flex flex-col items-center text-center p-6 rounded-3xl transition-all duration-300 ${activeStep === item.id
-                  ? "bg-white shadow-xl shadow-gray-200/50 scale-105"
-                  : "hover:bg-white/50"
+                  ? "bg-graphite border border-hairline-strong shadow-2xl shadow-black/40 scale-105"
+                  : "border border-transparent hover:bg-graphite/50"
                   }`}
               >
                 {/* Step Circle */}
                 <div
                   className={`w-20 h-20 rounded-full flex items-center justify-center mb-6 transition-all duration-500 border-2 relative z-10 ${activeStep >= item.id
-                    ? "bg-gray-900 border-gray-900 text-white"
-                    : "bg-white border-gray-100 text-gray-400"
+                    ? "bg-bronze border-bronze text-obsidian"
+                    : "bg-graphite border-hairline text-marble-faint"
                     }`}
                 >
                   <item.icon className="w-8 h-8" />
 
-                  {/* Small badge for completed steps in hover sequence */}
                   {activeStep > item.id && (
-                    <div className="absolute -right-1 -top-1 bg-emerald-500 rounded-full p-1 border-2 border-white">
-                      <CheckCircle2 className="w-3 h-3 text-white" />
+                    <div className="absolute -right-1 -top-1 bg-bronze rounded-full p-1 border-2 border-obsidian">
+                      <CheckCircle2 className="w-3 h-3 text-obsidian" />
                     </div>
                   )}
                 </div>
 
                 {/* Content */}
                 <div className="space-y-2">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                    Step 0{item.id}
-                  </span>
+                  <span className="eyebrow">Step 0{item.id}</span>
                   <h3
-                    className={`text-lg font-medium transition-colors ${activeStep >= item.id ? "text-gray-900" : "text-gray-500"
+                    className={`text-lg font-medium transition-colors ${activeStep >= item.id ? "text-marble" : "text-marble-dim"
                       }`}
                   >
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed px-2">
+                  <p className="text-sm text-marble-dim leading-relaxed px-2">
                     {item.desc}
                   </p>
                 </div>
@@ -146,7 +143,7 @@ export function HowItWorksSection({ visibleSections }: HowItWorksSectionProps) {
                 >
                   <Link
                     href={item.link}
-                    className="text-xs font-bold uppercase tracking-wider text-gray-900 border-b border-gray-900 pb-0.5 hover:text-gray-600 hover:border-gray-600 transition-colors"
+                    className="text-xs font-bold uppercase tracking-wider text-bronze-light border-b border-bronze pb-0.5 hover:text-marble hover:border-marble transition-colors"
                   >
                     {item.linkText}
                   </Link>
@@ -157,7 +154,7 @@ export function HowItWorksSection({ visibleSections }: HowItWorksSectionProps) {
         </div>
 
         {/* Mobile Connector (Vertical Line) */}
-        <div className="lg:hidden absolute left-1/2 top-[300px] bottom-[100px] w-px bg-gray-200 -z-10 -translate-x-1/2" />
+        <div className="lg:hidden absolute left-1/2 top-[300px] bottom-[100px] w-px bg-hairline -z-10 -translate-x-1/2" />
       </div>
     </section>
   );

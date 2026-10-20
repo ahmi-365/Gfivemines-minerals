@@ -13,13 +13,13 @@ export default function ClientShopPage({ id }: { id: string }) {
   };
 
   return (
-    <div className="p-8 max-w-2xl mx-auto">
-      <Link href="/shop" className="text-blue-600 underline mb-4 inline-block">
+    <div className="p-8 max-w-2xl mx-auto bg-obsidian text-marble">
+      <Link href="/marble-stones" className="text-bronze-light hover:text-bronze underline mb-4 inline-block">
         ← Back to Shop
       </Link>
 
-      <div className="border rounded-lg p-6 shadow-md">
-        <h1 className="text-2xl font-bold mb-2">Product ID: {id}</h1>
+      <div className="border border-hairline bg-graphite rounded-lg p-6 shadow-md">
+        <h1 className="font-display text-2xl font-bold mb-2 text-marble">Product ID: {id}</h1>
 
         <Image
           src="/placeholder.png"
@@ -29,7 +29,7 @@ export default function ClientShopPage({ id }: { id: string }) {
           className="rounded-md mb-4"
         />
 
-        <p className="text-gray-600 mb-4">
+        <p className="text-marble-dim mb-4">
           This is a sample description for product {id}. You can replace this with real API data.
         </p>
 

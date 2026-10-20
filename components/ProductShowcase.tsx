@@ -73,7 +73,7 @@ export function ProductShowcase() {
               ))}
             </div>
 
-            <Link href="/shop">
+            <Link href="/marble-stones">
               <Button className="btn-secondary">
                 Specify Your Stone
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
